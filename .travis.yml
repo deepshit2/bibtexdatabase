@@ -1,0 +1,4 @@
+language: java
+before_install:
+after_success:
+- mvn clean cobertura:cobertura coveralls:report
