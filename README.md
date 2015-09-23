@@ -24,6 +24,6 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 * Testaus
 
-⋅⋅* Yksikkötestaus (90%)
+	* Yksikkötestaus (90%)
 
-⋅⋅* Hyväksymätestaus
+	* Hyväksymätestaus
