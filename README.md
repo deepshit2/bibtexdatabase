@@ -5,7 +5,6 @@
 Ohjelmistotuotanto S2015 - Miniprojekti
 
 [https://bibtexdatabase.herokuapp.com/](https://bibtexdatabase.herokuapp.com/)
-
 [Product Backlog](https://trello.com/b/gAoFBDDj/ohtuspringteam)
 
 ##Jäsenet
@@ -18,21 +17,13 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 ##Sprint 1.
 
 * Käyttäjänä haluan syöttää viitteet järjestelmään ihmiselle hyvässä muodossa
-
 * Käyttäjänä haluan lisätä viitteitä formilla webbisivun kautta (article ja book)
-
-
 
 ##Definition of done
 
 * Koodi Herokussa
-
 * Koodi githubissa
-
 * Cl-palvelin
-
 * Testaus
-
 	* Yksikkötestaus (90%)
-
 	* Hyväksymätestaus
