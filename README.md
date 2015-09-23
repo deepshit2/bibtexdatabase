@@ -10,9 +10,9 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 ##Sprint 1.
 
-*Käyttäjänä haluan syöttää viitteet järjestelmään ihmiselle hyvässä muodossa
+* Käyttäjänä haluan syöttää viitteet järjestelmään ihmiselle hyvässä muodossa
 
-*Käyttäjänä haluan lisätä viitteitä formilla webbisivun kautta (article ja book)
+* Käyttäjänä haluan lisätä viitteitä formilla webbisivun kautta (article ja book)
 
 
 
