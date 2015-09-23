@@ -8,7 +8,12 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 [Product Backlog](https://trello.com/b/gAoFBDDj/ohtuspringteam)
 
-
+##Jäsenet
+* Jukka-Pekka Seppänen
+* Santeri Horttanainen
+* Tomi Ueda
+* Otto-Ville Raitolahti
+* Paavo Rohamo
 
 ##Sprint 1.
 
