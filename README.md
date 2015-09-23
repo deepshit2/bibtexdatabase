@@ -18,6 +18,8 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 ##Definition of done
 
+* Koodi Herokussa
+
 * Koodi githubissa
 
 * Cl-palvelin
