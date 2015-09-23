@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/ohtuspringteam/bibtexdatabase.svg?branch=master)](http$
+[![Build Status](https://travis-ci.org/ohtuspringteam/bibtexdatabase.svg?branch=master)](https://travis-ci.org/ohtuspringteam/bibtexdatabase) [![Coverage Status](https://coveralls.io/repos/ohtuspringteam/bibtexdatabase/badge.svg?branch=master&service=github)](https://coveralls.io/github/ohtuspringteam/bibtexdatabase?branch=master)
 
 # Bibtexdatabase
 
 Ohjelmistotuotanto S2015 - Miniprojekti
 
-*[Trello](https://trello.com/b/gAoFBDDj/ohtuspringteam)
+[Trello](https://trello.com/b/gAoFBDDj/ohtuspringteam)
 
 
 
@@ -18,12 +18,12 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 ##Definition of done
 
-*Koodi githubissa
+* Koodi githubissa
 
-*Cl-palvelin
+* Cl-palvelin
 
-*Testaus
+* Testaus
 
-⋅⋅*Yksikkötestaus (90%)
+⋅⋅* Yksikkötestaus (90%)
 
-⋅⋅*Hyväksymätestaus
+⋅⋅* Hyväksymätestaus
