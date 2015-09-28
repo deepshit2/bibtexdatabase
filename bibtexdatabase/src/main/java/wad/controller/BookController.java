@@ -19,7 +19,7 @@ public class BookController {
     BookRepository bookRepository;
     
     @RequestMapping(method = RequestMethod.POST)
-    public String createBook(@ModelAttribute("book") Book book){
+    public String createBook(@ModelAttribute Book book){
         bookRepository.save(book);
         return "redirect:/books";
     }
