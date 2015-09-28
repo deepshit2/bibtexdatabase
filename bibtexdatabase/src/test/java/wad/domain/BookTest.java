@@ -24,6 +24,7 @@ public class BookTest {
 
         //Getterit
         assertEquals("Osoite", book.getAddress());
+        assertEquals("Publisher", book.getPublisher());
         assertEquals("Author", book.getAuthor());
         assertEquals("123456", book.getIsbn());
         assertEquals("Note", book.getNote());
