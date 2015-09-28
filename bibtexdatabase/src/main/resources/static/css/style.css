@@ -1,0 +1,19 @@
+.formLayout
+{                
+    padding: 10px;
+    width: 300px;
+}
+
+.formLayout label, .formLayout input
+{
+    display: block;
+    width: 120px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.formLayout label
+{
+    text-align: right;
+    padding-right: 20px;
+}

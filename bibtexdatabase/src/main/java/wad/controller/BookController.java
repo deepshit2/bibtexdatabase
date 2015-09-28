@@ -21,7 +21,7 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST)
     public String createBook(@ModelAttribute Book book){
         bookRepository.save(book);
-        return "redirect:/books";
+        return "redirect:book";
     }
     @RequestMapping(method = RequestMethod.GET)
     public List<Book> getBooks(){

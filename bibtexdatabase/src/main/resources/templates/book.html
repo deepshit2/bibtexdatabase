@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>bibtexdatabase</title>
+        <link href="css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h1>Add new book</h1>
+        <div class="formLayout">
+            <form method="POST" th:action="@{/books}">
+                <label for="author">Author</label>
+                <input id="author" type="text" name="author"/>
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title"/>
+                <label for="publisher">Publisher</label>
+                <input id="publisher" type="text" name="publisher"/>
+                <label for="year">Year</label>
+                <input id="year" type="text" name="year"/>
+                <label for="volume">Volume</label>
+                <input id="volume" type="text" name="volume"/>
+                <label for="series">Series</label>
+                <input id="series" type="text" name="series"/>
+                <label for="address">Address</label>
+                <input id="address" type="text" name="address"/>
+                <label for="edition">Edition</label>
+                <input id="edition" type="text" name="edition"/>
+                <label for="month">Month</label>
+                <input id="month" type="text" name="month"/>
+                <label for="note">Note</label>
+                <input id="note" type="text" name="note"/>
+                <label for="isbn">ISBN</label>
+                <input id="isbn" type="text" name="isbn"/>
+                <input type="submit" value="Add new book"/>
+            </form>
+        </div>
+    </body>
+</html>
