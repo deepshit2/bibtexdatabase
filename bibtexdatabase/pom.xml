@@ -121,6 +121,14 @@
                 <version>2.7</version>
                 <configuration>
                     <format>xml</format>
+                    <instrumentation>
+                        <ignores>
+                            <ignore>wad/profiles/*.class</ignore>
+                        </ignores>
+                        <excludes>
+                            <exclude>wad/profiles/*.class</exclude>
+                        </excludes>
+                    </instrumentation>
                     <maxmem>256m</maxmem>
                     <!-- aggregated reports for multi-module projects -->
                     <aggregate>true</aggregate>
