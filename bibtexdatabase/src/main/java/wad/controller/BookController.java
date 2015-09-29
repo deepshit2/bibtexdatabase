@@ -4,6 +4,7 @@ package wad.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +32,16 @@ public class BookController {
         return bookRepository.findAll();
     }
     
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String getAdded(@PathVariable Long id, Model model){
+        model.addAttribute("book",bookRepository.findOne(id));
+        return "newbook";
+    }
+    
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newBook() {
         return "newbook";
     }
-
     
     @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
     public String deleteBook(RedirectAttributes redirectAttributes, @PathVariable Long id){

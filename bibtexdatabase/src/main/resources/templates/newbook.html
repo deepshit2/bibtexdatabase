@@ -34,5 +34,10 @@
                 <input type="submit" value="Add new book"/>
             </form>
         </div>
+        <div th:if="${message}">
+            <h3 th:text="${message}"></h3>
+            <p>Id: <strong th:text="${book.id}"></strong></p>
+            <p>TODO :  Tänne linkkejä lisätyn viitteen tarkasteluun...</p>
+        </div>
     </body>
 </html>

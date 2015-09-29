@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
         http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,6 +24,7 @@
         <junit.version>4.10</junit.version>
         <easyb.version>1.5</easyb.version>
         <java.version>1.8</java.version>
+        <fluentlenium.version>0.10.3</fluentlenium.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -35,6 +36,13 @@
             <artifactId>easyb-core</artifactId>
             <version>${easyb.version}</version>
             <scope>test</scope>        
+        </dependency>
+        
+        <dependency>
+            <groupId>org.fluentlenium</groupId>
+            <artifactId>fluentlenium-core</artifactId>
+            <version>${fluentlenium.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
