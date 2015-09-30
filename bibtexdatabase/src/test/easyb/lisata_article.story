@@ -8,7 +8,7 @@ description 'Käyttäjänä haluan lisätä article-viitteitä järjestelmään 
 scenario "käyttäjä voi lisätä articlen kunnollisilla syötteillä", {
     given 'käyttäjä on lomakesivulla', {
         driver = new HtmlUnitDriver();
-        driver.get("http://localhost:8090");
+        driver.get("https://bibtexdatabase.herokuapp.com/");
         element = driver.findElement(By.linkText("Add new article"));       
         element.click();
     }
