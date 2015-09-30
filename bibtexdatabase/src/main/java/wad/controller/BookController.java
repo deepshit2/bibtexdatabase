@@ -35,7 +35,7 @@ public class BookController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getAdded(@PathVariable Long id, Model model){
         model.addAttribute("book",bookRepository.findOne(id));
-        return "newbook";
+        return "book";
     }
     
     @RequestMapping(value = "/new", method = RequestMethod.GET)

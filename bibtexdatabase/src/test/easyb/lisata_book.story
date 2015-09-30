@@ -17,7 +17,7 @@ scenario "käyttäjä voi lisätä bookin kunnollisilla syötteillä", {
         element = driver.findElement(By.name("author"));
         element.sendKeys("kirjoittaja");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("artikkelin otsikko");
+        element.sendKeys("kirjan otsikko");
         element = driver.findElement(By.name("publisher"));
         element.sendKeys("julkaisija");
         element = driver.findElement(By.name("year"));
