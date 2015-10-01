@@ -15,7 +15,7 @@ public class Article extends AbstractPersistable<Long> {
     private Integer year;
     private Integer number;
     private Integer pages;
-    private Integer month;
+    private String month;
     private String note;
     private Integer volume;
 
@@ -67,11 +67,11 @@ public class Article extends AbstractPersistable<Long> {
         this.pages = pages;
     }
 
-    public Integer getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 

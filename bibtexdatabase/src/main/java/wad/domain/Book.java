@@ -7,8 +7,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Book extends AbstractPersistable<Long> {
     
-    private String author, title, publisher, address, isbn, note;
-    private Integer year, volume, edition, month, series;
+    private String author, title, publisher, address, isbn, note, month;
+    private Integer year, volume, edition, series;
 
     public String getAuthor() {
         return author;
@@ -82,11 +82,11 @@ public class Book extends AbstractPersistable<Long> {
         this.edition = edition;
     }
 
-    public Integer getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
