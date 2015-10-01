@@ -30,3 +30,7 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 * Testaus
 	* Yksikkötestaus (90%)
 	* Hyväksymätestaus
+
+##Sprint 2.
+* Käyttäjänä haluan ladata bibtex -muotoisen dokumentin
+* Käyttäjänä haluan pystyä hakemaan viitteitä asiasanojen perusteella
