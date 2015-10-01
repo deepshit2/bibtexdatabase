@@ -6,7 +6,9 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 [https://bibtexdatabase.herokuapp.com/](https://bibtexdatabase.herokuapp.com/)
 
-[trello](https://trello.com/b/gAoFBDDj/ohtuspringteam)
+[Backlog](https://trello.com/b/gAoFBDDj/ohtuspringteam)
+
+[Burndown](https://docs.google.com/spreadsheets/d/1a8vcys8JTx35pfChWAnYL8_g_-55QqnL3yNzM3ais4I/edit?usp=sharing)
 
 ##Jäsenet
 * Jukka-Pekka Seppänen
