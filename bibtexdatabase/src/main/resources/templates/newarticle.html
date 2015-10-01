@@ -35,14 +35,15 @@
 
                 <label for="volume">Volume</label>
                 <input id="volume" type="text" name="volume"/>
-                
+
                 <input type="submit" name="submit" id="submit" value="Add new article"/>
             </form>
         </div>
-        <div th:if="${message}">
-            <h3 th:text="${message}"></h3>
-            <p>Id: <strong th:text="${article.id}"></strong></p>
-            <p>TODO :  Tänne linkkejä lisätyn viitteen tarkasteluun...</p>
-        </div>
+        <!--        <div th:if="${message}">
+                    <h3 th:text="${message}"></h3>
+                    <p>Id: <strong th:text="${article.id}"></strong></p>
+                    <a href="#" th:href="@{/articles/{id}(id=${article.id})}">Created article</a>
+                </div>
+        -->
     </body>
 </html>

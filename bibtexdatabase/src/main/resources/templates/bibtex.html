@@ -6,8 +6,8 @@
         <meta charset="UTF-8" />
     </head>
     <body>
-        <h1>bibtexdatabase</h1>
-        <a href="#" th:href="@{/books/new}">Add new book</a>
-        <a href="#" th:href="@{/articles/new}">Add new article</a>
+        <div th:if="${bibtex}">
+            <p th:text="${bibtex}"></p>
+        </div>
     </body>
 </html>
