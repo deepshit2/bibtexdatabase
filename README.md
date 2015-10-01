@@ -19,12 +19,12 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 ##Sprint 1.
 
-* Käyttäjänä haluan syöttää viitteet järjestelmään ihmiselle hyvässä muodossa
-* Käyttäjänä haluan lisätä viitteitä formilla webbisivun kautta (article ja book)
+* Käyttäjänä haluan syöttää book-viitteitä järjestelmään lomakkeella webbisivun kautta
+* Käyttäjänä haluan lisätä article-viitteitä järjestelmään lomakkeella webbisivun kautta
 
 ##Definition of done
 
-* Koodi Herokussa
+* Toimiva ohjelma Herokussa
 * Koodi githubissa
 * Cl-palvelin
 * Testaus
