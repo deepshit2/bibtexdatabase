@@ -2,12 +2,25 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Mastersthesis extends AbstractPersistable<Long> {
-    private String author, title, school, type, address, note, key;
-    private Integer year, month;
+    
+    //Required fields: author, title, school, year
+    //Optional fields: type, address, month, note, key   
+
+    @NotBlank
+    String author;
+    @NotBlank
+    String title;
+    @NotBlank
+    String school;
+    @NotBlank
+    Integer year;
+    
+    private String type, address, note, key, month;
 
     public String getAuthor() {
         return author;
@@ -73,11 +86,11 @@ public class Mastersthesis extends AbstractPersistable<Long> {
         this.year = year;
     }
 
-    public Integer getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(String month) {
         this.month = month;
     } 
 }

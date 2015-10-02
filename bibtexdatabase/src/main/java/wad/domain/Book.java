@@ -7,19 +7,20 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Book extends AbstractPersistable<Long> {
 
+    //Required fields: author/editor, title, publisher, year
+    //Optional fields: volume/number, series, address, edition, month, note, key
+    
     @NotBlank
     private String author;
+    @NotBlank
     private String title;
+//    @NotBlank
     private String publisher;
-    private String address;
-    private String isbn;
-    private String note;
-
+//    @NotBlank
     private Integer year;
-    private Integer volume;
-    private Integer edition;
-    private String month;
-    private Integer series;
+    
+    private String address, isbn, note, month;
+    private Integer volume, edition, series;
 
     public String getAuthor() {
         return author;

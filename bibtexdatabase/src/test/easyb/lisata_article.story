@@ -27,7 +27,7 @@ scenario "käyttäjä voi lisätä articlen kunnollisilla syötteillä", {
         element = driver.findElement(By.name("pages"));
         element.sendKeys("20");
         element = driver.findElement(By.name("month"));
-        element.sendKeys("10");
+        element.sendKeys("oct");
         element = driver.findElement(By.name("note"));
         element.sendKeys("joooo");
         element = driver.findElement(By.name("volume"));

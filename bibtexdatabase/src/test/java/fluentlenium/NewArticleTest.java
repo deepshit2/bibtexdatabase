@@ -41,6 +41,9 @@ public class NewArticleTest extends FluentTest {
         goTo("http://localhost:" +serverPort+"/articles/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen kandi");
+//        fill("#journal").with("test");
+//        fill("#year").with("1999");
+//        fill("#volume").with("1");
         submit("input[type=submit]");
         assertTrue(pageSource().contains("New article created"));
     }

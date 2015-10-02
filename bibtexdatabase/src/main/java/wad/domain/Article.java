@@ -6,19 +6,24 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Article extends AbstractPersistable<Long> {
-
+    
+    //Required fields: author, title, journal, year, volume
+    //Optional fields: number, pages, month, note, key
+    
     @NotBlank
     private String author;
     @NotBlank
     private String title;
+//    @NotBlank
     private String journal;
+//    @NotBlank
     private Integer year;
-    private Integer number;
-    private Integer pages;
-    private String month;
-    private String note;
+//    @NotBlank
     private Integer volume;
-
+    
+    private String month, note;
+    private Integer number, pages; 
+        
     public String getAuthor() {
         return author;
     }

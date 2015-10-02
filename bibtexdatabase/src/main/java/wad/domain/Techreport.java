@@ -1,13 +1,26 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Techreport extends AbstractPersistable<Long> {
 
-    private String author, title, institution, type, address, month, note, key;
-    private Integer year, number;
+    //Required fields: author, title, institution, year
+    //Optional fields: type, number, address, month, note, key
+    
+    @NotBlank
+    private String author;
+    @NotBlank
+    private String title;
+    @NotBlank
+    private String institution;
+    @NotBlank
+    private Integer year;
+    
+    private String type, address, month, note, key;
+    private Integer number;
 
     public String getAuthor() {
         return author;
