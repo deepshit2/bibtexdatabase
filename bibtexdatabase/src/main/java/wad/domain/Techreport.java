@@ -6,8 +6,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Techreport extends AbstractPersistable<Long> {
 
-    private String author, title, institution, type, address, month, note, key;
-    private Integer year, number;
+    private String author, title, institution, type, address, note, key;
+    private Integer year, month, number;
 
     public String getAuthor() {
         return author;
@@ -49,11 +49,11 @@ public class Techreport extends AbstractPersistable<Long> {
         this.address = address;
     }
 
-    public String getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(Integer month) {
         this.month = month;
     }
 
