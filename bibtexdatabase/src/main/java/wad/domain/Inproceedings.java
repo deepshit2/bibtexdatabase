@@ -7,6 +7,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 public class Inproceedings extends AbstractPersistable<Long> {
 
+<<<<<<< HEAD
     //Required fields: author, title, booktitle, year
     //Optional fields: editor, volume/number, series, pages, address, month, organization, publisher, note, key
     
@@ -21,6 +22,10 @@ public class Inproceedings extends AbstractPersistable<Long> {
     
     private String editor, pages, organization, publisher, address, note, key;
     private Integer volume, series, month;
+=======
+    private String author, title, booktitle, editor, organization, publisher, address, note, key;
+    private Integer year, month, volume, series, pages;
+>>>>>>> d195f6054086c5b295f37e7d5350b5cc0882311b
 
     public String getAuthor() {
         return author;
@@ -50,11 +55,11 @@ public class Inproceedings extends AbstractPersistable<Long> {
         this.editor = editor;
     }
 
-    public String getPages() {
+    public Integer getPages() {
         return pages;
     }
 
-    public void setPages(String pages) {
+    public void setPages(Integer pages) {
         this.pages = pages;
     }
 
