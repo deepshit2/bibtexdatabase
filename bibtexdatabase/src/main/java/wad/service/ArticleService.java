@@ -2,11 +2,10 @@
 package wad.service;
 
 import java.util.List;
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Book;
-import wad.repository.BookRepository;
+import wad.domain.Article;
+import wad.repository.ArticleRepository;
 
 @Service
 public class ArticleService {
@@ -14,20 +13,20 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Book> list() {
-        List<Book> books = articleRepository.findAll();
-        return books;
+    public List<Article> list() {
+        List<Article> articles = articleRepository.findAll();
+        return articles;
     }
 
-    public void addBook(Book book) {
-        articleRepository.save(book);
+    public void addArticle(Article article) {
+        articleRepository.save(article);
     }
 
-    public void deleteBook(Long id) {
+    public void deleteArticle(Long id) {
         articleRepository.delete(articleRepository.findOne(id));
     }
 
-    public Book getBook(Long id) {
+    public Article getArticle(Long id) {
         return articleRepository.findOne(id);
     }
 }
