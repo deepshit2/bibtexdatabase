@@ -19,8 +19,8 @@ public class Techreport extends AbstractPersistable<Long> {
     @NotBlank
     private Integer year;
     
-    private String type, address, month, note, key;
-    private Integer number;
+    private String type, address, note, key;
+    private Integer number, month;
 
     public String getAuthor() {
         return author;
@@ -62,11 +62,11 @@ public class Techreport extends AbstractPersistable<Long> {
         this.address = address;
     }
 
-    public String getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(Integer month) {
         this.month = month;
     }
 

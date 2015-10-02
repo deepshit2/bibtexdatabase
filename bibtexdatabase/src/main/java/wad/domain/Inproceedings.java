@@ -19,8 +19,8 @@ public class Inproceedings extends AbstractPersistable<Long> {
     @NotBlank
     private Integer year;
     
-    private String editor, pages, organization, publisher, address, note, key, month;
-    private Integer volume, series;
+    private String editor, pages, organization, publisher, address, note, key;
+    private Integer volume, series, month;
 
     public String getAuthor() {
         return author;
@@ -106,11 +106,11 @@ public class Inproceedings extends AbstractPersistable<Long> {
         this.year = year;
     }
 
-    public String getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(Integer month) {
         this.month = month;
     }
 

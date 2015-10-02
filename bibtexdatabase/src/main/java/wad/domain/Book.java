@@ -19,8 +19,8 @@ public class Book extends AbstractPersistable<Long> {
 //    @NotBlank
     private Integer year;
     
-    private String address, isbn, note, month;
-    private Integer volume, edition, series;
+    private String address, isbn, note;
+    private Integer volume, edition, series, month;
 
     public String getAuthor() {
         return author;
@@ -94,11 +94,11 @@ public class Book extends AbstractPersistable<Long> {
         this.edition = edition;
     }
 
-    public String getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(Integer month) {
         this.month = month;
     }
 

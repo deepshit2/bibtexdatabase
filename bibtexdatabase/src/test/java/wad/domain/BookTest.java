@@ -14,7 +14,7 @@ public class BookTest {
         book.setAuthor("Author");
         book.setEdition(1);
         book.setIsbn("123456");
-        book.setMonth("oct,");
+        book.setMonth(1);
         book.setNote("Note");
         book.setPublisher("Publisher");
         book.setSeries(1);
@@ -30,7 +30,7 @@ public class BookTest {
         assertEquals("Note", book.getNote());
         assertEquals("Title", book.getTitle());
         assertEquals(1, (int) book.getEdition());
-        assertEquals("oct,", book.getMonth());
+        assertEquals(1, (int) book.getMonth());
         assertEquals(1, (int) book.getSeries());
         assertEquals(1, (int) book.getVolume());
         assertEquals(2015, (int) book.getYear());

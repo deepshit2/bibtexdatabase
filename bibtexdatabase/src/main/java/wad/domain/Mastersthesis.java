@@ -20,7 +20,8 @@ public class Mastersthesis extends AbstractPersistable<Long> {
     @NotBlank
     Integer year;
     
-    private String type, address, note, key, month;
+    private String type, address, note, key;
+    private Integer month;
 
     public String getAuthor() {
         return author;
@@ -86,11 +87,11 @@ public class Mastersthesis extends AbstractPersistable<Long> {
         this.year = year;
     }
 
-    public String getMonth() {
+    public Integer getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(Integer month) {
         this.month = month;
     } 
 }

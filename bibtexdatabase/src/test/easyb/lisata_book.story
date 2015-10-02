@@ -31,7 +31,7 @@ scenario "käyttäjä voi lisätä bookin kunnollisilla syötteillä", {
         element = driver.findElement(By.name("edition"));
         element.sendKeys("3");
         element = driver.findElement(By.name("month"));
-        element.sendKeys("oct");
+        element.sendKeys("12");
         element = driver.findElement(By.name("note"));
         element.sendKeys("joooo");
         element = driver.findElement(By.name("isbn"));
