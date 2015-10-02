@@ -2,6 +2,7 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -17,7 +18,7 @@ public class Mastersthesis extends AbstractPersistable<Long> {
     String title;
     @NotBlank
     String school;
-    @NotBlank
+    @NotNull
     Integer year;
     
     private String type, address, note, key;

@@ -1,6 +1,7 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -17,7 +18,7 @@ public class Inproceedings extends AbstractPersistable<Long> {
     private String title;
     @NotBlank
     private String booktitle;
-    @NotBlank
+    @NotNull
     private Integer year;
     
     private String editor, organization, publisher, address, note, key;

@@ -1,6 +1,7 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -16,7 +17,7 @@ public class Techreport extends AbstractPersistable<Long> {
     private String title;
     @NotBlank
     private String institution;
-    @NotBlank
+    @NotNull
     private Integer year;
 
     private String type, address, note, key;

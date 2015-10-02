@@ -16,9 +16,9 @@ public class Article extends AbstractPersistable<Long> {
     private String title;
 //    @NotBlank
     private String journal;
-//    @NotBlank
+//    @NotNull
     private Integer year;
-//    @NotBlank
+//    @NotNull
     private Integer volume;
     
     private String note;

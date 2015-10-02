@@ -16,7 +16,7 @@ public class Book extends AbstractPersistable<Long> {
     private String title;
 //    @NotBlank
     private String publisher;
-//    @NotBlank
+//    @NotNull
     private Integer year;
     
     private String address, isbn, note;
