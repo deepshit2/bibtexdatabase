@@ -2,38 +2,85 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>bibtexdatabase</title>
-        <link href="css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
-        <meta charset="UTF-8" />
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
     </head>
     <body>
-        <h1>Add new book</h1>
-        <div class="formLayout">
-            <form method="POST" th:action="@{/books}">
-                <label for="author">Author</label>
-                <input id="author" type="text" name="author"/>
-                <label for="title">Title</label>
-                <input id="title" type="text" name="title"/>
-                <label for="publisher">Publisher</label>
-                <input id="publisher" type="text" name="publisher"/>
-                <label for="year">Year</label>
-                <input id="year" type="text" name="year"/>
-                <label for="volume">Volume</label>
-                <input id="volume" type="text" name="volume"/>
-                <label for="series">Series</label>
-                <input id="series" type="text" name="series"/>
-                <label for="address">Address</label>
-                <input id="address" type="text" name="address"/>
-                <label for="edition">Edition</label>
-                <input id="edition" type="text" name="edition"/>
-                <label for="month">Month</label>
-                <input id="month" type="text" name="month"/>
-                <label for="note">Note</label>
-                <input id="note" type="text" name="note"/>
-                <label for="isbn">ISBN</label>
-                <input id="isbn" type="text" name="isbn"/>
-                <input type="submit" name="submit" id="submit" value="Add new book"/>
-            </form>
-        </div>
+        <div class="container">
+            <!--Navigation-->
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ><a href="#" th:href="@{/}">Home</a></li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true">
+                            Add bibtex <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/articles/new}">Add new article</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--Content-->
+            <h1>Add new book</h1>
+                <form role="form" method="POST" th:action="@{/books}">
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input id="author" class="form-control" type="text" name="author"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input id="title" class="form-control" type="text" name="title"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="publisher">Publisher</label>
+                        <input id="publisher" class="form-control" type="text" name="publisher"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input id="year" class="form-control" type="text" name="year"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="volume">Volume</label>
+                        <input id="volume" class="form-control" type="text" name="volume"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="series">Series</label>
+                        <input id="series" class="form-control" type="text" name="series"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input id="address" class="form-control" type="text" name="address"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="edition">Edition</label>
+                        <input id="edition" class="form-control" type="text" name="edition"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Month</label>
+                        <input id="month" class="form-control" type="text" name="month"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note</label>
+                        <input id="note" class="form-control" type="text" name="note"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN</label>
+                        <input id="isbn" class="form-control" type="text" name="isbn"/>
+                    </div>
+                    <button type="submit" name="submit" id="submit" value="Add new book" class="btn btn-default">Add new book</button>
+                </form>
+            </div>
+        <!--JavaScript imports -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <!--        <div th:if="${message}">
                     <h3 th:text="${message}"></h3>
                     <p>Id: <strong th:text="${book.id}"></strong></p>

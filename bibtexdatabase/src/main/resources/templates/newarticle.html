@@ -2,43 +2,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>bibtexdatabase</title>
-        <link href="css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
-        <meta charset="UTF-8" />
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
     </head>
     <body>
-        <h1>Add new article</h1>
-        <div class="formLayout">
+        <div class="container">
+            <!--Navigation-->
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ><a href="#" th:href="@{/}">Home</a></li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true">
+                            Add bibtex <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/articles/new}">Add new article</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <h1>Add new article</h1>
             <form method="POST" th:action="@{/articles}">
-                <label for="author">Author</label>
-                <input id="author" type="text" name="author"/>
-
-                <label for="title">Title</label>
-                <input id="title" type="text" name="title"/>
-
-                <label for="journal">Journal</label>
-                <input id="journal" type="text" name="journal"/>
-
-                <label for="year">Year</label>
-                <input id="year" type="text" name="year"/>
-
-                <label for="number">Number</label>
-                <input id="number" type="text" name="number"/>
-
-                <label for="pages">Pages</label>
-                <input id="pages" type="text" name="pages"/>
-
-                <label for="month">Month</label>
-                <input id="month" type="text" name="month"/>
-
-                <label for="note">Note</label>
-                <input id="note" type="text" name="note"/>
-
-                <label for="volume">Volume</label>
-                <input id="volume" type="text" name="volume"/>
-
-                <input type="submit" name="submit" id="submit" value="Add new article"/>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input id="author" class="form-control" type="text" name="author"/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" class="form-control" type="text" name="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="journal">Journal</label>
+                    <input id="journal" class="form-control" type="text" name="journal"/>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input id="year" class="form-control" type="text" name="year"/>
+                </div>
+                <div class="form-group">
+                    <label for="number">Number</label>
+                    <input id="number" class="form-control" type="text" name="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Pages</label>
+                    <input id="pages" class="form-control" type="text" name="pages"/>
+                </div>
+                <div class="form-group">
+                    <label for="month">Month</label>
+                    <input id="month" class="form-control" type="text" name="month"/>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note</label>
+                    <input id="note" class="form-control" type="text" name="note"/>
+                </div>
+                <div class="form-group">
+                    <label for="volume">Volume</label>
+                    <input id="volume" class="form-control" type="text" name="volume"/>
+                </div>
+                <button type="submit" name="submit" id="submit" value="Add new article" class="btn btn-default">Add new article</button>
             </form>
         </div>
+        <!--JavaScript imports -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <!--        <div th:if="${message}">
                     <h3 th:text="${message}"></h3>
                     <p>Id: <strong th:text="${article.id}"></strong></p>
