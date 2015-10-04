@@ -12,7 +12,7 @@ import wad.domain.Mastersthesis;
 import wad.service.MastersthesisService;
 
 @Controller
-@RequestMapping(value = "/masterthesises")
+@RequestMapping(value = "/mastersthesises")
 public class MastersthesisController {
 
     @Autowired
@@ -21,9 +21,9 @@ public class MastersthesisController {
     @RequestMapping(method = RequestMethod.POST)
     public String createMastersthesis(@ModelAttribute Mastersthesis mastersthesis, RedirectAttributes redirectAttributes) {
         mastersthesisService.addMastersthesis(mastersthesis);
-        redirectAttributes.addAttribute("id", mastersthesis.getId());
+        redirectAttributes.addFlashAttribute("id", mastersthesis.getId());
         redirectAttributes.addFlashAttribute("message", "New mastersthesis created");
-        return "redirect:/masterthesises/{id}";
+        return "redirect:/mastersthesises/new";
     }
 
     @RequestMapping(method = RequestMethod.GET)

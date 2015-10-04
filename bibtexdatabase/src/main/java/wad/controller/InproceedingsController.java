@@ -21,9 +21,9 @@ public class InproceedingsController {
     @RequestMapping(method = RequestMethod.POST)
     public String createInproceedings(@ModelAttribute Inproceedings inproceedings, RedirectAttributes redirectAttributes) {
         inproceedingsService.addInproceedings(inproceedings);
-        redirectAttributes.addAttribute("id", inproceedings.getId());
+        redirectAttributes.addFlashAttribute("id", inproceedings.getId());
         redirectAttributes.addFlashAttribute("message", "New inproceeding created");
-        return "redirect:/inproceedings/{id}";
+        return "redirect:/inproceedings/new";
     }
 
     @RequestMapping(method = RequestMethod.GET)
