@@ -31,20 +31,20 @@
             <h1>Add new book</h1>
                 <form role="form" method="POST" th:action="@{/books}">
                     <div class="form-group">
-                        <label for="author">Author</label>
-                        <input id="author" class="form-control" type="text" name="author"/>
+                        <label for="author">Author<font color="red"><sup>*</sup></font></label>
+                        <input id="author" class="form-control" required="true" type="text" name="author"/>
                     </div>
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input id="title" class="form-control" type="text" name="title"/>
+                        <label for="title">Title<font color="red"><sup>*</sup></font></label>
+                        <input id="title" class="form-control" required="true" type="text" name="title"/>
                     </div>
                     <div class="form-group">
-                        <label for="publisher">Publisher</label>
-                        <input id="publisher" class="form-control" type="text" name="publisher"/>
+                        <label for="publisher">Publisher<font color="red"><sup>*</sup></font></label>
+                        <input id="publisher" class="form-control" required="true" type="text" name="publisher"/>
                     </div>
                     <div class="form-group">
-                        <label for="year">Year</label>
-                        <input id="year" class="form-control" type="text" name="year"/>
+                        <label for="year">Year<font color="red"><sup>*</sup></font></label>
+                        <input id="year" class="form-control" required="true" type="text" name="year"/>
                     </div>
                     <div class="form-group">
                         <label for="volume">Volume</label>
@@ -74,7 +74,7 @@
                         <label for="isbn">ISBN</label>
                         <input id="isbn" class="form-control" type="text" name="isbn"/>
                     </div>
-                    <button type="submit" name="submit" id="submit" value="Add new book" class="btn btn-default">Add new book</button>
+                      <input type="submit" name="submit" id="submit" value="Add new book"/>
                 </form>
             </div>
         <!--JavaScript imports -->
