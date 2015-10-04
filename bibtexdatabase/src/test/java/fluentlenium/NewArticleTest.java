@@ -44,7 +44,7 @@ public class NewArticleTest extends FluentTest {
 //        fill("#journal").with("test");
 //        fill("#year").with("1999");
 //        fill("#volume").with("1");
-        submit("input[type=submit]");
+        submit("button[type=submit]");
         assertTrue(pageSource().contains("New article created"));
     }
 }

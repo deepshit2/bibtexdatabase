@@ -41,7 +41,7 @@ public class NewBookTest extends FluentTest {
         goTo("http://localhost:" +serverPort+"/books/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen väitöskirja");
-        submit("input[type=submit]");
+        submit("button[type=submit]");
         assertTrue(pageSource().contains("New book created"));
     }
 }
