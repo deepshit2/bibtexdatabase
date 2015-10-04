@@ -21,9 +21,9 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST)
     public String createBook(@ModelAttribute Book book, RedirectAttributes redirectAttributes) {
         bookService.addBook(book);
-        redirectAttributes.addAttribute("id", book.getId());
+        redirectAttributes.addFlashAttribute("id", book.getId());
         redirectAttributes.addFlashAttribute("message", "New book created");
-        return "redirect:/books/{id}";
+        return "redirect:/books/new";
     }
 
     @RequestMapping(method = RequestMethod.GET)

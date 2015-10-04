@@ -23,9 +23,9 @@ public class ArticleController {
     @RequestMapping(method = RequestMethod.POST)
     public String createArticle(RedirectAttributes redirectAttributes, @ModelAttribute Article article){
         articleRepository.save(article);
-        redirectAttributes.addAttribute("id", article.getId());
+        redirectAttributes.addFlashAttribute("id", article.getId());
         redirectAttributes.addFlashAttribute("message", "New article created");
-        return "redirect:/articles/{id}";
+        return "redirect:/articles/new";
     }
     @RequestMapping(method = RequestMethod.GET)
     public List<Article> getArticles(){
@@ -46,7 +46,7 @@ public class ArticleController {
     @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
     public String deleteArticle(RedirectAttributes redirectAttributes, @PathVariable Long id){
         articleRepository.delete(id);
-        redirectAttributes.addFlashAttribute("message", "Artitcle deleted");
+        redirectAttributes.addFlashAttribute("message", "Article deleted");
         return "redirect:/articles";
     }
     
