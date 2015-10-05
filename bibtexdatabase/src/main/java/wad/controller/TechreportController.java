@@ -26,9 +26,9 @@ public class TechreportController {
     @RequestMapping(method = RequestMethod.POST)
     public String createTechreport(@ModelAttribute Techreport techreport, RedirectAttributes redirectAttributes) {
         techreportService.addTechreport(techreport);
-        redirectAttributes.addAttribute("id", techreport.getId());
+        redirectAttributes.addFlashAttribute("id", techreport.getId());
         redirectAttributes.addFlashAttribute("message", "New techreport created");
-        return "redirect:/techreports/{id}";
+        return "redirect:/techreports/new";
     }
 
     @RequestMapping(method = RequestMethod.GET)

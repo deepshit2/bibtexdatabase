@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     </head>
     <body>
-        <div class="container" align="center">
+        <div class="container">
             <!--Navigation-->
             <nav>
                 <ul class="nav nav-tabs">
@@ -30,6 +30,57 @@
                     </li>
                 </ul>
             </nav>
+            <div th:if="${message}">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong th:text="${message}"></strong> <a href="#" th:href="@{/techreports/{id}(id=${id})}">View techreport</a>
+                </div>
+            </div>
+            <!--Content-->
+            <h1>Add new techreport</h1>
+            <form role="form" method="POST" th:action="@{/techreports}">
+                <div class="form-group">
+                    <label for="author">Author<font color="red"><sup>*</sup></font></label>
+                    <input id="author" class="form-control" required="true" type="text" name="author"/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title<font color="red"><sup>*</sup></font></label>
+                    <input id="title" class="form-control" required="true" type="text" name="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="institution">Institution<font color="red"><sup>*</sup></font></label>
+                    <input id="institution" class="form-control" required="true" type="text" name="institution"/>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year<font color="red"><sup>*</sup></font></label>
+                    <input id="year" class="form-control" required="true" type="text" name="year"/>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input id="type" class="form-control" type="text" name="type"/>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input id="address" class="form-control" type="text" name="address"/>
+                </div>
+                <div class="form-group">
+                    <label for="number">Number</label>
+                    <input id="number" class="form-control" type="text" name="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="month">Month</label>
+                    <input id="month" class="form-control" type="text" name="month"/>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note</label>
+                    <input id="note" class="form-control" type="text" name="note"/>
+                </div>
+                <div class="form-group">
+                    <label for="key">Key</label>
+                    <input id="key" class="form-control" type="text" name="key"/>
+                </div>
+                <button type="submit" name="submit" id="submit" value="Add new techreport" class="btn btn-default">Add new techreport</button>
+            </form>
         </div>
         <!--JavaScript imports -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

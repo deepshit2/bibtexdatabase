@@ -30,12 +30,11 @@
                 </ul>
             </nav>
             <div th:if="${message}">
-                <div class="alert alert-success" role="alert">
-                    <h3 th:text="${message}"></h3>
-                    <a href="#" th:href="@{/articles/{id}(id=${id})}">View article</a>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong th:text="${message}"></strong> <a href="#" th:href="@{/articles/{id}(id=${id})}">View article</a>
                 </div>
             </div>
-
             <h1>Add new article</h1>
             <form method="POST" th:action="@{/articles}">
                 <div class="form-group">

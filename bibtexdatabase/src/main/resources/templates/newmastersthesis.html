@@ -29,14 +29,12 @@
                     </li>
                 </ul>
             </nav>
-
             <div th:if="${message}">
-                <div class="alert alert-success" role="alert">
-                    <h3 th:text="${message}"></h3>
-                    <a href="#" th:href="@{/mastersthesis/{id}(id=${id})}">View mastersthesis</a>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong th:text="${message}"></strong> <a href="#" th:href="@{/mastersthesises/{id}(id=${id})}">View mastersthesis</a>
                 </div>
             </div>
-
             <!--Content-->
             <h1>Add new mastersthesis</h1>
             <form role="form" method="POST" th:action="@{/mastersthesises}">
