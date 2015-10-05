@@ -8,7 +8,9 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 
 [Backlog](https://trello.com/b/gAoFBDDj/ohtuspringteam)
 
-[Burndown](https://docs.google.com/spreadsheets/d/1a8vcys8JTx35pfChWAnYL8_g_-55QqnL3yNzM3ais4I/edit?usp=sharing)
+[Burndown sprint 1](https://docs.google.com/spreadsheets/d/1a8vcys8JTx35pfChWAnYL8_g_-55QqnL3yNzM3ais4I/edit?usp=sharing)
+
+[Burndown sprint 2](https://docs.google.com/spreadsheets/d/1t7lnGBohWWyEUNtwTysRNfehCEYvia4sC__T7VJpmDw/edit?usp=sharing)
 
 ##Jäsenet
 * Jukka-Pekka Seppänen
