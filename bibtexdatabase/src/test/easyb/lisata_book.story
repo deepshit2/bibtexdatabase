@@ -43,7 +43,24 @@ scenario "käyttäjä voi lisätä bookin kunnollisilla syötteillä", {
     then 'uusi book tallennetaan', {
         driver.getPageSource().contains("New book created").shouldBe true
     }
+}
 
+scenario "käyttäjä ei voi lisätä bookkia epäkunnollisilla syötteillä", {
+    given 'käyttäjä on lomakesivulla', {
+        driver = new HtmlUnitDriver();
+        driver.get("https://bibtexdatabase.herokuapp.com/");
+        element = driver.findElement(By.linkText("Add new book"));       
+        element.click();
+    }
 
+    when 'käyttäjä on syöttänyt epäkunnolliset syötteet', {
+        element = driver.findElement(By.name("submit"));
+        element.submit();
+    }
+
+    then 'uutta bookkia ei tallenneta', {
+        driver.getPageSource().contains("New book created").shouldBe false
+    }
 
 }
+
