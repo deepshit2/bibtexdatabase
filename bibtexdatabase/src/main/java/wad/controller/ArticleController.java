@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import wad.domain.Article;
 import wad.repository.ArticleRepository;
+import wad.service.ArticleService;
 
 @Controller
 @RequestMapping("/articles")
@@ -19,6 +20,9 @@ public class ArticleController {
     
     @Autowired
     private ArticleRepository articleRepository;
+    
+    @Autowired
+    private ArticleService articleService;
     
     @RequestMapping(method = RequestMethod.POST)
     public String createArticle(RedirectAttributes redirectAttributes, @ModelAttribute Article article){
@@ -50,4 +54,10 @@ public class ArticleController {
         return "redirect:/articles";
     }
     
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
+    public String getBibtex(@PathVariable Long id, Model model){
+        Article article = articleRepository.findOne(id);
+        model.addAttribute("bibtex", articleService.getBibtex(article.getId()));
+        return "bibtex";
+    }
 }

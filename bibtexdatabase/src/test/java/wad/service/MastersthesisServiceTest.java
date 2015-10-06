@@ -1,4 +1,3 @@
-
 package wad.service;
 
 import java.util.ArrayList;
@@ -21,15 +20,16 @@ public class MastersthesisServiceTest {
 
     @Autowired
     private MastersthesisService service;
-    
+
     @Autowired
     private MastersthesisRepository repository;
-    
+
     private Mastersthesis m1;
     private Mastersthesis m2;
-    
+
     @Before
     public void setUp() {
+        repository.deleteAll();
         m1 = new Mastersthesis();
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
@@ -41,7 +41,7 @@ public class MastersthesisServiceTest {
         m2.setSchool("koulu2");
         m2.setYear(2002);
     }
-    
+
     @Test
     public void testAddThesis() {
         service.addMastersthesis(m1);
@@ -50,7 +50,7 @@ public class MastersthesisServiceTest {
         assertEquals(retrieved.getAuthor(), m1.getAuthor());
         assertEquals(retrieved.getTitle(), m1.getTitle());
     }
-    
+
     @Test
     public void testDeleteThesis() {
         repository.save(m1);
@@ -59,7 +59,7 @@ public class MastersthesisServiceTest {
         Mastersthesis eiOle = repository.findOne(id);
         assertTrue(eiOle == null);
     }
-    
+
     @Test
     public void testGetThesis() {
         repository.save(m1);
@@ -68,18 +68,60 @@ public class MastersthesisServiceTest {
         assertEquals(retrieved.getAuthor(), m1.getAuthor());
         assertEquals(retrieved.getTitle(), m1.getTitle());
     }
-    
+
     @Test
     public void testListArticles() {
         repository.save(m1);
         repository.save(m2);
         List<Mastersthesis> kaikki = service.list();
         List<String> titles = new ArrayList();
-        for(Mastersthesis m : kaikki) {
+        for (Mastersthesis m : kaikki) {
             titles.add(m.getTitle());
         }
         assertTrue(titles.contains(m1.getTitle()));
         assertTrue(titles.contains(m2.getTitle()));
     }
-    
+
+    @Test
+    public void testFindByAuthor() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Mastersthesis> articles = service.search("thor1");
+        assertTrue(articles.size() == 1);
+        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+    }
+
+    @Test
+    public void testFindByTitle() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Mastersthesis> boobs = service.search("kko1");
+        assertTrue(boobs.size() == 1);
+        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+    }
+
+    @Test
+    public void testFindBySchool() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Mastersthesis> boobs = service.search("oulu2");
+        assertTrue(boobs.size() == 1);
+    }
+
+    @Test
+    public void testSearchCanFindAll() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Mastersthesis> boobs = service.search("ikko");
+        assertTrue(boobs.size() == 2);
+    }
+
+    @Test
+    public void nonExistCantBeFound() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Mastersthesis> boobs = service.search("batman134134");
+        assertTrue(boobs.isEmpty());
+    }
+
 }

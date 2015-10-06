@@ -1,8 +1,9 @@
-
 package wad.service;
+
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,15 +34,18 @@ public class ArticleService {
     }
     
     private String toBibtex(Article article) throws IllegalArgumentException, IllegalAccessException{
-        String result = "";
+        String result = "@Article {\n";
         Class<? extends Object> obj = article.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
-            result += String.format("%s =       \"%s\", \n",
+            if (field.get(article) == null || field.get(article).toString().isEmpty())
+                continue;
+            result += String.format("%s\t\t=\t\t\t\t\"%s\", \n",
                 field.getName(),
                 field.get(article)
             );
         }
+        result += "}";
         return result;
     }
     
@@ -54,4 +58,16 @@ public class ArticleService {
         }
             return result;
         }
+
+
+    public List<Article> search(String name) {
+        List<Article> result = new ArrayList<>();
+        List<Article> byAuthor = articleRepository.findByAuthorContaining(name);
+        List<Article> byTitle = articleRepository.findByTitleContaining(name);
+        result.addAll(byAuthor);
+        result.addAll(byTitle);
+        return result;
     }
+
+}
+

@@ -10,7 +10,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     </head>
-    <body>
+    <body >
         <div class="container" align="center">
 
             <!--Navigation-->
@@ -31,14 +31,39 @@
                     </li>
                 </ul>
             </nav>
+            <h1>Bibtexdatabase</h1>  
+            <form role="form" action="#">
+                <div class="form-group">
+                    <input class="filterinput form-control" id="author" type="text" name="searchtext"/>
+                </div>
+            </form>
+
+            <ul class="list-group" id="list">
+                <li class="list-group-item" th:each="article : ${articles}">
+                    <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}" th:text="${article.title} + ', ' + ${article.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="book : ${books}">
+                    <a href="#" th:href="@{/book/{id}/bibtex(id=${book.id})}" th:text="${book.title} + ', ' + ${book.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="techreport : ${techreports}">
+                    <a href="#" th:href="@{/techreports/{id}/bibtex(id=${techreport.id})}" th:text="${techreport.title} + ', ' + ${techreport.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="mastersthesis : ${mastersthesises}">
+                    <a href="#" th:href="@{/mastersthesises/{id}/bibtex(id=${mastersthesis.id})}" th:text="${mastersthesis.title} + ', ' + ${mastersthesis.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="inproceeding : ${inproceedings}">
+                    <a href="#" th:href="@{/inproceedings/{id}/bibtex(id=${inproceeding.id})}" th:text="${inproceeding.title} + ', ' + ${inproceeding.author}"></a>
+                </li>
+            </ul>
 
             <!--Content-->
-            <h1>Bibtexdatabase</h1>   
+
         </div>
 
         <!--JavaScript imports -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="javascript/filter.js"></script>
     </body>
 </html>

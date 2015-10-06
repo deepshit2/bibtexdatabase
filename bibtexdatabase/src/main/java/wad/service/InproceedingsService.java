@@ -1,6 +1,7 @@
 
 package wad.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,4 +31,16 @@ public class InproceedingsService {
     public Inproceedings getInproceedings(Long id) {
         return inproceedingsRepository.findOne(id);
     }
+    
+    public List<Inproceedings> search(String name) {
+        List<Inproceedings> result = new ArrayList<>();
+        List<Inproceedings> byAuthor = inproceedingsRepository.findByAuthorContaining(name);
+        List<Inproceedings> byTitle = inproceedingsRepository.findByTitleContaining(name);
+        List<Inproceedings> byBooktitle = inproceedingsRepository.findByBooktitleContaining(name);
+        result.addAll(byAuthor);
+        result.addAll(byTitle);
+        result.addAll(byBooktitle);
+        return result;
+    }
+    
 }

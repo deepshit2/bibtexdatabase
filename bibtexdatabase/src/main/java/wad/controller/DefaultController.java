@@ -14,29 +14,29 @@ import wad.service.TechreportService;
 @Controller
 public class DefaultController {
 
-     
     @Autowired
     BookService bookService;
-    
+
     @Autowired
     ArticleService articleService;
-    
+
     @Autowired
     InproceedingsService inproceedingsService;
-    
+
     @Autowired
     MastersthesisService mastersthesisService;
 
     @Autowired
     TechreportService techreportService;
-    
+
     @RequestMapping(value = "*", method = RequestMethod.GET)
-    public String listAll(Model model){
-        model.addAttribute("articles",articleService.list());
-        model.addAttribute("books",bookService.list());
+    public String listAll(Model model) {
+        model.addAttribute("articles", articleService.list());
+        model.addAttribute("books", bookService.list());
         model.addAttribute("inproceedings", inproceedingsService.list());
-        model.addAttribute("mastersthesis", mastersthesisService.list());
+        model.addAttribute("mastersthesises", mastersthesisService.list());
         model.addAttribute("techreports", techreportService.list());
         return "index";
     }
+
 }

@@ -30,6 +30,7 @@ public class ArticleServiceTest {
     
     @Before
     public void setUp() {
+        articleRepository.deleteAll();
         article1 = new Article();
         article1.setAuthor("kirjoittaja1");
         article1.setTitle("otsikko1");
@@ -42,7 +43,6 @@ public class ArticleServiceTest {
         article2.setJournal("journal2");
         article2.setYear(2002);
         article2.setVolume(3);
-        
     }
     
     @Test
@@ -84,5 +84,40 @@ public class ArticleServiceTest {
         assertTrue(titles.contains(article1.getTitle()));
         assertTrue(titles.contains(article2.getTitle()));
     }
+    
+    @Test
+    public void testFindByAuthor() {
+        articleRepository.save(article1);
+        articleRepository.save(article2);
+        List<Article> articles = articleService.search("aja1");
+        assertTrue(articles.size() == 1);
+        assertEquals(articles.get(0).getAuthor(), article1.getAuthor());
+    }
+
+    @Test
+    public void testFindByTitle() {
+        articleRepository.save(article1);
+        articleRepository.save(article2);
+        List<Article> articles = articleService.search("kko1");
+        assertTrue(articles.size() == 1);
+        assertEquals(articles.get(0).getAuthor(), article1.getAuthor());
+    }
+
+    @Test
+    public void testSearcCanFindAll() {
+        articleRepository.save(article1);
+        articleRepository.save(article2);
+        List<Article> articles = articleService.search("ikko");
+        assertTrue(articles.size() == 2);
+    }
+
+    @Test
+    public void nonExistCantBeFound() {
+        articleRepository.save(article1);
+        articleRepository.save(article2);
+        List<Article> articles = articleService.search("batman134134");
+        assertTrue(articles.isEmpty());
+    }
+    
     
 }
