@@ -40,11 +40,13 @@ public class ArticleService {
         for (Field field : fields) {
             if (field.get(article) == null || field.get(article).toString().isEmpty())
                 continue;
-            result += String.format("%s\t\t=\t\t\t\t\"%s\", \n",
+            result += String.format("%s\t\t=\t\t\"%s\",\n",
                 field.getName(),
                 field.get(article)
             );
         }
+        int ind = result.lastIndexOf(",");
+        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
         result += "}";
         return result;
     }
@@ -55,6 +57,7 @@ public class ArticleService {
         try {
         result = toBibtex(article);
         } catch (Exception ex) {
+            System.err.println(ex.getMessage());
         }
             return result;
         }
