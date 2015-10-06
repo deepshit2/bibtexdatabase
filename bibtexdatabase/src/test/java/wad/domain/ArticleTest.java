@@ -11,6 +11,7 @@ public class ArticleTest {
         Article article = new Article();
 
         //Setterit
+        article.setCitation("artsu");
         article.setAuthor("Author");
         article.setJournal("jossain");
         article.setNumber(3);
@@ -31,6 +32,7 @@ public class ArticleTest {
         assertEquals("Title", article.getTitle());
         assertTrue(1 == article.getVolume());
         assertTrue(2015 == article.getYear());
+        assertEquals("artsu", article.getCitation());
 
     }
 

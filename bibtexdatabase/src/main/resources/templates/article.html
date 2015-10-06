@@ -8,6 +8,8 @@
     <body>
         <h1 id="title" th:text="${article.title}">Title</h1>
         <div class="formLayout">
+            <label for="citation">Citation</label>
+            <p id="citation" th:text="${article.citation}">citation</p>
             <label for="author">Author</label>
             <p id="author" th:text="${article.author}">author</p>
             <label for="journal">Journal</label>

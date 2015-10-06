@@ -32,12 +32,14 @@ public class ArticleServiceTest {
     public void setUp() {
         articleRepository.deleteAll();
         article1 = new Article();
+        article1.setCitation("artsu");
         article1.setAuthor("kirjoittaja1");
         article1.setTitle("otsikko1");
         article1.setJournal("journal");
         article1.setYear(2001);
         article1.setVolume(2);
         article2 = new Article();
+        article2.setCitation("artsu2");
         article2.setAuthor("kirjoittaja2");
         article2.setTitle("otsikko2");
         article2.setJournal("journal2");

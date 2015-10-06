@@ -9,7 +9,8 @@ public class Article extends AbstractPersistable<Long> {
     
     //Required fields: author, title, journal, year, volume
     //Optional fields: number, pages, month, note, key
-    
+    @NotBlank
+    public String citation;
     @NotBlank
     public String author;
     @NotBlank
@@ -96,6 +97,12 @@ public class Article extends AbstractPersistable<Long> {
         this.volume = volume;
     }
     
-    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
+    }
 
 }

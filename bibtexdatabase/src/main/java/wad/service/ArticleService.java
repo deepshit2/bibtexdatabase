@@ -34,12 +34,16 @@ public class ArticleService {
     }
     
     private String toBibtex(Article article) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Article {\n";
+        String result = "@Article {";
         Class<? extends Object> obj = article.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             if (field.get(article) == null || field.get(article).toString().isEmpty())
                 continue;
+            if (field.getName().equals("citation")) {
+                result += article.getCitation() + "\n";
+                continue;
+            }
             result += String.format("%s\t\t=\t\t\"%s\",\n",
                 field.getName(),
                 field.get(article)
