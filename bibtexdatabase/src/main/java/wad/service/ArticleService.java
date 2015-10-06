@@ -1,6 +1,6 @@
-
 package wad.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,4 +29,14 @@ public class ArticleService {
     public Article getArticle(Long id) {
         return articleRepository.findOne(id);
     }
+
+    public List<Article> search(String name) {
+        List<Article> result = new ArrayList<>();
+        List<Article> byAuthor = articleRepository.findByAuthorContaining(name);
+        List<Article> byTitle = articleRepository.findByTitleContaining(name);
+        result.addAll(byAuthor);
+        result.addAll(byTitle);
+        return result;
+    }
+
 }

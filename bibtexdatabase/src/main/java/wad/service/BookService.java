@@ -1,8 +1,8 @@
 
 package wad.service;
 
+import java.util.ArrayList;
 import java.util.List;
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Book;
@@ -30,4 +30,14 @@ public class BookService {
     public Book getBook(Long id) {
         return bookRepository.findOne(id);
     }
+    
+    public List<Book> search(String name) {
+        List<Book> result = new ArrayList<>();
+        List<Book> byAuthor = bookRepository.findByAuthorContaining(name);
+        List<Book> byTitle = bookRepository.findByTitleContaining(name);
+        result.addAll(byAuthor);
+        result.addAll(byTitle);
+        return result;
+    }
+    
 }

@@ -1,18 +1,17 @@
-
 package wad.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Mastersthesis;
 import wad.repository.MastersthesisRepository;
 
-
 @Service
 public class MastersthesisService {
 
     @Autowired
-    private MastersthesisRepository  mastersthesisRepository;
+    private MastersthesisRepository mastersthesisRepository;
 
     public List<Mastersthesis> list() {
         List<Mastersthesis> mastersthesises = mastersthesisRepository.findAll();
@@ -30,4 +29,16 @@ public class MastersthesisService {
     public Mastersthesis getMastersthesis(Long id) {
         return mastersthesisRepository.findOne(id);
     }
+
+    public List<Mastersthesis> search(String name) {
+        List<Mastersthesis> result = new ArrayList<>();
+        List<Mastersthesis> byAuthor = mastersthesisRepository.findByAuthorContaining(name);
+        List<Mastersthesis> byTitle = mastersthesisRepository.findByTitleContaining(name);
+        List<Mastersthesis> byBooktitle = mastersthesisRepository.findBySchoolContaining(name);
+        result.addAll(byAuthor);
+        result.addAll(byTitle);
+        result.addAll(byBooktitle);
+        return result;
+    }
+
 }

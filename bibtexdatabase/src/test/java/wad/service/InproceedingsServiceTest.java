@@ -30,6 +30,7 @@ public class InproceedingsServiceTest {
     
     @Before
     public void setUp() {
+        repository.deleteAll();
         m1 = new Inproceedings();
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
@@ -80,6 +81,48 @@ public class InproceedingsServiceTest {
         }
         assertTrue(titles.contains(m1.getTitle()));
         assertTrue(titles.contains(m2.getTitle()));
+    }
+    
+    @Test
+    public void testFindByAuthor() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Inproceedings> articles = service.search("thor1");
+        assertTrue(articles.size() == 1);
+        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+    }
+
+    @Test
+    public void testFindByTitle() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Inproceedings> boobs = service.search("kko1");
+        assertTrue(boobs.size() == 1);
+        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+    }
+
+    @Test
+    public void testFindByBooktitle() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Inproceedings> boobs = service.search("oulu2");
+        assertTrue(boobs.size() == 1);
+    }
+
+    @Test
+    public void testSearchCanFindAll() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Inproceedings> boobs = service.search("ikko");
+        assertTrue(boobs.size() == 2);
+    }
+
+    @Test
+    public void nonExistCantBeFound() {
+        repository.save(m1);
+        repository.save(m2);
+        List<Inproceedings> boobs = service.search("batman134134");
+        assertTrue(boobs.isEmpty());
     }
     
     
