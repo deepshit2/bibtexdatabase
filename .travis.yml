@@ -1,12 +1,7 @@
 language: java
 jdk:
   - oraclejdk8
--cache:	
-  directories:		
-    - .autoconf
-    - ~/.m2/repository
-install: mvn install --quiet -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script: mvn test
+script: ./scripts/travisdump.sh
 before_install: cd bibtexdatabase
 after_success:
 - mvn clean cobertura:cobertura coveralls:report
