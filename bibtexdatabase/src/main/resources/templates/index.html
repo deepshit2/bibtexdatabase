@@ -40,10 +40,19 @@
 
             <ul class="list-group" id="list">
                 <li class="list-group-item" th:each="article : ${articles}">
-                    <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}" th:text="${article.title} + ' ' + ${article.author}"></a>
+                    <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}" th:text="${article.title} + ', ' + ${article.author}"></a>
                 </li>
                 <li class="list-group-item" th:each="book : ${books}">
-                    <a href="#" th:href="@{/book/{id}/bibtex(id=${book.id})}" th:text="${book.title} + ' ' + ${book.author}"></a>
+                    <a href="#" th:href="@{/book/{id}/bibtex(id=${book.id})}" th:text="${book.title} + ', ' + ${book.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="techreport : ${techreports}">
+                    <a href="#" th:href="@{/techreports/{id}/bibtex(id=${techreport.id})}" th:text="${techreport.title} + ', ' + ${techreport.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="mastersthesis : ${mastersthesises}">
+                    <a href="#" th:href="@{/mastersthesises/{id}/bibtex(id=${mastersthesis.id})}" th:text="${mastersthesis.title} + ', ' + ${mastersthesis.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="inproceeding : ${inproceedings}">
+                    <a href="#" th:href="@{/inproceedings/{id}/bibtex(id=${inproceeding.id})}" th:text="${inproceeding.title} + ', ' + ${inproceeding.author}"></a>
                 </li>
             </ul>
 
