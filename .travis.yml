@@ -3,6 +3,7 @@ jdk:
   - oraclejdk8
 -cache:	
   directories:		
+    - .autoconf
     - ~/.m2/repository
 before_install: cd bibtexdatabase
 after_success:
