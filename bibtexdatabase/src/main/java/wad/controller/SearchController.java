@@ -18,58 +18,38 @@ import wad.repository.BookRepository;
 import wad.repository.InproceedingsRepository;
 import wad.repository.MastersthesisRepository;
 import wad.repository.TechreportRepository;
+import wad.service.ArticleService;
+import wad.service.BookService;
+import wad.service.InproceedingsService;
+import wad.service.MastersthesisService;
+import wad.service.TechreportService;
 
 @Controller
 @RequestMapping("/")
 public class SearchController {
 
     @Autowired
-    private ArticleRepository articleRepository;
+    private BookService bookService;
 
     @Autowired
-    private BookRepository bookRepository;
+    private ArticleService articleService;
 
     @Autowired
-    private InproceedingsRepository inproceedingsRepository;
+    private InproceedingsService inproceedingsService;
 
     @Autowired
-    private MastersthesisRepository mastersthesisRepository;
+    private MastersthesisService mastersthesisService;
 
     @Autowired
-    private TechreportRepository techreportRepository;
+    private TechreportService techreportService;
 
     @RequestMapping(method = RequestMethod.POST)
     public String list(@RequestParam String search, Model model) {
-
-        if (search != null) {
-            List<Article> articles = new ArrayList<>();
-            articles.addAll(articleRepository.findByAuthorContaining(search));
-            articles.addAll(articleRepository.findByTitleContaining(search));
-            model.addAttribute("articles", articles);
-
-            List<Book> books = new ArrayList<>();
-            books.addAll(bookRepository.findByAuthorContaining(search));
-            books.addAll(bookRepository.findByTitleContaining(search));
-            model.addAttribute("books", books);
-
-            List<Inproceedings> inproceedings = new ArrayList<>();
-            inproceedings.addAll(inproceedingsRepository.findByAuthorContaining(search));
-            inproceedings.addAll(inproceedingsRepository.findByBooktitleContaining(search));
-            inproceedings.addAll(inproceedingsRepository.findByTitleContaining(search));
-            model.addAttribute("inproceedings", inproceedings);
-
-            List<Mastersthesis> mastersthesises = new ArrayList<>();
-            mastersthesises.addAll(mastersthesisRepository.findByAuthorContaining(search));
-            mastersthesises.addAll(mastersthesisRepository.findBySchoolContaining(search));
-            mastersthesises.addAll(mastersthesisRepository.findByTitleContaining(search));
-            model.addAttribute("mastersthesises", mastersthesises);
-
-            List<Techreport> techreports = new ArrayList<>();
-            techreports.addAll(techreportRepository.findByAuthorContaining("name"));
-            techreports.addAll(techreportRepository.findByInstitutionContaining("name"));
-            techreports.addAll(techreportRepository.findByTitleContaining("name"));
-            model.addAttribute("techreports", techreports);
-        }
+        model.addAttribute("articles", articleService.search(search));
+        model.addAttribute("books", bookService.search(search));
+        model.addAttribute("inproceedings", inproceedingsService.search(search));
+        model.addAttribute("mastersthesises", mastersthesisService.search(search));
+        model.addAttribute("techreports", techreportService.search(search));
         return "index";
     }
 }
