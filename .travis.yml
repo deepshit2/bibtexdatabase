@@ -1,7 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
-script: mvn verify -l dump.txt
+script: 
+  - mvn test -l dump1.txt
+  - mvn integration-test -l dump2.txt
+  - mvn verify -l dump3.txt
 before_install: cd bibtexdatabase
 after_success:
 - mvn clean cobertura:cobertura coveralls:report
