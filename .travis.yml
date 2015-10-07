@@ -2,6 +2,5 @@ language: java
 jdk:
   - oraclejdk8
 before_install: cd bibtexdatabase
-install: ./scripts/travisdump.sh
 after_success:
 - mvn clean cobertura:cobertura coveralls:report
