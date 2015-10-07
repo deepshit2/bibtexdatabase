@@ -28,6 +28,10 @@
             </nav>
             <h1 id="title" th:text="${book.title}">Title</h1>
             <div class="form-group">
+            <label for="citation">Citation</label>
+            <p id="citation" th:text="${book.citation}">citation</p>
+            </div>
+            <div class="form-group">
             <label for="author">Author</label>
             <p id="author" th:text="${book.author}">author</p>
             </div>

@@ -39,7 +39,11 @@ public class NewBookTest extends FluentTest {
     @Test
     public void submitBook(){
         goTo("http://localhost:" +serverPort+"/books/new");
+
+        fill("#citation").with("kirja");
         fill("#author").with("Santeri");
+        fill("#publisher").with("kustantamo");
+        fill("#year").with("1234");
         fill("#title").with("Eeppinen väitöskirja");
         submit("button[type=submit]");
         assertTrue(pageSource().contains("New book created"));

@@ -32,11 +32,13 @@ public class BookServiceTest {
     public void setUp() {
         repository.deleteAll();
         m1 = new Book();
+        m1.setCitation("kirja");
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
         m1.setPublisher("koulu1");
         m1.setYear(2001);
         m2 = new Book();
+        m2.setCitation("kirja");
         m2.setAuthor("author2");
         m2.setTitle("otsikko2");
         m2.setPublisher("koulu2");

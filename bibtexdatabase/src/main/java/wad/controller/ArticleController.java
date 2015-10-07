@@ -19,26 +19,23 @@ import wad.service.ArticleService;
 public class ArticleController {
     
     @Autowired
-    private ArticleRepository articleRepository;
-    
-    @Autowired
     private ArticleService articleService;
     
     @RequestMapping(method = RequestMethod.POST)
     public String createArticle(RedirectAttributes redirectAttributes, @ModelAttribute Article article){
-        articleRepository.save(article);
+        articleService.addArticle(article);
         redirectAttributes.addFlashAttribute("id", article.getId());
         redirectAttributes.addFlashAttribute("message", "New article created");
         return "redirect:/articles/new";
     }
     @RequestMapping(method = RequestMethod.GET)
     public List<Article> getArticles(){
-        return articleRepository.findAll();
+        return articleService.list();
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String getAdded(@PathVariable Long id, Model model){
-        model.addAttribute("article",articleRepository.findOne(id));
+        model.addAttribute("article",articleService.getArticle(id));
         return "article";
     }
     
@@ -49,14 +46,14 @@ public class ArticleController {
     
     @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
     public String deleteArticle(RedirectAttributes redirectAttributes, @PathVariable Long id){
-        articleRepository.delete(id);
+        articleService.deleteArticle(id);
         redirectAttributes.addFlashAttribute("message", "Article deleted");
         return "redirect:/articles";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
-        Article article = articleRepository.findOne(id);
+        Article article = articleService.getArticle(id);
         model.addAttribute("bibtex", articleService.getBibtex(article.getId()));
         return "bibtex";
     }

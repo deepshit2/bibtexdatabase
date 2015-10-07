@@ -1,6 +1,7 @@
 package wad.domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -9,18 +10,19 @@ public class Book extends AbstractPersistable<Long> {
 
     //Required fields: author/editor, title, publisher, year
     //Optional fields: volume/number, series, address, edition, month, note, key
-    
     @NotBlank
-    private String author;
+    public String citation;
     @NotBlank
-    private String title;
-//    @NotBlank
-    private String publisher;
-//    @NotNull
-    private Integer year;
+    public String author;
+    @NotBlank
+    public String title;
+    @NotBlank
+    public String publisher;
+    @NotNull
+    public Integer year;
     
-    private String address, isbn, note;
-    private Integer volume, edition, series, month;
+    public String address, isbn, note;
+    public Integer volume, edition, series, month;
 
     public String getAuthor() {
         return author;
@@ -110,5 +112,11 @@ public class Book extends AbstractPersistable<Long> {
         this.series = series;
     }
     
-    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
+    }
 }

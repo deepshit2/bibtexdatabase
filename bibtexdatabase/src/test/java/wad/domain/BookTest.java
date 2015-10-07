@@ -10,6 +10,7 @@ public class BookTest {
         Book book = new Book();
 
         //Setterit
+        book.setCitation("kirja");
         book.setAddress("Osoite");
         book.setAuthor("Author");
         book.setEdition(1);
@@ -23,6 +24,7 @@ public class BookTest {
         book.setYear(2015);
 
         //Getterit
+        assertEquals("kirja", book.getCitation());
         assertEquals("Osoite", book.getAddress());
         assertEquals("Publisher", book.getPublisher());
         assertEquals("Author", book.getAuthor());

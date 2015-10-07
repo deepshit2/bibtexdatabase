@@ -39,6 +39,10 @@
             <h1>Add new book</h1>
             <form role="form" method="POST" th:action="@{/books}">
                 <div class="form-group">
+                    <label for="citation">Citation<font color="red"><sup>*</sup></font></label>
+                    <input id="citation" class="form-control" required="true" type="text" name="citation"/>
+                </div>
+                <div class="form-group">
                     <label for="author">Author<font color="red"><sup>*</sup></font></label>
                     <input id="author" class="form-control" required="true" type="text" name="author"/>
                 </div>

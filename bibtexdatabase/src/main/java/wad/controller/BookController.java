@@ -51,4 +51,11 @@ public class BookController {
         redirectAttributes.addFlashAttribute("message", "Book deleted");
         return "redirect:/books";
     }
+    
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
+    public String getBibtex(@PathVariable Long id, Model model){
+        Book book = bookService.getBook(id);
+        model.addAttribute("bibtex", bookService.getBibtex(book.getId()));
+        return "bibtex";
+    }
 }
