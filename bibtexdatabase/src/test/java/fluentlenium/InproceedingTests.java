@@ -53,5 +53,15 @@ public class InproceedingTests extends FluentTest {
         assertTrue(pageSource().contains("kirjoittaja1"));
     }
     
+    /*
+    @Test
+    public void inproBibtex() {
+        goTo("http://localhost:" +serverPort+"/inproceedings/1/bibtex");
+        assertTrue(pageSource().contains("@Inproceedings"));
+        assertTrue(pageSource().contains("}"));
+        assertTrue(pageSource().contains("kirjoittaja"));
+        assertTrue(pageSource().contains(","));
+    }
+    */
     
 }
