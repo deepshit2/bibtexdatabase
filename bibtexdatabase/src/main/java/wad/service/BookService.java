@@ -37,16 +37,16 @@ public class BookService {
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
-            if (field.get(book) == null || field.get(book).toString().isEmpty())
-                continue;
-            if (field.getName().equals("citation")) {
+            boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
+            if (ehto && field.getName().equals("citation")) {
                 result += book.getCitation() + "\n";
                 continue;
             }
-            result += String.format("%s\t\t=\t\t\"%s\",\n",
+            if(ehto) {
+                result += String.format("%s\t\t=\t\t\"%s\",\n",
                 field.getName(),
-                field.get(book)
-            );
+                field.get(book));
+            }
         }
         int ind = result.lastIndexOf(",");
         result = new StringBuilder(result).replace(ind, ind+1,"").toString();

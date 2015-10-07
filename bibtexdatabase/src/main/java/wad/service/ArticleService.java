@@ -38,16 +38,16 @@ public class ArticleService {
         Class<? extends Object> obj = article.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
-            if (field.get(article) == null || field.get(article).toString().isEmpty())
-                continue;
-            if (field.getName().equals("citation")) {
+            boolean ehto = (field.get(article) != null && !field.get(article).toString().isEmpty());
+            if (ehto && field.getName().equals("citation")) {
                 result += article.getCitation() + "\n";
                 continue;
             }
-            result += String.format("%s\t\t=\t\t\"%s\",\n",
+            if(ehto) {
+                result += String.format("%s\t\t=\t\t\"%s\",\n",
                 field.getName(),
-                field.get(article)
-            );
+                field.get(article));
+            }
         }
         int ind = result.lastIndexOf(",");
         result = new StringBuilder(result).replace(ind, ind+1,"").toString();
