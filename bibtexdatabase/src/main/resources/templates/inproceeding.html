@@ -25,30 +25,33 @@
                     </li>
                 </ul>
             </nav>
-            <h1 id="title" th:text="${article.title}">Title</h1>
+            <h1 id="title" th:text="${inproceeding.title}">Title</h1>
             <div class="formLayout">
-                <label for="citation">Citation</label>
-                <p id="citation" th:text="${article.citation}">citation</p>
                 <label for="author">Author</label>
-                <p id="author" th:text="${article.author}">author</p>
-                <label for="journal">Journal</label>
-                <p id="journal" th:text="${article.journal}">journal</p>
+                <p id="author" th:text="${inproceeding.author}">author</p>
+                <label for="booktitle">Journal</label>
+                <p id="booktitle" th:text="${inproceeding.booktitle}">booktitle</p>
+                <label for="publisher">publisher</label>
+                <p id="publisher" th:text="${inproceeding.publisher}">author</p>
                 <label for="year">Year</label>
-                <p id="year" th:text="${article.year}">year</p>
-                <label for="number">Number</label>
-                <p id="number" th:text="${article.number}">number</p>
-                <label for="pages">Pages</label>
-                <p id="pages" th:text="${article.pages}">volume</p>
-                <label for="month">Month</label>
-                <p id="month" th:text="${article.month}">month</p>
-                <label for="note">Note</label>
-                <p id="note" th:text="${article.note}">note</p>
+                <p id="year" th:text="${inproceeding.year}">year</p>
                 <label for="volume">Volume</label>
-                <p id="volume" th:text="${article.volume}">volume</p>
+                <p id="volume" th:text="${inproceeding.volume}">volume</p>
+                <label for="series">Series</label>
+                <p id="series" th:text="${inproceeding.series}">series</p>
+                <label for="address">address</label>
+                <p id="address" th:text="${inproceeding.address}">address</p>
+                <label for="month">Month</label>
+                <p id="month" th:text="${inproceeding.month}">month</p>
+                <label for="note">Note</label>
+                <p id="note" th:text="${inproceeding.note}">note</p>
+                <label for="key">Key</label>
+                <p id="key" th:text="${inproceeding.key}">key</p>
+
             </div>
             <div th:if="${message}">
                 <h3 th:text="${message}"></h3>
-                <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}">BibTeX</a>
+                <a href="#" th:href="@{/inproceedings/{id}/bibtex(id=${inproceeding.id})}">BibTeX</a>
             </div>
         </div>
     </body>
