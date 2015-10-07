@@ -32,7 +32,6 @@ public class ArticleTests extends FluentTest {
         return webDriver;
     }
     
-    /*
     @Test
     public void submitArticle(){
         goTo("http://localhost:" +serverPort+"/articles/new");
@@ -47,9 +46,5 @@ public class ArticleTests extends FluentTest {
         assertTrue(pageSource().contains("Santeri"));
         assertTrue(pageSource().contains("Eeppinen kandi"));
     }
-    */
-    @Test
-    public void test() {
-        
-    }
+
 }

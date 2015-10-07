@@ -32,20 +32,16 @@ public class BookBibtexTest extends FluentTest {
         return webDriver;
     }
     
-    /*
-    @Autowired
-    private BookRepository repo;
-    
     @Before
     public void setUp() {
-        repo.deleteAll();
-        Book article1 = new Book();
-        article1.setCitation("artsu");
-        article1.setAuthor("kirjoittaja1");
-        article1.setTitle("otsikko1");
-        article1.setPublisher("journal");
-        article1.setYear(2001);
-        repo.save(article1);
+        goTo("http://localhost:" +serverPort+"/books/new");
+
+        fill("#citation").with("kirja");
+        fill("#author").with("Santeri");
+        fill("#publisher").with("kustantamo");
+        fill("#year").with("1234");
+        fill("#title").with("Eeppinen väitöskirja");
+        submit("button[type=submit]");
     }
     
     @Test
@@ -56,10 +52,5 @@ public class BookBibtexTest extends FluentTest {
         assertTrue(pageSource().contains("year"));
         assertTrue(pageSource().contains("}"));
     }
-    */
-    @Test
-    public void test() {
-        
-    }
-    
+
 }

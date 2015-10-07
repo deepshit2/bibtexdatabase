@@ -37,31 +37,30 @@ public class InproceedingTests extends FluentTest {
     
     @Before
     public void setUp() {
-        repo.deleteAll();
-        Inproceedings article1 = new Inproceedings();
-        article1.setCitation("artsu");
-        article1.setAuthor("kirjoittaja1");
-        article1.setTitle("otsikko1");
-        article1.setBooktitle("journal");
-        article1.setYear(2001);
-        repo.save(article1);
+        goTo("http://localhost:" +serverPort+"/inproceedings/new");
+        fill("#author").with("Santeri");
+        fill("#citation").with("seksiwau");
+        fill("#booktitle").with("Kumpula");
+        fill("#year").with("2015");
+        fill("#title").with("Eeppinen seksiopas");
+        submit("button[type=submit]");
     }
     
     @Test
     public void findInpro(){
         goTo("http://localhost:" +serverPort+"/inproceedings/1");
-        assertTrue(pageSource().contains("kirjoittaja1"));
+        System.out.println(pageSource());
+        assertTrue(pageSource().contains("Santeri"));
     }
     
-    /*
     @Test
     public void inproBibtex() {
         goTo("http://localhost:" +serverPort+"/inproceedings/1/bibtex");
+        System.out.println(pageSource());
         assertTrue(pageSource().contains("@Inproceedings"));
         assertTrue(pageSource().contains("}"));
-        assertTrue(pageSource().contains("kirjoittaja"));
+        assertTrue(pageSource().contains("Santeri"));
         assertTrue(pageSource().contains(","));
     }
-    */
     
 }

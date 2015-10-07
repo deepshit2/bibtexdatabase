@@ -32,36 +32,38 @@ public class ArticleBibtexTest extends FluentTest {
         return webDriver;
     }
     
-    /*
+
     @Autowired
     private ArticleRepository repo;
     
     @Before
     public void setUp() {
-        repo.deleteAll();
-        Article article1 = new Article();
-        article1.setCitation("artsu");
-        article1.setAuthor("kirjoittaja1");
-        article1.setTitle("otsikko1");
-        article1.setJournal("journal");
-        article1.setYear(2001);
-        article1.setVolume(2);
-        repo.save(article1);
+        goTo("http://localhost:" +serverPort+"/articles/new");
+        fill("#author").with("Santeri");
+        fill("#title").with("Eeppinen kandi");
+        fill("#citation").with("artsu");
+        fill("#journal").with("test");
+        fill("#year").with("1999");
+        fill("#volume").with("1");
+        submit("button[type=submit]");
     }
     
     @Test
-    public void submitArticle(){
+    public void articleSubmitted(){
+        goTo("http://localhost:" +serverPort+"/articles/1");
+        assertTrue(pageSource().contains("Santeri"));
+        assertTrue(pageSource().contains("1999"));
+        assertTrue(pageSource().contains("year"));
+        assertTrue(pageSource().contains("kandi"));
+    }
+    
+    @Test
+    public void articleBibtex(){
         goTo("http://localhost:" +serverPort+"/articles/1/bibtex");
         assertTrue(pageSource().contains("@Article {"));
-        assertTrue(pageSource().contains("title"));
+        assertTrue(pageSource().contains("1999"));
         assertTrue(pageSource().contains("year"));
         assertTrue(pageSource().contains("}"));
-    }
-    */
-    
-    @Test
-    public void test() {
-        
     }
     
 }

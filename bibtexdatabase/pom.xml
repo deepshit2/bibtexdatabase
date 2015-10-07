@@ -139,10 +139,12 @@
                         <ignores>
                             <ignore>wad/profiles/*.class</ignore>
                             <ignore>wad/Application.class</ignore>
+                            <ignore>wad/controller/SearchController.class</ignore>
                         </ignores>
                         <excludes>
                             <exclude>wad/profiles/*.class</exclude>
                             <exclude>wad/Application.class</exclude>
+                            <exclude>wad/controller/SearchController.class</exclude>
                         </excludes>
                     </instrumentation>
                     <maxmem>256m</maxmem>

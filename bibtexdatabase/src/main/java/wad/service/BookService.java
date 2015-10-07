@@ -34,6 +34,7 @@ public class BookService {
     
     private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException{
         String result = "@Book {";
+        String tabs;
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
@@ -43,8 +44,13 @@ public class BookService {
                 continue;
             }
             if(ehto) {
-                result += String.format("%s\t\t\t=\t\t\"%s\",\n",
+                if (field.getName().length()<8)
+                    tabs="\t\t\t";
+                else
+                    tabs="\t\t";
+                result += String.format("%s%s=\t\t\"%s\",\n",
                 field.getName(),
+                tabs,
                 field.get(book));
             }
         }
