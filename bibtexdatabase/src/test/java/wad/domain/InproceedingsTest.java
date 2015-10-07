@@ -11,7 +11,7 @@ public class InproceedingsTest {
     public void inproceedingsSetteritGetteritTestiNostattaaRivikattavuutta() {
 
         Inproceedings i = new Inproceedings();
-        
+        i.setCitation("seksiwau");
         i.setAuthor("tekija");
         i.setTitle("otsikko");
         i.setBooktitle("toinenOtsikko");
@@ -37,6 +37,7 @@ public class InproceedingsTest {
         assertEquals("osoite", i.getAddress());
         assertEquals("jeeee", i.getNote());
         assertEquals("avain", i.getKey());
+        assertEquals("seksiwau", i.getCitation());
         
         assertTrue(i.getPages() == 666);
         assertTrue(i.getYear() == 2000);

@@ -13,16 +13,19 @@ public class Inproceedings extends AbstractPersistable<Long> {
     //Optional fields: editor, volume/number, series, pages, address, month, organization, publisher, note, key
     
     @NotBlank
-    private String author;
+    public String citation;
+
     @NotBlank
-    private String title;
+    public String author;
     @NotBlank
-    private String booktitle;
+    public String title;
+    @NotBlank
+    public String booktitle;
     @NotNull
-    private Integer year;
+    public Integer year;
     
-    private String editor, organization, publisher, address, note, key;
-    private Integer month, volume, series, pages;
+    public String editor, organization, publisher, address, note, key;
+    public Integer month, volume, series, pages;
 
     public String getAuthor() {
         return author;
@@ -134,5 +137,13 @@ public class Inproceedings extends AbstractPersistable<Long> {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
 }

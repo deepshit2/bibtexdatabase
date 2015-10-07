@@ -51,4 +51,11 @@ public class InproceedingsController {
         redirectAttributes.addFlashAttribute("message", "Inproceeding deleted");
         return "redirect:/inproceedings";
     }
+    
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
+    public String getBibtex(@PathVariable Long id, Model model){
+        Inproceedings inproceedings = inproceedingsService.getInproceedings(id);
+        model.addAttribute("bibtex", inproceedingsService.getBibtex(inproceedings.getId()));
+        return "bibtex";
+    }
 }

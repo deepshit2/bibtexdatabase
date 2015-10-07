@@ -32,6 +32,7 @@ public class NewInproceedingsTest extends FluentTest {
     public void submitBook(){
         goTo("http://localhost:" +serverPort+"/inproceedings/new");
         fill("#author").with("Santeri");
+        fill("#citation").with("seksiwau");
         fill("#booktitle").with("Kumpula");
         fill("#year").with("2015");
         fill("#title").with("Eeppinen seksiopas");

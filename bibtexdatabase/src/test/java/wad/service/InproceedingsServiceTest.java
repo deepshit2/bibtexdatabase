@@ -32,11 +32,13 @@ public class InproceedingsServiceTest {
     public void setUp() {
         repository.deleteAll();
         m1 = new Inproceedings();
+        m1.setCitation("cite");
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
         m1.setBooktitle("koulu1");
         m1.setYear(2001);
         m2 = new Inproceedings();
+        m2.setCitation("cite2");
         m2.setAuthor("author2");
         m2.setTitle("otsikko2");
         m2.setBooktitle("koulu2");
