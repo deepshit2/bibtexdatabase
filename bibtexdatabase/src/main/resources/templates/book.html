@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-
     </head>
     <body>
         <div class="container">
@@ -22,54 +21,57 @@
                         <ul class="dropdown-menu">
                             <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>
                             <li role="presentation" ><a href="#" th:href="@{/articles/new}">Add new article</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/inproceedings/new}">Add new inproceedings</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/mastersthesises/new}">Add new mastersthesis</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/techreports/new}">Add new techreport</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
             <h1 id="title" th:text="${book.title}">Title</h1>
             <div class="form-group">
-            <label for="citation">Citation</label>
-            <p id="citation" th:text="${book.citation}">citation</p>
+                <label for="citation">Citation</label>
+                <p id="citation" th:text="${book.citation}">citation</p>
             </div>
             <div class="form-group">
-            <label for="author">Author</label>
-            <p id="author" th:text="${book.author}">author</p>
+                <label for="author">Author</label>
+                <p id="author" th:text="${book.author}">author</p>
             </div>
             <div class="form-group">
-            <label for="publisher">Publisher</label>
-            <p id="publisher" th:text="${book.publisher}">publisher</p>
+                <label for="publisher">Publisher</label>
+                <p id="publisher" th:text="${book.publisher}">publisher</p>
             </div>
             <div class="form-group">
-            <label for="year">Year</label>
-            <p id="year" th:text="${book.year}">year</p>
+                <label for="year">Year</label>
+                <p id="year" th:text="${book.year}">year</p>
             </div>
             <div class="form-group">
-            <label for="volume">Volume</label>
-            <p id="volume" th:text="${book.volume}">volume</p>
+                <label for="volume">Volume</label>
+                <p id="volume" th:text="${book.volume}">volume</p>
             </div>
             <div class="form-group">
-            <label for="series">Series</label>
-            <p id="series" th:text="${book.series}">series</p>
+                <label for="series">Series</label>
+                <p id="series" th:text="${book.series}">series</p>
             </div>
             <div class="form-group">
-            <label for="address">Address</label>
-            <p id="address" th:text="${book.address}">address</p>
+                <label for="address">Address</label>
+                <p id="address" th:text="${book.address}">address</p>
             </div>
             <div class="form-group">
-            <label for="edition">Edition</label>
-            <p id="edition" th:text="${book.edition}">edition</p>
+                <label for="edition">Edition</label>
+                <p id="edition" th:text="${book.edition}">edition</p>
             </div>
             <div class="form-group">
-            <label for="month">Month</label>
-            <p id="month" th:text="${book.month}">month</p>
+                <label for="month">Month</label>
+                <p id="month" th:text="${book.month}">month</p>
             </div>
             <div class="form-group">
-            <label for="note">Note</label>
-            <p id="note" th:text="${book.note}">note</p>
+                <label for="note">Note</label>
+                <p id="note" th:text="${book.note}">note</p>
             </div>
             <div class="form-group">
-            <label for="isbn">ISBN</label>
-            <p id="isbn" th:text="${book.isbn}">isbn</p>
+                <label for="isbn">ISBN</label>
+                <p id="isbn" th:text="${book.isbn}">isbn</p>
             </div>
         </div>
         <!--JavaScript imports -->
@@ -78,8 +80,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <div th:if="${message}">
             <h3 th:text="${message}"></h3>
-            <!--            <p>Id: <strong th:text="${book.id}"></strong></p>
-                        <p>TODO :  Tänne linkkejä lisätyn viitteen tarkasteluun...</p>-->
             <a href="#" th:href="@{/books/{id}/bibtex(id=${book.id})}">BibTeX</a>
         </div>
     </body>

@@ -2,8 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>bibtexdatabase</title>
-        <link href="css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
-        <meta charset="UTF-8" />
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     </head>
     <body>
         <div class="container">
@@ -25,30 +28,29 @@
                     </li>
                 </ul>
             </nav>
-            <h1 id="title" th:text="${article.title}">Title</h1>
+            <h1 id="title" th:text="${mastersthesis.title}">Title</h1>
             <div class="formLayout">
-                <label for="citation">Citation</label>
-                <p id="citation" th:text="${article.citation}">citation</p>
                 <label for="author">Author</label>
-                <p id="author" th:text="${article.author}">author</p>
-                <label for="journal">Journal</label>
-                <p id="journal" th:text="${article.journal}">journal</p>
+                <p id="author" th:text="${mastersthesis.author}">author</p>
+                <label for="school">School</label>
+                <p id="school" th:text="${mastersthesis.school}">school</p>
                 <label for="year">Year</label>
-                <p id="year" th:text="${article.year}">year</p>
-                <label for="number">Number</label>
-                <p id="number" th:text="${article.number}">number</p>
-                <label for="pages">Pages</label>
-                <p id="pages" th:text="${article.pages}">volume</p>
-                <label for="month">Month</label>
-                <p id="month" th:text="${article.month}">month</p>
-                <label for="note">Note</label>
-                <p id="note" th:text="${article.note}">note</p>
+                <p id="year" th:text="${mastersthesis.year}">year</p>
+                <label for="type">Type</label>
+                <p id="type" th:text="${mastersthesis.type}">type</p>
                 <label for="volume">Volume</label>
-                <p id="volume" th:text="${article.volume}">volume</p>
+                <p id="volume" th:text="${mastersthesis.volume}">volume</p>
+                <label for="address">address</label>
+                <p id="address" th:text="${mastersthesis.address}">address</p>
+                <label for="month">Month</label>
+                <p id="month" th:text="${mastersthesis.month}">month</p>
+                <label for="key">Key</label>
+                <p id="key" th:text="${inproceeding.key}">key</p>
+
             </div>
             <div th:if="${message}">
                 <h3 th:text="${message}"></h3>
-                <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}">BibTeX</a>
+                <a href="#" th:href="@{/mastersthesises/{id}/bibtex(id=${mastersthesis.id})}">BibTeX</a>
             </div>
         </div>
     </body>
