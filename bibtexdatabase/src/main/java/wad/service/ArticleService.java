@@ -44,7 +44,7 @@ public class ArticleService {
                 continue;
             }
             if(ehto) {
-                result += String.format("%s\t\t=\t\t\"%s\",\n",
+                result += String.format("%s\t\t=\t\t\t\"%s\",\n",
                 field.getName(),
                 field.get(article));
             }
