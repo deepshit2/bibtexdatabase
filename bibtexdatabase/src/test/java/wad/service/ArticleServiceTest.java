@@ -121,5 +121,16 @@ public class ArticleServiceTest {
         assertTrue(articles.isEmpty());
     }
     
+    @Test
+    public void testGetBibtex() {
+        articleRepository.save(article1);
+        String bibtex = articleService.getBibtex(article1.getId());
+        assertTrue(bibtex.contains("@Article"));
+        assertTrue(bibtex.contains("{"));
+        assertTrue(bibtex.contains("}"));
+        assertTrue(bibtex.contains(","));
+        assertTrue(bibtex.contains("kirjoittaja1"));
+    }
+    
     
 }
