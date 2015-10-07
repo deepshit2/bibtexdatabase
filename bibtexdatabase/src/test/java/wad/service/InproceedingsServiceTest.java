@@ -127,5 +127,27 @@ public class InproceedingsServiceTest {
         assertTrue(boobs.isEmpty());
     }
     
+    @Test
+    public void testGetBibtex() {
+        repository.save(m1);
+        String bibtex = service.getBibtex(m1.getId());
+        assertTrue(bibtex.contains("@Inproceedings"));
+        assertTrue(bibtex.contains("{"));
+        assertTrue(bibtex.contains("}"));
+        assertTrue(bibtex.contains(","));
+        assertTrue(bibtex.contains("author1"));
+    }
+    
+    @Test
+    public void testGetNoBibtex() {
+        String bibtex = "";
+        try {
+            bibtex = service.getBibtex(9999999L);
+        } catch(Exception e) {
+            
+        }
+        assertTrue(bibtex.isEmpty());
+    }
+    
     
 }
