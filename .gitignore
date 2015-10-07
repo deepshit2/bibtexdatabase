@@ -2,4 +2,4 @@
 /bibtexdatabase/target/
 .coveralls.yml
 /bibtexdatabase/.gitignore
-
+/bibtexdatabase/src/test/easyb/ export-ignore
