@@ -14,8 +14,6 @@ scenario "käyttäjä voi lisätä articlen kunnollisilla syötteillä", {
     }
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
-        element = driver.findElement(By.name("citation"));
-        element.sendKeys("artsu");
         element = driver.findElement(By.name("author"));
         element.sendKeys("kirjoittaja");
         element = driver.findElement(By.name("title"));
