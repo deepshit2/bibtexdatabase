@@ -37,3 +37,4 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 * Käyttäjänä haluan ladata bibtex -muotoisen dokumentin
 * Käyttäjänä haluan pystyä hakemaan viitteitä asiasanojen perusteella
 * Käyttäjänä haluan lisätä inproceedings-viitteitä järjestelmään lomakkeella webbisivun kautta.
+
