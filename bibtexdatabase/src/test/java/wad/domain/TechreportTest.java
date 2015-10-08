@@ -12,6 +12,7 @@ public class TechreportTest {
         
         Techreport t = new Techreport();
         
+        t.setCitation("cite");
         t.setAuthor("tekija");
         t.setTitle("otsikko");
         t.setInstitution("instituutio");
@@ -24,6 +25,7 @@ public class TechreportTest {
         t.setYear(2001);
         t.setNumber(4);
         
+        assertEquals("cite", t.getCitation());
         assertEquals("tekija", t.getAuthor());
         assertEquals("otsikko", t.getTitle());
         assertEquals("instituutio", t.getInstitution());

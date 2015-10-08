@@ -32,11 +32,13 @@ public class TechreportServiceTest {
     public void setUp() {
         repository.deleteAll();
         m1 = new Techreport();
+        m1.setCitation("cite");
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
         m1.setInstitution("koulu1");
         m1.setYear(2001);
         m2 = new Techreport();
+        m2.setCitation("cite");
         m2.setAuthor("author2");
         m2.setTitle("otsikko2");
         m2.setInstitution("koulu2");

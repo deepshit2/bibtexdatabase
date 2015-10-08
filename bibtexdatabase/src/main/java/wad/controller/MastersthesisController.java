@@ -51,4 +51,11 @@ public class MastersthesisController {
         redirectAttributes.addFlashAttribute("message", "Mastersthesis deleted");
         return "redirect:/mastersthesises";
     }
+    
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
+    public String getBibtex(@PathVariable Long id, Model model){
+        Mastersthesis mastersthesis = mastersthesisService.getMastersthesis(id);
+        model.addAttribute("bibtex", mastersthesisService.getBibtex(mastersthesis.getId()));
+        return "bibtex";
+    }
 }

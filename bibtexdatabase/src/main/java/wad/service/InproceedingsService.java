@@ -39,6 +39,7 @@ public class InproceedingsService {
         Class<? extends Object> obj = inproceedings.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
+            field.setAccessible(true);
             boolean ehto = (field.get(inproceedings) != null && !field.get(inproceedings).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += inproceedings.getCitation() + "\n";

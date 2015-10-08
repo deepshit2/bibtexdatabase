@@ -12,6 +12,7 @@ public class MastersthesisTest {
         
         Mastersthesis thesis = new Mastersthesis();
         
+        thesis.setCitation("cite");
         thesis.setAuthor("opiskelija");
         thesis.setTitle("otsikko");
         thesis.setSchool("koulu");
@@ -23,6 +24,7 @@ public class MastersthesisTest {
         thesis.setYear(2015);
         thesis.setMonth(1);
         
+        assertEquals("cite", thesis.getCitation());
         assertEquals("opiskelija", thesis.getAuthor());
         assertEquals("otsikko", thesis.getTitle());
         assertEquals("koulu", thesis.getSchool());

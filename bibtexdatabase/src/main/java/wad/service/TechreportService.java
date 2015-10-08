@@ -1,5 +1,6 @@
 package wad.service;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,46 @@ public class TechreportService {
     public Techreport getTechreport(Long id) {
         return techreportRepository.findOne(id);
     }
+    
+    private String toBibtex(Techreport techreport) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Techreport {";
+        String tabs;
+        Class<? extends Object> obj = techreport.getClass();
+        Field[] fields = obj.getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            boolean ehto = (field.get(techreport) != null && !field.get(techreport).toString().isEmpty());
+            if (ehto && field.getName().equals("citation")) {
+                result += techreport.getCitation() + "\n";
+                continue;
+            }
+            if(ehto) {
+                if (field.getName().length()<8)
+                    tabs="\t\t\t";
+                else
+                    tabs="\t\t";
+                result += String.format("%s%s=\t\t\"%s\",\n",
+                field.getName(),
+                tabs,
+                field.get(techreport));
+            }
+        }
+        int ind = result.lastIndexOf(",");
+        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result += "}";
+        return result;
+    }
+    
+    public String getBibtex(Long id) {
+        Techreport techreport = techreportRepository.findOne(id);
+        String result = "";
+        try {
+        result = toBibtex(techreport);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+            return result;
+        }
 
     public List<Techreport> search(String name) {
         List<Techreport> result = new ArrayList<>();

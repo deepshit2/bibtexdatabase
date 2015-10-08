@@ -11,7 +11,8 @@ public class Mastersthesis extends AbstractPersistable<Long> {
     
     //Required fields: author, title, school, year
     //Optional fields: type, address, month, note, key   
-
+    @NotBlank
+    String citation;
     @NotBlank
     String author;
     @NotBlank
@@ -94,5 +95,13 @@ public class Mastersthesis extends AbstractPersistable<Long> {
 
     public void setMonth(Integer month) {
         this.month = month;
-    } 
+    }
+    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
+    }
 }

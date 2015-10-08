@@ -31,11 +31,13 @@ public class MastersthesisServiceTest {
     public void setUp() {
         repository.deleteAll();
         m1 = new Mastersthesis();
+        m1.setCitation("cite");
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
         m1.setSchool("koulu1");
         m1.setYear(2001);
         m2 = new Mastersthesis();
+        m2.setCitation("cite");
         m2.setAuthor("author2");
         m2.setTitle("otsikko2");
         m2.setSchool("koulu2");

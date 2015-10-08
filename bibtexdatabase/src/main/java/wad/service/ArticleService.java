@@ -39,6 +39,7 @@ public class ArticleService {
         Class<? extends Object> obj = article.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
+            field.setAccessible(true);
             boolean ehto = (field.get(article) != null && !field.get(article).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += article.getCitation() + "\n";

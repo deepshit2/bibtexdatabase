@@ -23,7 +23,7 @@ import wad.repository.InproceedingsRepository;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class InproceedingTests extends FluentTest {
+public class MastersthesisTests extends FluentTest {
     @Value("${local.server.port}")
     private int serverPort;
     public WebDriver webDriver = new HtmlUnitDriver();
@@ -32,33 +32,32 @@ public class InproceedingTests extends FluentTest {
         return webDriver;
     }
     
-    @Autowired
-    private InproceedingsRepository repo;
     
     @Before
     public void setUp() {
-        goTo("http://localhost:" +serverPort+"/inproceedings/new");
+        goTo("http://localhost:" +serverPort+"/mastersthesises/new");
+        fill("#citation").with("meisterpapper");
         fill("#author").with("Santeri");
-        fill("#citation").with("seksiwau");
-        fill("#booktitle").with("Kumpula");
+        fill("#school").with("Kumpula");
         fill("#year").with("2015");
         fill("#title").with("Eeppinen seksiopas");
         submit("button[type=submit]");
     }
     
-    @Test
-    public void findInpro(){
-        goTo("http://localhost:" +serverPort+"/inproceedings/1");
-        assertTrue(pageSource().contains("Santeri"));
-    }
     
     @Test
-    public void inproBibtex() {
-        goTo("http://localhost:" +serverPort+"/inproceedings/1/bibtex");
-        assertTrue(pageSource().contains("@Inproceedings"));
+    public void masterBibtex() {
+        goTo("http://localhost:" +serverPort+"/mastersthesises/1/bibtex");
+        assertTrue(pageSource().contains("@Mastersthesis"));
         assertTrue(pageSource().contains("}"));
         assertTrue(pageSource().contains("Santeri"));
         assertTrue(pageSource().contains(","));
+    }
+    
+     @Test
+    public void findMaster(){
+        goTo("http://localhost:" +serverPort+"/mastersthesises/1");
+        assertTrue(pageSource().contains("Santeri"));
     }
     
 }

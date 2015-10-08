@@ -10,7 +10,8 @@ public class Techreport extends AbstractPersistable<Long> {
 
     //Required fields: author, title, institution, year
     //Optional fields: type, number, address, month, note, key
-    
+    @NotBlank
+    private String citation;
     @NotBlank
     private String author;
     @NotBlank
@@ -102,5 +103,13 @@ public class Techreport extends AbstractPersistable<Long> {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
 }

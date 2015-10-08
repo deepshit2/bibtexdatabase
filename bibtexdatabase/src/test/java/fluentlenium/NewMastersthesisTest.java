@@ -31,6 +31,7 @@ public class NewMastersthesisTest extends FluentTest {
     @Test
     public void submitBook(){
         goTo("http://localhost:" +serverPort+"/mastersthesises/new");
+        fill("#citation").with("meisterpapper");
         fill("#author").with("Santeri");
         fill("#school").with("Kumpula");
         fill("#year").with("2015");

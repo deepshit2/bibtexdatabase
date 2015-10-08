@@ -10,20 +10,20 @@ public class Article extends AbstractPersistable<Long> {
     //Required fields: author, title, journal, year, volume
     //Optional fields: number, pages, month, note, key
     @NotBlank
-    public String citation;
+    private String citation;
     @NotBlank
-    public String author;
+    private String author;
     @NotBlank
-    public String title;
+    private String title;
 //    @NotBlank
-    public String journal;
+    private String journal;
 //    @NotNull
-    public Integer year;
+    private Integer year;
 //    @NotNull
-    public Integer volume;
+    private Integer volume;
     
-    public String note;
-    public Integer number, pages, month; 
+    private String note;
+    private Integer number, pages, month; 
         
     public String getAuthor() {
         return author;

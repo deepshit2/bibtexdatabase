@@ -56,4 +56,11 @@ public class TechreportController {
         redirectAttributes.addFlashAttribute("message", "Techreport deleted");
         return "redirect:/techreports";
     }
+    
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
+    public String getBibtex(@PathVariable Long id, Model model){
+        Techreport techreport = techreportService.getTechreport(id);
+        model.addAttribute("bibtex", techreportService.getBibtex(techreport.getId()));
+        return "bibtex";
+    }
 }

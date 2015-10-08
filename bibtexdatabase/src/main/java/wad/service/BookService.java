@@ -38,6 +38,7 @@ public class BookService {
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
+            field.setAccessible(true);
             boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += book.getCitation() + "\n";

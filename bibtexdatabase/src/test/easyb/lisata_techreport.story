@@ -14,6 +14,8 @@ scenario "käyttäjä voi lisätä techreportit kunnollisilla syötteillä", {
     }
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
+        element = driver.findElement(By.name("citation"));
+        element.sendKeys("raporttirobotti");
         element = driver.findElement(By.name("author"));
         element.sendKeys("kirjoittaja");
         element = driver.findElement(By.name("title"));

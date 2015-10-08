@@ -11,18 +11,18 @@ public class Book extends AbstractPersistable<Long> {
     //Required fields: author/editor, title, publisher, year
     //Optional fields: volume/number, series, address, edition, month, note, key
     @NotBlank
-    public String citation;
+    private String citation;
     @NotBlank
-    public String author;
+    private String author;
     @NotBlank
-    public String title;
+    private String title;
     @NotBlank
-    public String publisher;
+    private String publisher;
     @NotNull
-    public Integer year;
+    private Integer year;
     
-    public String address, isbn, note;
-    public Integer volume, edition, series, month;
+    private String address, isbn, note;
+    private Integer volume, edition, series, month;
 
     public String getAuthor() {
         return author;

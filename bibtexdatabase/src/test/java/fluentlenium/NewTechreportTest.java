@@ -31,6 +31,7 @@ public class NewTechreportTest extends FluentTest {
     @Test
     public void submitBook(){
         goTo("http://localhost:" +serverPort+"/techreports/new");
+        fill("#citation").with("raportti");
         fill("#author").with("Santeri");
         fill("#institution").with("Kustantamo");
         fill("#year").with("1234");
