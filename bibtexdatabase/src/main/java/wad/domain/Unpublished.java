@@ -3,6 +3,7 @@ package wad.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -26,7 +27,7 @@ public class Unpublished extends AbstractPersistable<Long> {
     private String key;
     private Integer month, year;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Tag> tags;
 
     public List<Tag> getTags() {

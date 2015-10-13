@@ -3,6 +3,7 @@ package wad.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
@@ -27,7 +28,7 @@ public class Phdthesis extends AbstractPersistable<Long> {
     private String type, address, note, key;
     private Integer month;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Tag> tags;
 
     public List<Tag> getTags() {

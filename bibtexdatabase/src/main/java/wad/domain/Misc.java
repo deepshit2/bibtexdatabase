@@ -3,9 +3,8 @@ package wad.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
@@ -21,7 +20,7 @@ public class Misc extends AbstractPersistable<Long> {
     private String author, howpublished, note, key;
     private Integer month, year;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Tag> tags;
 
     public List<Tag> getTags() {

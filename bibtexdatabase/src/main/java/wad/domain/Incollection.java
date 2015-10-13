@@ -2,6 +2,7 @@ package wad.domain;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
@@ -33,7 +34,7 @@ public class Incollection extends AbstractPersistable<Long> {
     private String editor, type, address, note, key;
     private Integer month, edition, volume, series, pages, chapter;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<Tag> tags;
 
     public List<Tag> getTags() {
