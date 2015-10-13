@@ -1,6 +1,8 @@
 package wad.domain;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -24,6 +26,17 @@ public class Book extends AbstractPersistable<Long> {
     private String address, isbn, note;
     private Integer volume, edition, series, month;
 
+    @ManyToMany
+    private List<Tag> tags;
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+    
     public String getAuthor() {
         return author;
     }

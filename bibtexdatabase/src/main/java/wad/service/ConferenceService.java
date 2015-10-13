@@ -34,6 +34,7 @@ public class ConferenceService {
         return inproceedingsRepository.findOne(id);
     }
     
+    
     private String toBibtex(Conference inproceedings) throws IllegalArgumentException, IllegalAccessException{
         String result = "@Conference {";
         String tabs;
@@ -72,7 +73,7 @@ public class ConferenceService {
             System.err.println(ex.getMessage());
         }
             return result;
-        }
+    }
     
     public List<Conference> search(String name) {
         List<Conference> result = new ArrayList<>();
