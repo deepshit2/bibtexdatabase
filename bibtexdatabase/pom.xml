@@ -36,14 +36,14 @@
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
         </dependency>
-
+        <!--
         <dependency>
             <groupId>org.easyb</groupId>
             <artifactId>easyb-core</artifactId>
             <version>${easyb.version}</version>
             <scope>test</scope>        
         </dependency>
-        
+        -->
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-core</artifactId>
@@ -152,6 +152,7 @@
                     <aggregate>true</aggregate>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.easyb</groupId>
                 <artifactId>maven-easyb-plugin</artifactId>
@@ -170,6 +171,7 @@
                     </storyReport>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 </project>
