@@ -1,11 +1,11 @@
 
 package wad.service;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Booklet;
 import wad.domain.Unpublished;
 import wad.repository.UnpublishedRepository;
 
@@ -32,14 +32,14 @@ public class UnpublishedService {
         return repo.findOne(id);
     }
     
-    /*
-    private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Book {";
+    private String toBibtex(Unpublished book) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Unpublished {";
         String tabs;
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
+            if(field.getName().equals("tags")) continue;
             boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += book.getCitation() + "\n";
@@ -61,11 +61,9 @@ public class UnpublishedService {
         result += "}";
         return result;
     }
-    */
     
-    /*
     public String getBibtex(Long id) {
-        Booklet book = repo.findOne(id);
+        Unpublished book = repo.findOne(id);
         String result = "";
         try {
         result = toBibtex(book);
@@ -74,7 +72,6 @@ public class UnpublishedService {
         }
             return result;
     }
-    */
     
     public List<Unpublished> search(String name) {
         List<Unpublished> result = new ArrayList<>();

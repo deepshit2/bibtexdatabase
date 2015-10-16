@@ -116,12 +116,12 @@ public class UnpublishedServiceTest {
         List<Unpublished> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
-    /*
+    
     @Test
     public void testGetBibtex() {
         repository.save(m1);
         String bibtex = service.getBibtex(m1.getId());
-        assertTrue(bibtex.contains("@Book"));
+        assertTrue(bibtex.contains("@Unpublished"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));
         assertTrue(bibtex.contains(","));
@@ -138,5 +138,5 @@ public class UnpublishedServiceTest {
         }
         assertTrue(bibtex.isEmpty());
     }
-    */
+    
 }

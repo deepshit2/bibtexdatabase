@@ -14,36 +14,36 @@ import wad.repository.IncollectionRepository;
 public class IncollectionService {
 
     @Autowired
-    private IncollectionRepository inproceedingsRepository;
+    private IncollectionRepository incollection;
 
     public List<Incollection> list() {
-        List<Incollection> inproceedings = inproceedingsRepository.findAll();
+        List<Incollection> inproceedings = incollection.findAll();
         return inproceedings;
     }
 
     public void addIncollection(Incollection inproceedings) {
-        inproceedingsRepository.save(inproceedings);
+        incollection.save(inproceedings);
     }
 
     public void deleteIncollection(Long id) {
-        inproceedingsRepository.delete(inproceedingsRepository.findOne(id));
+        incollection.delete(incollection.findOne(id));
     }
 
     public Incollection getIncollection(Long id) {
-        return inproceedingsRepository.findOne(id);
+        return incollection.findOne(id);
     }
     
-    /*
-    private String toBibtex(Inproceedings inproceedings) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Inproceedings {";
+    private String toBibtex(Incollection incollection) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Incollection {";
         String tabs;
-        Class<? extends Object> obj = inproceedings.getClass();
+        Class<? extends Object> obj = incollection.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            boolean ehto = (field.get(inproceedings) != null && !field.get(inproceedings).toString().isEmpty());
+            if(field.getName().equals("tags")) continue;
+            boolean ehto = (field.get(incollection) != null && !field.get(incollection).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
-                result += inproceedings.getCitation() + "\n";
+                result += incollection.getCitation() + "\n";
                 continue;
             }
             if(ehto) {
@@ -54,7 +54,7 @@ public class IncollectionService {
                 result += String.format("%s%s=\t\t\"%s\",\n",
                 field.getName(),
                 tabs,
-                field.get(inproceedings));
+                field.get(incollection));
             }
         }
         int ind = result.lastIndexOf(",");
@@ -64,7 +64,7 @@ public class IncollectionService {
     }
     
     public String getBibtex(Long id) {
-        Inproceedings inproceedings = inproceedingsRepository.findOne(id);
+        Incollection inproceedings = incollection.findOne(id);
         String result = "";
         try {
         result = toBibtex(inproceedings);
@@ -73,13 +73,13 @@ public class IncollectionService {
         }
             return result;
         }
-    */
+    
     
     public List<Incollection> search(String name) {
         List<Incollection> result = new ArrayList<>();
-        List<Incollection> byAuthor = inproceedingsRepository.findByAuthorContaining(name);
-        List<Incollection> byTitle = inproceedingsRepository.findByTitleContaining(name);
-        List<Incollection> byBooktitle = inproceedingsRepository.findByBooktitleContaining(name);
+        List<Incollection> byAuthor = incollection.findByAuthorContaining(name);
+        List<Incollection> byTitle = incollection.findByTitleContaining(name);
+        List<Incollection> byBooktitle = incollection.findByBooktitleContaining(name);
         result.addAll(byAuthor);
         result.addAll(byTitle);
         result.addAll(byBooktitle);

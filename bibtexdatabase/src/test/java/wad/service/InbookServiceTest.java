@@ -120,19 +120,17 @@ public class InbookServiceTest {
         assertTrue(boobs.isEmpty());
     }
     
-    /*
     @Test
     public void testGetBibtex() {
         repository.save(m1);
         String bibtex = service.getBibtex(m1.getId());
-        assertTrue(bibtex.contains("@Book"));
+        assertTrue(bibtex.contains("@Inbook"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));
         assertTrue(bibtex.contains(","));
         assertTrue(bibtex.contains("author1"));
     }
-    */
-    /*
+    
     @Test
     public void testGetNoBibtex() {
         String bibtex = "";
@@ -143,6 +141,5 @@ public class InbookServiceTest {
         }
         assertTrue(bibtex.isEmpty());
     }
-    */
     
 }

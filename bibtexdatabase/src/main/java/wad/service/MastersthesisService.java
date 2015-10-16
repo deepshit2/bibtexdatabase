@@ -38,6 +38,7 @@ public class MastersthesisService {
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
+            if(field.getName().equals("tags")) continue;
             boolean ehto = (field.get(mastersthesis) != null && !field.get(mastersthesis).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += mastersthesis.getCitation() + "\n";

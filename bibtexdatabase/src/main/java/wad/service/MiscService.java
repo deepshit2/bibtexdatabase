@@ -1,11 +1,11 @@
 
 package wad.service;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Booklet;
 import wad.domain.Misc;
 import wad.repository.MiscRepository;
 
@@ -32,19 +32,19 @@ public class MiscService {
         return repo.findOne(id);
     }
     
-    /*
-    private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Book {";
+    private String toBibtex(Misc misc) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Misc {";
         String tabs;
-        Class<? extends Object> obj = book.getClass();
+        Class<? extends Object> obj = misc.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
-            if (ehto && field.getName().equals("citation")) {
-                result += book.getCitation() + "\n";
-                continue;
-            }
+            if(field.getName().equals("tags")) continue;
+            boolean ehto = (field.get(misc) != null && !field.get(misc).toString().isEmpty());
+//            if (ehto && field.getName().equals("citation")) {
+//                result += misc.getCitation() + "\n";
+//                continue;
+//            }
             if(ehto) {
                 if (field.getName().length()<8)
                     tabs="\t\t\t";
@@ -53,7 +53,7 @@ public class MiscService {
                 result += String.format("%s%s=\t\t\"%s\",\n",
                 field.getName(),
                 tabs,
-                field.get(book));
+                field.get(misc));
             }
         }
         int ind = result.lastIndexOf(",");
@@ -61,11 +61,9 @@ public class MiscService {
         result += "}";
         return result;
     }
-    */
     
-    /*
     public String getBibtex(Long id) {
-        Booklet book = repo.findOne(id);
+        Misc book = repo.findOne(id);
         String result = "";
         try {
         result = toBibtex(book);
@@ -74,7 +72,7 @@ public class MiscService {
         }
             return result;
     }
-    */
+    
     
     public List<Misc> search(String name) {
         List<Misc> result = new ArrayList<>();

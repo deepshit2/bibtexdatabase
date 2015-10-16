@@ -1,6 +1,7 @@
 
 package wad.service;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,20 +31,19 @@ public class BookletService {
     public Booklet getBooklet(Long id) {
         return repo.findOne(id);
     }
-    
-    /*
-    private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Book {";
+   
+    private String toBibtex(Booklet book) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Booklet {";
         String tabs;
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
-            if (ehto && field.getName().equals("citation")) {
-                result += book.getCitation() + "\n";
-                continue;
-            }
+//            if (ehto && field.getName().equals("citation")) {
+//                result += book.getCitation() + "\n";
+//                continue;
+//            }
             if(ehto) {
                 if (field.getName().length()<8)
                     tabs="\t\t\t";
@@ -60,9 +60,7 @@ public class BookletService {
         result += "}";
         return result;
     }
-    */
-    
-    /*
+        
     public String getBibtex(Long id) {
         Booklet book = repo.findOne(id);
         String result = "";
@@ -73,7 +71,6 @@ public class BookletService {
         }
             return result;
     }
-    */
     
     public List<Booklet> search(String name) {
         List<Booklet> result = new ArrayList<>();

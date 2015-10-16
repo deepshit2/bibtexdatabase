@@ -33,15 +33,15 @@ public class ProceedingsService {
     public Proceedings getProceedings(Long id) {
         return inproceedingsRepository.findOne(id);
     }
-    
-    /*
-    private String toBibtex(Inproceedings inproceedings) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Inproceedings {";
+   
+    private String toBibtex(Proceedings inproceedings) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Proceedings {";
         String tabs;
         Class<? extends Object> obj = inproceedings.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
+            if(field.getName().equals("tags")) continue;
             boolean ehto = (field.get(inproceedings) != null && !field.get(inproceedings).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += inproceedings.getCitation() + "\n";
@@ -65,7 +65,7 @@ public class ProceedingsService {
     }
     
     public String getBibtex(Long id) {
-        Inproceedings inproceedings = inproceedingsRepository.findOne(id);
+        Proceedings inproceedings = inproceedingsRepository.findOne(id);
         String result = "";
         try {
         result = toBibtex(inproceedings);
@@ -74,7 +74,7 @@ public class ProceedingsService {
         }
             return result;
         }
-    */
+   
     public List<Proceedings> search(String name) {
         List<Proceedings> result = new ArrayList<>();
         List<Proceedings> byTitle = inproceedingsRepository.findByTitleContaining(name);

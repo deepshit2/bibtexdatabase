@@ -129,12 +129,12 @@ public class IncollectionServiceTest {
         List<Incollection> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
-    /*
+    
     @Test
     public void testGetBibtex() {
         repository.save(m1);
         String bibtex = service.getBibtex(m1.getId());
-        assertTrue(bibtex.contains("@Inproceedings"));
+        assertTrue(bibtex.contains("@Incollection"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));
         assertTrue(bibtex.contains(","));
@@ -151,6 +151,6 @@ public class IncollectionServiceTest {
         }
         assertTrue(bibtex.isEmpty());
     }
-    */
+    
     
 }

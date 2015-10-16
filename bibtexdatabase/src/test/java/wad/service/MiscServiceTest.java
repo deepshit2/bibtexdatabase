@@ -115,12 +115,12 @@ public class MiscServiceTest {
         List<Misc> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
-    /*
+    
     @Test
     public void testGetBibtex() {
         repository.save(m1);
         String bibtex = service.getBibtex(m1.getId());
-        assertTrue(bibtex.contains("@Book"));
+        assertTrue(bibtex.contains("@Misc"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));
         assertTrue(bibtex.contains(","));
@@ -137,5 +137,5 @@ public class MiscServiceTest {
         }
         assertTrue(bibtex.isEmpty());
     }
-    */
+    
 }

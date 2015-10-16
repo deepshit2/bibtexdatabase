@@ -31,17 +31,18 @@ public class PhdthesisService {
     public Phdthesis getPhdthesis(Long id) {
         return mastersthesisRepository.findOne(id);
     }
-    /*
-    private String toBibtex(Mastersthesis mastersthesis) throws IllegalArgumentException, IllegalAccessException{
-        String result = "@Mastersthesis {";
+    
+    private String toBibtex(Phdthesis thesis) throws IllegalArgumentException, IllegalAccessException{
+        String result = "@Phdthesis {";
         String tabs;
-        Class<? extends Object> obj = mastersthesis.getClass();
+        Class<? extends Object> obj = thesis.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            boolean ehto = (field.get(mastersthesis) != null && !field.get(mastersthesis).toString().isEmpty());
+            if(field.getName().equals("tags")) continue;
+            boolean ehto = (field.get(thesis) != null && !field.get(thesis).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
-                result += mastersthesis.getCitation() + "\n";
+                result += thesis.getCitation() + "\n";
                 continue;
             }
             if(ehto) {
@@ -52,7 +53,7 @@ public class PhdthesisService {
                 result += String.format("%s%s=\t\t\"%s\",\n",
                 field.getName(),
                 tabs,
-                field.get(mastersthesis));
+                field.get(thesis));
             }
         }
         int ind = result.lastIndexOf(",");
@@ -62,7 +63,7 @@ public class PhdthesisService {
     }
     
     public String getBibtex(Long id) {
-        Mastersthesis mastersthesis = mastersthesisRepository.findOne(id);
+        Phdthesis mastersthesis = mastersthesisRepository.findOne(id);
         String result = "";
         try {
         result = toBibtex(mastersthesis);
@@ -71,7 +72,7 @@ public class PhdthesisService {
         }
             return result;
         }
-    */
+    
     public List<Phdthesis> search(String name) {
         List<Phdthesis> result = new ArrayList<>();
         List<Phdthesis> byAuthor = mastersthesisRepository.findByAuthorContaining(name);
