@@ -7,26 +7,10 @@
     </head>
     <body>
         <div class="container">
+            
             <!--Navigation-->
-            <nav>
-                <ul class="nav nav-tabs">
-                    <li role="presentation" ><a href="#" th:href="@{/}">Home</a></li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true">
-                            Add bibtex <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li role="presentation" ><a href="#" th:href="@{/articles/new}">Add new article</a></li>
-                            <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>                          
-                            <li role="presentation" ><a href="#" th:href="@{/booklets/new}">Add new booklet</a></li>
-                            <li role="presentation" ><a href="#" th:href="@{/inbooks/new}">Add new inbook</a></li>
-                            <li role="presentation" ><a href="#" th:href="@{/inproceedings/new}">Add new inproceedings</a></li>
-                            <li role="presentation" ><a href="#" th:href="@{/mastersthesises/new}">Add new mastersthesis</a></li>
-                            <li role="presentation" ><a href="#" th:href="@{/techreports/new}">Add new techreport</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <div th:replace="fragments/navbar :: navbar"></div>
+            
             <h1 id="title" th:text="${article.title}">Title</h1>
             <div class="formLayout">
                 <label for="citation">Citation</label>
