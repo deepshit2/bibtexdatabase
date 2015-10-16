@@ -5299,3 +5299,504 @@ java.lang.IllegalStateException: Tomcat connector in failed state
 2015-10-16 22:31:01.101  INFO 10009 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Fri Oct 16 21:20:21 EEST 2015]; root of context hierarchy
 2015-10-16 22:31:01.103  INFO 10009 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2015-10-16 22:31:01.115  INFO 10009 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:05:38.759  INFO 18843 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:05:38 EEST 2015]; root of context hierarchy
+2015-10-17 00:05:39.401  INFO 18843 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-17 00:05:40.023  INFO 18843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93a2ccdc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:05:40.043  INFO 18843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:05:40.048  INFO 18843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:05:40.052  INFO 18843 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:05:40.416  INFO 18843 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-17 00:05:41.119  INFO 18843 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-17 00:05:41.124  INFO 18843 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-17 00:05:41.124  INFO 18843 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-17 00:05:41.590  INFO 18843 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:05:42.494 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-17 00:05:42.495 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:05:42.495 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-17 00:05:42.495 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:05:42.495 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:05:42.496 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-17 00:05:42.497 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:05:42.497 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-17 00:05:42.497 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:05:42.497 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-17 00:05:42.498 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:05:42.498 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-17 00:05:42.498 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:05:42.498 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-17 00:05:42.499 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-17 00:05:42.500 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-17 00:05:42.501 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-17 00:05:42.502 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-17 00:05:42.503 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:05:42.504 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-17 00:05:42.504 ERROR 18843 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:05:43.737  INFO 18843 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-17 00:05:43.785  INFO 18843 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-17 00:05:46.821 ERROR 18843 --- [http-nio-8080-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-3] Exception processing template "newarticle": Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+2015-10-17 00:05:46.831 ERROR 18843 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-17 00:06:28.136 ERROR 18843 --- [http-nio-8080-exec-5] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-5] Exception processing template "newarticle": Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+2015-10-17 00:06:28.138 ERROR 18843 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-17 00:09:04.507  INFO 18843 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:05:38 EEST 2015]; root of context hierarchy
+2015-10-17 00:09:04.509  INFO 18843 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-17 00:09:04.526  INFO 18843 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:09:08.849  INFO 18945 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:09:08 EEST 2015]; root of context hierarchy
+2015-10-17 00:09:09.517  INFO 18945 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-17 00:09:10.191  INFO 18945 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93a2ccdc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:09:10.214  INFO 18945 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:09:10.220  INFO 18945 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:09:10.223  INFO 18945 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:09:10.605  INFO 18945 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-17 00:09:11.307  INFO 18945 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-17 00:09:11.311  INFO 18945 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-17 00:09:11.311  INFO 18945 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-17 00:09:11.802  INFO 18945 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:09:12.735 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-17 00:09:12.736 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:09:12.736 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-17 00:09:12.736 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-17 00:09:12.737 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:09:12.738 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-17 00:09:12.738 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:09:12.738 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-17 00:09:12.738 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:09:12.738 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-17 00:09:12.739 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:09:12.739 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-17 00:09:12.739 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-17 00:09:12.740 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-17 00:09:12.741 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:09:12.742 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:09:12.743 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-17 00:09:12.744 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:09:12.744 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-17 00:09:12.744 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:09:12.744 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-17 00:09:12.744 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:09:12.745 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-17 00:09:12.745 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:09:12.745 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-17 00:09:12.745 ERROR 18945 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:09:13.938  INFO 18945 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-17 00:09:13.977  INFO 18945 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-17 00:10:08.420  INFO 18945 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:09:08 EEST 2015]; root of context hierarchy
+2015-10-17 00:10:08.421  INFO 18945 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-17 00:10:08.430  INFO 18945 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:10:12.158  INFO 19019 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:10:12 EEST 2015]; root of context hierarchy
+2015-10-17 00:10:12.797  INFO 19019 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-17 00:10:13.330  INFO 19019 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93a2ccdc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:10:13.348  INFO 19019 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:10:13.353  INFO 19019 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:10:13.356  INFO 19019 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:10:13.661  INFO 19019 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-17 00:10:14.301  INFO 19019 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-17 00:10:14.305  INFO 19019 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-17 00:10:14.305  INFO 19019 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-17 00:10:14.718  INFO 19019 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:10:15.581 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-17 00:10:15.582 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:10:15.582 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-17 00:10:15.583 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:10:15.583 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-17 00:10:15.583 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:10:15.583 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-17 00:10:15.584 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:10:15.584 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-17 00:10:15.584 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:10:15.584 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-17 00:10:15.584 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:10:15.585 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-17 00:10:15.585 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:10:15.585 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-17 00:10:15.585 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:10:15.586 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-17 00:10:15.586 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:10:15.586 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-17 00:10:15.586 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:10:15.586 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-17 00:10:15.587 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:10:15.587 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-17 00:10:15.587 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:10:15.587 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-17 00:10:15.587 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-17 00:10:15.588 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-17 00:10:15.589 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:10:15.590 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-17 00:10:15.590 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:10:15.590 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-17 00:10:15.590 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:10:15.590 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-17 00:10:15.591 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:10:15.592 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-17 00:10:15.592 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:10:15.592 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-17 00:10:15.592 ERROR 19019 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:10:16.815  INFO 19019 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-17 00:10:16.852  INFO 19019 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-17 00:10:36.055 ERROR 19019 --- [http-nio-8080-exec-10] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-10] Exception processing template "newarticle": Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+2015-10-17 00:10:36.061 ERROR 19019 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newarticle", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-17 00:11:21.593  INFO 19019 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:10:12 EEST 2015]; root of context hierarchy
+2015-10-17 00:11:21.596  INFO 19019 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-17 00:11:21.609  INFO 19019 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:11:25.397  INFO 19087 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:11:25 EEST 2015]; root of context hierarchy
+2015-10-17 00:11:26.049  INFO 19087 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-17 00:11:26.605  INFO 19087 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93a2ccdc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:11:26.624  INFO 19087 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:11:26.630  INFO 19087 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:11:26.633  INFO 19087 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:11:26.955  INFO 19087 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-17 00:11:27.604  INFO 19087 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-17 00:11:27.608  INFO 19087 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-17 00:11:27.608  INFO 19087 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-17 00:11:28.035  INFO 19087 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:11:28.920 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-17 00:11:28.921 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:11:28.921 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-17 00:11:28.921 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:11:28.922 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-17 00:11:28.922 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:11:28.922 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-17 00:11:28.922 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:11:28.923 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-17 00:11:28.923 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:11:28.923 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-17 00:11:28.923 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:11:28.924 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-17 00:11:28.924 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:11:28.924 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-17 00:11:28.924 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-17 00:11:28.925 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-17 00:11:28.926 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:11:28.927 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-17 00:11:28.928 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:11:28.929 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-17 00:11:28.930 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:11:28.930 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-17 00:11:28.930 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:11:28.930 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-17 00:11:28.930 ERROR 19087 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:11:30.274  INFO 19087 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-17 00:11:30.316  INFO 19087 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-17 00:14:54.671  INFO 19087 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:11:25 EEST 2015]; root of context hierarchy
+2015-10-17 00:14:54.676  INFO 19087 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-17 00:14:54.688  INFO 19087 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:14:58.254  INFO 19143 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:14:58 EEST 2015]; root of context hierarchy
+2015-10-17 00:14:58.964  INFO 19143 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-17 00:14:59.547  INFO 19143 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93a2ccdc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:14:59.567  INFO 19143 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:14:59.574  INFO 19143 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:14:59.580  INFO 19143 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-17 00:14:59.964  INFO 19143 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-17 00:15:00.654  INFO 19143 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-17 00:15:00.658  INFO 19143 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-17 00:15:00.658  INFO 19143 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-17 00:15:01.090  INFO 19143 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-17 00:15:01.953 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-17 00:15:01.954 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:15:01.954 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-17 00:15:01.954 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-17 00:15:01.954 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:15:01.955 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-17 00:15:01.956 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-17 00:15:01.956 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-17 00:15:01.956 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:15:01.956 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-17 00:15:01.957 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-17 00:15:01.957 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-17 00:15:01.957 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:15:01.957 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-17 00:15:01.957 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:15:01.958 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-17 00:15:01.959 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-17 00:15:01.960 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:15:01.961 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-17 00:15:01.961 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-17 00:15:01.961 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-17 00:15:01.961 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-17 00:15:01.962 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-17 00:15:01.963 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:15:01.963 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-17 00:15:01.963 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-17 00:15:03.120  INFO 19143 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-17 00:15:03.163  INFO 19143 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
