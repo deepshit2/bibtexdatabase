@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.service.ArticleService;
 import wad.service.BookService;
+import wad.service.BookletService;
+import wad.service.InbookService;
 import wad.service.InproceedingsService;
 import wad.service.MastersthesisService;
 import wad.service.TechreportService;
@@ -19,6 +21,12 @@ public class DefaultController {
 
     @Autowired
     ArticleService articleService;
+    
+    @Autowired
+    BookletService bookletService;
+    
+    @Autowired
+    InbookService inbookService;
 
     @Autowired
     InproceedingsService inproceedingsService;
@@ -28,15 +36,18 @@ public class DefaultController {
 
     @Autowired
     TechreportService techreportService;
-
+    
+    
     @RequestMapping(value = "*", method = RequestMethod.GET)
     public String listAll(Model model) {
         model.addAttribute("articles", articleService.list());
         model.addAttribute("books", bookService.list());
+        model.addAttribute("booklets", bookletService.list());
+        model.addAttribute("inbooks", inbookService.list());
         model.addAttribute("inproceedings", inproceedingsService.list());
         model.addAttribute("mastersthesises", mastersthesisService.list());
         model.addAttribute("techreports", techreportService.list());
         return "index";
     }
-
+    
 }
