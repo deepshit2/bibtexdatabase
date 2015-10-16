@@ -3378,3 +3378,6 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template "books
 2015-10-16 20:14:04.044 ERROR 8576 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
 2015-10-16 20:14:05.163  INFO 8576 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2015-10-16 20:14:05.206  INFO 8576 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-16 20:18:03.656  INFO 8576 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Fri Oct 16 20:14:00 EEST 2015]; root of context hierarchy
+2015-10-16 20:18:03.662  INFO 8576 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-16 20:18:03.672  INFO 8576 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

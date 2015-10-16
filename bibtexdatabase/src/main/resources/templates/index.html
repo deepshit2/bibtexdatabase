@@ -22,8 +22,10 @@
                             Add bibtex <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>
                             <li role="presentation" ><a href="#" th:href="@{/articles/new}">Add new article</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/books/new}">Add new book</a></li>                          
+                            <li role="presentation" ><a href="#" th:href="@{/booklets/new}">Add new booklet</a></li>
+                            <li role="presentation" ><a href="#" th:href="@{/inbooks/new}">Add new inbook</a></li>
                             <li role="presentation" ><a href="#" th:href="@{/inproceedings/new}">Add new inproceedings</a></li>
                             <li role="presentation" ><a href="#" th:href="@{/mastersthesises/new}">Add new mastersthesis</a></li>
                             <li role="presentation" ><a href="#" th:href="@{/techreports/new}">Add new techreport</a></li>
@@ -45,6 +47,12 @@
                 <li class="list-group-item" th:each="book : ${books}">
                     <a href="#" th:href="@{/books/{id}/bibtex(id=${book.id})}" th:text="${book.title} + ', ' + ${book.author}"></a>
                 </li>
+                <li class="list-group-item" th:each="booklet : ${booklets}">
+                    <a href="#" th:href="@{/booklets/{id}/bibtex(id=${booklet.id})}" th:text="${booklet.title} + ', ' + ${booklet.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="inbook : ${inbooks}">
+                    <a href="#" th:href="@{/inbooks/{id}/bibtex(id=${inbook.id})}" th:text="${inbook.title} + ', ' + ${inbook.author}"></a>
+                </li>               
                 <li class="list-group-item" th:each="techreport : ${techreports}">
                     <a href="#" th:href="@{/techreports/{id}/bibtex(id=${techreport.id})}" th:text="${techreport.title} + ', ' + ${techreport.author}"></a>
                 </li>
