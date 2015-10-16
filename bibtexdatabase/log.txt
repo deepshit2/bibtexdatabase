@@ -5800,3 +5800,6 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template "newar
 2015-10-17 00:15:01.963 ERROR 19143 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
 2015-10-17 00:15:03.120  INFO 19143 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2015-10-17 00:15:03.163  INFO 19143 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-17 00:24:56.742  INFO 19143 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Sat Oct 17 00:14:58 EEST 2015]; root of context hierarchy
+2015-10-17 00:24:56.744  INFO 19143 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-17 00:24:56.757  INFO 19143 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
