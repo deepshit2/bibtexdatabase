@@ -1,6 +1,8 @@
 package wad.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
@@ -30,7 +32,7 @@ public class Article extends AbstractPersistable<Long> {
     
     @ManyToMany(fetch=FetchType.EAGER)
     private List<Tag> tags;
-
+    
     public List<Tag> getTags() {
         return tags;
     }

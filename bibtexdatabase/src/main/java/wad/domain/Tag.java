@@ -4,6 +4,7 @@ package wad.domain;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -15,33 +16,33 @@ public class Tag extends AbstractPersistable<Long> {
     @Column(unique=true)
     private String name;
     
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Article> articles;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Book> books;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Booklet> booklets;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Conference> conferences;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Inbook> inbooks;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Incollection> incollections;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Inproceedings> inproceedings;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Proceedings> proceedings;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Manual> manuals;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Mastersthesis> mastersthesises;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Misc> miscs;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Phdthesis> phdthesises;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Techreport> techreports;
-    @ManyToMany(mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags", fetch=FetchType.EAGER)
     private List<Unpublished> unpublisheds;
     
     public List<Article> getArticles() {
