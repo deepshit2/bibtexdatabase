@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wad.service.ArticleService;
 import wad.service.BookService;
 import wad.service.BookletService;
+import wad.service.ConferenceService;
 import wad.service.InbookService;
 import wad.service.IncollectionService;
 import wad.service.InproceedingsService;
@@ -30,6 +31,9 @@ public class DefaultController {
     
     @Autowired
     BookletService bookletService;
+    
+    @Autowired
+    ConferenceService conferenceService;
     
     @Autowired
     InbookService inbookService;
@@ -66,6 +70,7 @@ public class DefaultController {
         model.addAttribute("articles", articleService.list());
         model.addAttribute("books", bookService.list());
         model.addAttribute("booklets", bookletService.list());
+        model.addAttribute("conferences", conferenceService.list());
         model.addAttribute("inbooks", inbookService.list());
         model.addAttribute("incollections", incollectionService.list());
         model.addAttribute("inproceedings", inproceedingsService.list());
