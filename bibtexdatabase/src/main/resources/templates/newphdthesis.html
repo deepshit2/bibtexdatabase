@@ -1,16 +1,76 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>bibtexdatabase</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container">
+            
+            <!--Navigation-->
+            <div th:replace="fragments/navbar :: navbar"></div>
+            
+            <div th:if="${message}">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong th:text="${message}"></strong> <a href="#" th:href="@{/phdthesises/{id}(id=${id})}">View phdthesis</a>
+                    <a href="#" th:href="@{/phdthesises/{id}/bibtex(id=${id})}">BibTeX</a>
+                </div>
+            </div>
+            <!--Content-->
+            <h1>Add new phdthesis</h1>
+            <form role="form" method="POST" th:action="@{/phdthesises}">
+                <div class="form-group">
+                    <label for="citation">Citation<font color="red"><sup>*</sup></font></label>
+                    <input id="citation" class="form-control" required="true" type="text" name="citation"/>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author<font color="red"><sup>*</sup></font></label>
+                    <input id="author" class="form-control" required="true" type="text" name="author"/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title<font color="red"><sup>*</sup></font></label>
+                    <input id="title" class="form-control" required="true" type="text" name="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="school">School<font color="red"><sup>*</sup></font></label>
+                    <input id="school" class="form-control" required="true" type="text" name="school"/>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year<font color="red"><sup>*</sup></font></label>
+                    <input id="year" class="form-control" required="true" type="text" name="year"/>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input id="type" class="form-control" type="text" name="type"/>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input id="address" class="form-control" type="text" name="address"/>
+                </div>
+                <div class="form-group">
+                    <label for="month">Month</label>
+                    <input id="month" class="form-control" type="text" name="month"/>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note</label>
+                    <input id="note" class="form-control" type="text" name="note"/>
+                </div>
+                <div class="form-group">
+                    <label for="key">Key</label>
+                    <input id="key" class="form-control" type="text" name="key"/>
+                </div>
+                <button type="submit" name="submit" id="submit" value="Add new phdthesis" class="btn btn-default">Add new phdthesis</button>
+            </form>
+        </div>
+        <!--JavaScript imports -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
 </html>
