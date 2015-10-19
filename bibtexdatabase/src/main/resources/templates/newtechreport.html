@@ -20,13 +20,14 @@
                 <div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong th:text="${message}"></strong> <a href="#" th:href="@{/techreports/{id}(id=${id})}">View techreport</a>
+                    <a href="#" th:href="@{/techreports/{id}/bibtex(id=${id})}">BibTeX</a>
                 </div>
             </div>
             <!--Content-->
             <h1>Add new techreport</h1>
             <form role="form" method="POST" th:action="@{/techreports}">
                 <div class="form-group">
-                    <label for="citation">Citationr<font color="red"><sup>*</sup></font></label>
+                    <label for="citation">Citation<font color="red"><sup>*</sup></font></label>
                     <input id="citation" class="form-control" required="true" type="text" name="citation"/>
                 </div>
                 <div class="form-group">
