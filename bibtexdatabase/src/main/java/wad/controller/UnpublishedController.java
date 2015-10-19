@@ -42,7 +42,7 @@ public class UnpublishedController {
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newUnpublished() {
-        return "newUnpublished";
+        return "newunpublished";
     }
 
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)

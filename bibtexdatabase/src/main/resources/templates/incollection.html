@@ -1,16 +1,92 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>bibtexdatabase</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container">
+            
+            <!--Navigation-->
+            <div th:replace="fragments/navbar :: navbar"></div>
+            
+            <h1 id="title" th:text="${incollection.title}">Title</h1>
+            <div class="form-group">
+                <label for="citation">Citation</label>
+                <p id="citation" th:text="${incollection.citation}">citation</p>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <p id="author" th:text="${incollection.author}">author</p>
+            </div>
+            <div class="form-group">
+                <label for="booktitle">Book title</label>
+                <p id="booktitle" th:text="${incollection.booktitle}">booktitle</p>
+            </div>
+            <div class="form-group">
+                <label for="publisher">Publisher</label>
+                <p id="publisher" th:text="${incollection.publisher}">publisher</p>
+            </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <p id="year" th:text="${incollection.year}">year</p>
+            </div>
+            <div class="form-group">
+                <label for="editor">Editor</label>
+                <p id="editor" th:text="${incollection.editor}">editor</p>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <p id="type" th:text="${incollection.type}">type</p>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <p id="address" th:text="${incollection.address}">address</p>
+            </div>     
+            <div class="form-group">
+                <label for="volume">Volume</label>
+                <p id="volume" th:text="${incollection.volume}">volume</p>
+            </div>
+            <div class="form-group">
+                <label for="series">Series</label>
+                <p id="series" th:text="${incollection.series}">series</p>
+            </div>         
+            <div class="form-group">
+                <label for="edition">Edition</label>
+                <p id="edition" th:text="${incollection.edition}">edition</p>
+            </div>         
+            <div class="form-group">
+                <label for="pages">Pages</label>
+                <p id="pages" th:text="${incollection.pages}">pages</p>
+            </div>
+            <div class="form-group">
+                <label for="chapter">Chapter</label>
+                <p id="chapter" th:text="${incollection.chapter}">chapter</p>
+            </div>      
+            <div class="form-group">
+                <label for="month">Month</label>
+                <p id="month" th:text="${incollection.month}">month</p>
+            </div>
+            <div class="form-group">
+                <label for="note">Note</label>
+                <p id="note" th:text="${incollection.note}">note</p>
+            </div>
+            <div class="form-group">
+                <label for="key">Key</label>
+                <p id="key" th:text="${incollection.key}">key</p>
+            </div>
+        </div>
+        <!--JavaScript imports -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <div th:if="${message}">
+            <h3 th:text="${message}"></h3>
+            <a href="#" th:href="@{/incollections/{id}/bibtex(id=${incollection.id})}">BibTeX</a>
+        </div>
     </body>
 </html>
