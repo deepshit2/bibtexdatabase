@@ -39,22 +39,5 @@ scenario "käyttäjä voi lisätä bookletin kunnollisilla syötteillä", {
     }
 }
 
-scenario "käyttäjä ei voi lisätä booklettia epäkunnollisilla syötteillä", {
-    given 'käyttäjä on lomakesivulla', {
-        driver = new HtmlUnitDriver();
-        driver.get("https://bibtexdatabase.herokuapp.com/");
-        element = driver.findElement(By.linkText("Add new booklet"));       
-        element.click();
-    }
 
-    when 'käyttäjä on syöttänyt epäkunnolliset syötteet', {
-        element = driver.findElement(By.name("submit"));
-        element.submit();
-    }
-
-    then 'uutta booklettia ei tallenneta', {
-        driver.getPageSource().contains("New booklet created").shouldBe false
-    }
-
-}
 
