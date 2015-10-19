@@ -34,6 +34,9 @@ public class Article extends AbstractPersistable<Long> {
     private List<Tag> tags;
     
     public List<Tag> getTags() {
+        if(tags == null) {
+            tags = new ArrayList<>();
+        }
         return tags;
     }
 

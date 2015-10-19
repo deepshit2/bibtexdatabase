@@ -1,5 +1,6 @@
 package wad.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,6 +39,9 @@ public class Incollection extends AbstractPersistable<Long> {
     private List<Tag> tags;
 
     public List<Tag> getTags() {
+        if(tags == null) {
+            tags = new ArrayList<>();
+        }
         return tags;
     }
 
