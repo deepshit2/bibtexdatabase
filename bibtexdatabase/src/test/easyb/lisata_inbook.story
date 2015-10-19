@@ -25,7 +25,7 @@ scenario "käyttäjä voi lisätä inbookin kunnollisilla syötteillä", {
         element = driver.findElement(By.name("year"));
         element.sendKeys("1999");
         element = driver.findElement(By.name("address"));
-        element.sendKeys("osoite 100");
+        element.sendKeys("osoite 10");
         element = driver.findElement(By.name("month"));
         element.sendKeys("12");
         element = driver.findElement(By.name("type"));
