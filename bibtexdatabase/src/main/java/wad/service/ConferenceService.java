@@ -12,7 +12,7 @@ import wad.repository.ConferenceRepository;
 
 
 @Service
-public class ConferenceService {
+public class ConferenceService implements ServiceInterface<Conference> {
 
     @Autowired
     private ConferenceRepository inproceedingsRepository;
@@ -74,6 +74,16 @@ public class ConferenceService {
             System.err.println(ex.getMessage());
         }
             return result;
+    }
+    
+    public String getBibtex(Conference conference) {
+        String result = "";
+        try {
+            result = toBibtex(conference);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
     }
     
     public List<Conference> search(String name) {

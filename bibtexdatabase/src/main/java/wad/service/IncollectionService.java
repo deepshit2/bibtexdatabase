@@ -11,7 +11,7 @@ import wad.domain.Inproceedings;
 import wad.repository.IncollectionRepository;
 
 @Service
-public class IncollectionService {
+public class IncollectionService implements ServiceInterface<Incollection>{
 
     @Autowired
     private IncollectionRepository incollection;
@@ -73,6 +73,16 @@ public class IncollectionService {
         }
             return result;
         }
+    
+    public String getBibtex(Incollection incollection) {
+        String result = "";
+        try {
+            result = toBibtex(incollection);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
     
     
     public List<Incollection> search(String name) {

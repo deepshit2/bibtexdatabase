@@ -10,7 +10,7 @@ import wad.domain.Inbook;
 import wad.repository.InbookRepository;
 
 @Service
-public class InbookService {
+public class InbookService implements ServiceInterface<Inbook>{
     
     @Autowired
     InbookRepository repo;
@@ -67,6 +67,16 @@ public class InbookService {
         String result = "";
         try {
         result = toBibtex(item);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+            return result;
+    }
+    
+    public String getBibtex(Inbook inbook) {
+        String result = "";
+        try {
+        result = toBibtex(inbook);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }

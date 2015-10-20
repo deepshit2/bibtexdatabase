@@ -1,6 +1,5 @@
 package wad.service;
 
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import wad.domain.Article;
 import wad.repository.ArticleRepository;
 
 @Service
-public class ArticleService {
+public class ArticleService implements ServiceInterface<Article>{
 
     @Autowired
     private ArticleRepository articleRepository;
@@ -32,48 +31,60 @@ public class ArticleService {
     public Article getArticle(Long id) {
         return articleRepository.findOne(id);
     }
-    
-    private String toBibtex(Article article) throws IllegalArgumentException, IllegalAccessException{
+
+    private String toBibtex(Article article) throws IllegalArgumentException, IllegalAccessException {
         String result = "@Article {";
         String tabs;
         Class<? extends Object> obj = article.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            if(field.getName().equals("tags")) continue;
+            if (field.getName().equals("tags")) {
+                continue;
+            }
             boolean ehto = (field.get(article) != null && !field.get(article).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += article.getCitation() + "\n";
                 continue;
             }
-            if(ehto) {
-                if (field.getName().length()<8)
-                    tabs="\t\t\t";
-                else
-                    tabs="\t\t";
+            if (ehto) {
+                if (field.getName().length() < 8) {
+                    tabs = "\t\t\t";
+                } else {
+                    tabs = "\t\t";
+                }
                 result += String.format("%s%s=\t\t\"%s\",\n",
-                field.getName(),
-                tabs,
-                field.get(article));
+                        field.getName(),
+                        tabs,
+                        field.get(article));
             }
         }
         int ind = result.lastIndexOf(",");
-        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result = new StringBuilder(result).replace(ind, ind + 1, "").toString();
         result += "}";
         return result;
     }
-    
+
     public String getBibtex(Long id) {
         Article article = articleRepository.findOne(id);
         String result = "";
         try {
-        result = toBibtex(article);
+            result = toBibtex(article);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
-            return result;
-        }
+        return result;
+    }
 
+    public String getBibtex(Article article) {
+        String result = "";
+        try {
+            result = toBibtex(article);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
 
     public List<Article> search(String name) {
         List<Article> result = new ArrayList<>();
@@ -85,4 +96,3 @@ public class ArticleService {
     }
 
 }
-

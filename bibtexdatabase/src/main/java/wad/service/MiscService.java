@@ -10,7 +10,7 @@ import wad.domain.Misc;
 import wad.repository.MiscRepository;
 
 @Service
-public class MiscService {
+public class MiscService implements ServiceInterface<Misc>{
 
     @Autowired
     private MiscRepository repo;
@@ -73,6 +73,15 @@ public class MiscService {
             return result;
     }
     
+    public String getBibtex(Misc misc) {
+        String result = "";
+        try {
+            result = toBibtex(misc);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
     
     public List<Misc> search(String name) {
         List<Misc> result = new ArrayList<>();

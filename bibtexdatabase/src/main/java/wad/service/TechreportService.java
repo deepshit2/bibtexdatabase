@@ -9,7 +9,7 @@ import wad.domain.Techreport;
 import wad.repository.TechreportRepository;
 
 @Service
-public class TechreportService {
+public class TechreportService implements ServiceInterface<Techreport> {
 
     @Autowired
     private TechreportRepository techreportRepository;
@@ -71,6 +71,16 @@ public class TechreportService {
         }
             return result;
         }
+    
+    public String getBibtex(Techreport techreport) {
+        String result = "";
+        try {
+            result = toBibtex(techreport);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
 
     public List<Techreport> search(String name) {
         List<Techreport> result = new ArrayList<>();

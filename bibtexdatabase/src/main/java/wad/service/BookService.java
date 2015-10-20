@@ -1,4 +1,3 @@
-
 package wad.service;
 
 import java.lang.reflect.Field;
@@ -10,7 +9,7 @@ import wad.domain.Book;
 import wad.repository.BookRepository;
 
 @Service
-public class BookService {
+public class BookService implements ServiceInterface<Book> {
 
     @Autowired
     private BookRepository bookRepository;
@@ -31,48 +30,61 @@ public class BookService {
     public Book getBook(Long id) {
         return bookRepository.findOne(id);
     }
-    
-    private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException{
+
+    private String toBibtex(Book book) throws IllegalArgumentException, IllegalAccessException {
         String result = "@Book {";
         String tabs;
         Class<? extends Object> obj = book.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            if(field.getName().equals("tags")) continue;
+            if (field.getName().equals("tags")) {
+                continue;
+            }
             boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += book.getCitation() + "\n";
                 continue;
             }
-            if(ehto) {
-                if (field.getName().length()<8)
-                    tabs="\t\t\t";
-                else
-                    tabs="\t\t";
+            if (ehto) {
+                if (field.getName().length() < 8) {
+                    tabs = "\t\t\t";
+                } else {
+                    tabs = "\t\t";
+                }
                 result += String.format("%s%s=\t\t\"%s\",\n",
-                field.getName(),
-                tabs,
-                field.get(book));
+                        field.getName(),
+                        tabs,
+                        field.get(book));
             }
         }
         int ind = result.lastIndexOf(",");
-        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result = new StringBuilder(result).replace(ind, ind + 1, "").toString();
         result += "}";
         return result;
     }
-    
+
     public String getBibtex(Long id) {
         Book book = bookRepository.findOne(id);
         String result = "";
         try {
-        result = toBibtex(book);
+            result = toBibtex(book);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
-            return result;
+        return result;
+    }
+
+    public String getBibtex(Book book) {
+        String result = "";
+        try {
+            result = toBibtex(book);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
         }
-    
+        return result;
+    }
+
     public List<Book> search(String name) {
         List<Book> result = new ArrayList<>();
         List<Book> byAuthor = bookRepository.findByAuthorContaining(name);
@@ -81,5 +93,5 @@ public class BookService {
         result.addAll(byTitle);
         return result;
     }
-    
+
 }

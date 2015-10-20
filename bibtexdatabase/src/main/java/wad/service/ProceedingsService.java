@@ -12,7 +12,7 @@ import wad.repository.ProceedingsRepository;
 
 
 @Service
-public class ProceedingsService {
+public class ProceedingsService  implements ServiceInterface<Proceedings>{
 
     @Autowired
     private ProceedingsRepository inproceedingsRepository;
@@ -74,6 +74,16 @@ public class ProceedingsService {
         }
             return result;
         }
+    
+    public String getBibtex(Proceedings proceedings) {
+        String result = "";
+        try {
+            result = toBibtex(proceedings);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
    
     public List<Proceedings> search(String name) {
         List<Proceedings> result = new ArrayList<>();

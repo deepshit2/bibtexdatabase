@@ -10,7 +10,7 @@ import wad.domain.Phdthesis;
 import wad.repository.PhdthesisRepository;
 
 @Service
-public class PhdthesisService {
+public class PhdthesisService implements ServiceInterface<Phdthesis>{
 
     @Autowired
     private PhdthesisRepository mastersthesisRepository;
@@ -72,6 +72,16 @@ public class PhdthesisService {
         }
             return result;
         }
+    
+    public String getBibtex(Phdthesis phdthesis) {
+        String result = "";
+        try {
+            result = toBibtex(phdthesis);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
     
     public List<Phdthesis> search(String name) {
         List<Phdthesis> result = new ArrayList<>();

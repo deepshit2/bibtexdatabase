@@ -10,7 +10,7 @@ import wad.domain.Booklet;
 import wad.repository.BookletRepository;
 
 @Service
-public class BookletService {
+public class BookletService implements ServiceInterface<Booklet>{
 
     @Autowired
     private BookletRepository repo;
@@ -70,6 +70,16 @@ public class BookletService {
             System.err.println(ex.getMessage());
         }
             return result;
+    }
+    
+    public String getBibtex(Booklet booklet) {
+        String result = "";
+        try {
+            result = toBibtex(booklet);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
     }
     
     public List<Booklet> search(String name) {

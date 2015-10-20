@@ -11,7 +11,7 @@ import wad.repository.InproceedingsRepository;
 
 
 @Service
-public class InproceedingsService {
+public class InproceedingsService implements ServiceInterface<Inproceedings>{
 
     @Autowired
     private InproceedingsRepository inproceedingsRepository;
@@ -73,6 +73,16 @@ public class InproceedingsService {
         }
             return result;
         }
+    
+    public String getBibtex(Inproceedings inproceedings) {
+        String result = "";
+        try {
+            result = toBibtex(inproceedings);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
     
     public List<Inproceedings> search(String name) {
         List<Inproceedings> result = new ArrayList<>();

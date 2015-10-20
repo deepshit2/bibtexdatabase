@@ -9,7 +9,7 @@ import wad.domain.Mastersthesis;
 import wad.repository.MastersthesisRepository;
 
 @Service
-public class MastersthesisService {
+public class MastersthesisService implements ServiceInterface<Mastersthesis>{
 
     @Autowired
     private MastersthesisRepository mastersthesisRepository;
@@ -71,6 +71,16 @@ public class MastersthesisService {
         }
             return result;
         }
+    
+    public String getBibtex(Mastersthesis mastersthesis) {
+        String result = "";
+        try {
+            result = toBibtex(mastersthesis);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
+    }
 
     public List<Mastersthesis> search(String name) {
         List<Mastersthesis> result = new ArrayList<>();

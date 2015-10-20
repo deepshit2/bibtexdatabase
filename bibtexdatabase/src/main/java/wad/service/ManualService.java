@@ -10,7 +10,7 @@ import wad.domain.Manual;
 import wad.repository.ManualRepository;
 
 @Service
-public class ManualService {
+public class ManualService implements ServiceInterface<Manual>{
     
     @Autowired
     private ManualRepository repo;
@@ -71,6 +71,16 @@ public class ManualService {
             System.err.println(ex.getMessage());
         }
             return result;
+    }
+    
+    public String getBibtex(Manual manual) {
+        String result = "";
+        try {
+            result = toBibtex(manual);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
     }
     
     

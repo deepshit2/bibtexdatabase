@@ -10,7 +10,7 @@ import wad.domain.Unpublished;
 import wad.repository.UnpublishedRepository;
 
 @Service
-public class UnpublishedService {
+public class UnpublishedService implements ServiceInterface<Unpublished>{
 
     @Autowired
     private UnpublishedRepository repo;
@@ -71,6 +71,16 @@ public class UnpublishedService {
             System.err.println(ex.getMessage());
         }
             return result;
+    }
+    
+    public String getBibtex(Unpublished unpublished) {
+        String result = "";
+        try {
+            result = toBibtex(unpublished);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        return result;
     }
     
     public List<Unpublished> search(String name) {
