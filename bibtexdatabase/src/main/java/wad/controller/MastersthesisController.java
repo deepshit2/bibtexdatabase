@@ -21,9 +21,9 @@ public class MastersthesisController {
     @RequestMapping(method = RequestMethod.POST)
     public String createMastersthesis(@ModelAttribute Mastersthesis mastersthesis, RedirectAttributes redirectAttributes) {
         mastersthesisService.addMastersthesis(mastersthesis);
-        redirectAttributes.addFlashAttribute("id", mastersthesis.getId());
+        redirectAttributes.addAttribute("id", mastersthesis.getId());
         redirectAttributes.addFlashAttribute("message", "New mastersthesis created");
-        return "redirect:/mastersthesises/new";
+        return "redirect:/mastersthesises/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class MastersthesisController {
             model.addAttribute("mastersthesises", mastersthesisService.list());
         }
         return "mastersthesises";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("mastersthesis", mastersthesisService.getMastersthesis(id));
-        return "mastersthesis";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

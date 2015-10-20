@@ -26,9 +26,9 @@ public class TechreportController {
     @RequestMapping(method = RequestMethod.POST)
     public String createTechreport(@ModelAttribute Techreport techreport, RedirectAttributes redirectAttributes) {
         techreportService.addTechreport(techreport);
-        redirectAttributes.addFlashAttribute("id", techreport.getId());
+        redirectAttributes.addAttribute("id", techreport.getId());
         redirectAttributes.addFlashAttribute("message", "New techreport created");
-        return "redirect:/techreports/new";
+        return "redirect:/techreports/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -37,12 +37,6 @@ public class TechreportController {
             model.addAttribute("techreports", techreportService.list());
         }
         return "techreports";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("techreport", techreportService.getTechreport(id));
-        return "techreport";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

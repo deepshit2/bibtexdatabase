@@ -16,14 +16,14 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import wad.Application;
-import wad.domain.Book;
-import wad.repository.BookRepository;
+import wad.domain.Inproceedings;
+import wad.repository.InproceedingsRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class BookTests extends FluentTest {
+public class TechreportBibtexTests extends FluentTest {
     @Value("${local.server.port}")
     private int serverPort;
     public WebDriver webDriver = new HtmlUnitDriver();
@@ -34,21 +34,22 @@ public class BookTests extends FluentTest {
     
     @Before
     public void setUp() {
-        goTo("http://localhost:" +serverPort+"/books/new");
-        fill("#citation").with("kirja");
+        goTo("http://localhost:" +serverPort+"/techreports/new");
         fill("#author").with("Santeri");
-        fill("#publisher").with("kustantamo");
-        fill("#year").with("1234");
-        fill("#title").with("Eeppinen väitöskirja");
+        fill("#citation").with("raporttiruttunen");
+        fill("#institution").with("Raportit, turhia vai ei?");
+        fill("#year").with("2015");
+        fill("#title").with("Eeppinen raportti raporteista");
         submit("button[type=submit]");
     }
     
     @Test
-    public void findBook(){
-        goTo("http://localhost:" +serverPort+"/books/1");
-        assertTrue(pageSource().contains("1234"));
+    public void techBibtex() {
+        goTo("http://localhost:" +serverPort+"/techreports/1/bibtex");
+        assertTrue(pageSource().contains("@Techreport"));
+        assertTrue(pageSource().contains("}"));
         assertTrue(pageSource().contains("Santeri"));
+        assertTrue(pageSource().contains(","));
     }
     
-
 }

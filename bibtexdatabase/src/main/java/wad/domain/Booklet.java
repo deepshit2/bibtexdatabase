@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
@@ -17,8 +17,9 @@ public class Booklet extends AbstractPersistable<Long> {
     Required fields: title
     Optional fields: author, howpublished, address, month, year, note, key
     */
-    
-    @NotNull
+    @NotBlank
+    private String citation;
+    @NotBlank
     private String title;
     
     private String author, howpublished, address, note, key;
@@ -100,6 +101,14 @@ public class Booklet extends AbstractPersistable<Long> {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
 
     

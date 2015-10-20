@@ -9,5 +9,8 @@
         <div th:if="${bibtex}">
             <pre th:text="${bibtex}"></pre>
         </div>
+        <div th:if="${message}" style="display: none">
+            <h3 th:text="${message}"></h3>
+        </div>
     </body>
 </html>

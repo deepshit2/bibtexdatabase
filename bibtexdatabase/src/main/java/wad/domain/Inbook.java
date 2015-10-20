@@ -18,7 +18,8 @@ public class Inbook extends AbstractPersistable<Long> {
     Required fields: author/editor, title, chapter/pages, publisher, year
     Optional fields: volume/number, series, type, address, edition, month, note, key
     */
-    
+    @NotBlank
+    private String citation;
     @NotBlank
     private String author;
     @NotBlank
@@ -149,6 +150,14 @@ public class Inbook extends AbstractPersistable<Long> {
 
     public void setMonth(Integer month) {
         this.month = month;
+    }
+
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
     
     

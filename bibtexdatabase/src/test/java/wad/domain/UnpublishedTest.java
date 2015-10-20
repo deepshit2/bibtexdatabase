@@ -11,6 +11,7 @@ public class UnpublishedTest {
         Unpublished book = new Unpublished();
 
         //Setterit
+        book.setCitation("citation");
         book.setAuthor("Author");
         book.setTitle("Title");
         book.setMonth(1);

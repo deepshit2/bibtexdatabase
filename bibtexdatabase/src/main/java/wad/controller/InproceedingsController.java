@@ -21,9 +21,9 @@ public class InproceedingsController {
     @RequestMapping(method = RequestMethod.POST)
     public String createInproceedings(@ModelAttribute Inproceedings inproceedings, RedirectAttributes redirectAttributes) {
         inproceedingsService.addInproceedings(inproceedings);
-        redirectAttributes.addFlashAttribute("id", inproceedings.getId());
+        redirectAttributes.addAttribute("id", inproceedings.getId());
         redirectAttributes.addFlashAttribute("message", "New inproceeding created");
-        return "redirect:/inproceedings/new";
+        return "redirect:/inproceedings/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,11 +34,11 @@ public class InproceedingsController {
         return "inproceedings";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("inproceeding", inproceedingsService.getInproceedings(id));
-        return "inproceeding";
-    }
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public String getAdded(@PathVariable Long id, Model model) {
+//        model.addAttribute("inproceeding", inproceedingsService.getInproceedings(id));
+//        return "inproceeding";
+//    }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newInproceedings() {

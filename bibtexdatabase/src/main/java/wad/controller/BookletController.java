@@ -21,9 +21,9 @@ public class BookletController {
     @RequestMapping(method = RequestMethod.POST)
     public String createBooklet(@ModelAttribute Booklet booklet, RedirectAttributes redirectAttributes) {
         bookletService.addBooklet(booklet);
-        redirectAttributes.addFlashAttribute("id", booklet.getId());
+        redirectAttributes.addAttribute("id", booklet.getId());
         redirectAttributes.addFlashAttribute("message", "New booklet created");
-        return "redirect:/booklets/new";
+        return "redirect:/booklets/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class BookletController {
             model.addAttribute("booklets", bookletService.list());
         }
         return "booklets";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("booklet", bookletService.getBooklet(id));
-        return "booklet";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

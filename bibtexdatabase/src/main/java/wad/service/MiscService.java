@@ -41,10 +41,10 @@ public class MiscService {
             field.setAccessible(true);
             if(field.getName().equals("tags")) continue;
             boolean ehto = (field.get(misc) != null && !field.get(misc).toString().isEmpty());
-//            if (ehto && field.getName().equals("citation")) {
-//                result += misc.getCitation() + "\n";
-//                continue;
-//            }
+            if (ehto && field.getName().equals("citation")) {
+                result += misc.getCitation() + "\n";
+                continue;
+            }
             if(ehto) {
                 if (field.getName().length()<8)
                     tabs="\t\t\t";

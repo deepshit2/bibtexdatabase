@@ -11,6 +11,7 @@ public class BookletTest {
         Booklet book = new Booklet();
 
         //Setterit
+        book.setCitation("citation");
         book.setAuthor("Author");
         book.setTitle("Title");
         book.setHowpublished("kopioitu");

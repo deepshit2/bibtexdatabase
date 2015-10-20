@@ -49,15 +49,6 @@ public class ArticleBibtexTest extends FluentTest {
     }
     
     @Test
-    public void articleSubmitted(){
-        goTo("http://localhost:" +serverPort+"/articles/1");
-        assertTrue(pageSource().contains("Santeri"));
-        assertTrue(pageSource().contains("1999"));
-        assertTrue(pageSource().contains("year"));
-        assertTrue(pageSource().contains("kandi"));
-    }
-    
-    @Test
     public void articleBibtex(){
         goTo("http://localhost:" +serverPort+"/articles/1/bibtex");
         assertTrue(pageSource().contains("@Article {"));

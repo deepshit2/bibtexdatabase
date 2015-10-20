@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import wad.domain.Article;
-import wad.repository.ArticleRepository;
 import wad.service.ArticleService;
 
 @Controller
@@ -24,20 +23,15 @@ public class ArticleController {
     @RequestMapping(method = RequestMethod.POST)
     public String createArticle(RedirectAttributes redirectAttributes, @ModelAttribute Article article){
         articleService.addArticle(article);
-        redirectAttributes.addFlashAttribute("id", article.getId());
+        redirectAttributes.addAttribute("id", article.getId());
         redirectAttributes.addFlashAttribute("message", "New article created");
-        return "redirect:/articles/new";
+        return "redirect:/articles/{id}/bibtex";
     }
     @RequestMapping(method = RequestMethod.GET)
     public List<Article> getArticles(){
         return articleService.list();
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model){
-        model.addAttribute("article",articleService.getArticle(id));
-        return "article";
-    }
     
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newArticle() {

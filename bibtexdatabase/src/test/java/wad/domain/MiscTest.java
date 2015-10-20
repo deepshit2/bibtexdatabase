@@ -11,6 +11,7 @@ public class MiscTest {
         Misc book = new Misc();
 
         //Setterit
+        book.setCitation("citation");
         book.setAuthor("Author");
         book.setTitle("Title");
         book.setHowpublished("kopioitu");

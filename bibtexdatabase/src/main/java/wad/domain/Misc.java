@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
@@ -16,7 +17,8 @@ public class Misc extends AbstractPersistable<Long> {
     Required fields: none
     Optional fields: author, title, howpublished, month, year, note, key
     */
-    
+    @NotBlank
+    private String citation;
     private String title;
     private String author, howpublished, note, key;
     private Integer month, year;
@@ -89,6 +91,14 @@ public class Misc extends AbstractPersistable<Long> {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+    
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
 
     

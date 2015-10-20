@@ -40,10 +40,10 @@ public class BookletService {
         for (Field field : fields) {
             field.setAccessible(true);
             boolean ehto = (field.get(book) != null && !field.get(book).toString().isEmpty());
-//            if (ehto && field.getName().equals("citation")) {
-//                result += book.getCitation() + "\n";
-//                continue;
-//            }
+            if (ehto && field.getName().equals("citation")) {
+                result += book.getCitation() + "\n";
+                continue;
+            }
             if(ehto) {
                 if (field.getName().length()<8)
                     tabs="\t\t\t";

@@ -21,9 +21,9 @@ public class ManualController {
     @RequestMapping(method = RequestMethod.POST)
     public String createManual(@ModelAttribute Manual manual, RedirectAttributes redirectAttributes) {
         manualService.addManual(manual);
-        redirectAttributes.addFlashAttribute("id", manual.getId());
+        redirectAttributes.addAttribute("id", manual.getId());
         redirectAttributes.addFlashAttribute("message", "New manual created");
-        return "redirect:/manuals/new";
+        return "redirect:/manuals/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class ManualController {
             model.addAttribute("manuals", manualService.list());
         }
         return "manuals";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("manual", manualService.getManual(id));
-        return "manual";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

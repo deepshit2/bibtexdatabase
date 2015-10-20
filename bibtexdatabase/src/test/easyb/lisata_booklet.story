@@ -14,6 +14,8 @@ scenario "käyttäjä voi lisätä bookletin kunnollisilla syötteillä", {
     }
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
+        element = driver.findElement(By.name("citation"));
+        element.sendKeys("citation");
         element = driver.findElement(By.name("title"));
         element.sendKeys("otsikko");
         element = driver.findElement(By.name("author"));

@@ -21,9 +21,9 @@ public class ProceedingsController {
     @RequestMapping(method = RequestMethod.POST)
     public String createProceedings(@ModelAttribute Proceedings proceedings, RedirectAttributes redirectAttributes) {
         proceedingsService.addProceedings(proceedings);
-        redirectAttributes.addFlashAttribute("id", proceedings.getId());
+        redirectAttributes.addAttribute("id", proceedings.getId());
         redirectAttributes.addFlashAttribute("message", "New proceeding created");
-        return "redirect:/proceedings/new";
+        return "redirect:/proceedings/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class ProceedingsController {
             model.addAttribute("proceedings", proceedingsService.list());
         }
         return "proceedings";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("proceeding", proceedingsService.getProceedings(id));
-        return "proceeding";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

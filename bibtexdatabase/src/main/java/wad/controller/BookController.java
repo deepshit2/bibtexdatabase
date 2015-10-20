@@ -21,9 +21,9 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST)
     public String createBook(@ModelAttribute Book book, RedirectAttributes redirectAttributes) {
         bookService.addBook(book);
-        redirectAttributes.addFlashAttribute("id", book.getId());
+        redirectAttributes.addAttribute("id", book.getId());
         redirectAttributes.addFlashAttribute("message", "New book created");
-        return "redirect:/books/new";
+        return "redirect:/books/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,11 +34,6 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("book", bookService.getBook(id));
-        return "book";
-    }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newBook() {

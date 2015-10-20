@@ -21,9 +21,9 @@ public class ConferenceController {
     @RequestMapping(method = RequestMethod.POST)
     public String createConference(@ModelAttribute Conference conference, RedirectAttributes redirectAttributes) {
         conferenceService.addConference(conference);
-        redirectAttributes.addFlashAttribute("id", conference.getId());
+        redirectAttributes.addAttribute("id", conference.getId());
         redirectAttributes.addFlashAttribute("message", "New conference created");
-        return "redirect:/conferences/new";
+        return "redirect:/conferences/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class ConferenceController {
             model.addAttribute("conferences", conferenceService.list());
         }
         return "conferences";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("conference", conferenceService.getConference(id));
-        return "conference";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

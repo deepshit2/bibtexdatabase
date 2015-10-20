@@ -33,10 +33,12 @@ public class ManualServiceTest {
     public void setUp() {
         repository.deleteAll();
         m1 = new Manual();
+        m1.setCitation("citation");
         m1.setAuthor("author1");
         m1.setTitle("otsikko1");
         m1.setYear(2001);
         m2 = new Manual();
+        m2.setCitation("citation");
         m2.setAuthor("author2");
         m2.setTitle("otsikko2");
         m2.setYear(2002);

@@ -19,6 +19,9 @@ public class Manual extends AbstractPersistable<Long> {
     */
     
     @NotBlank
+    private String citation;
+    
+    @NotBlank
     private String title;
     
     private String author, organization, address, note, key;
@@ -108,6 +111,14 @@ public class Manual extends AbstractPersistable<Long> {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
     
     

@@ -21,9 +21,9 @@ public class InbookController {
     @RequestMapping(method = RequestMethod.POST)
     public String createInbook(@ModelAttribute Inbook inbook, RedirectAttributes redirectAttributes) {
         inbookService.addInbook(inbook);
-        redirectAttributes.addFlashAttribute("id", inbook.getId());
+        redirectAttributes.addAttribute("id", inbook.getId());
         redirectAttributes.addFlashAttribute("message", "New inbook created");
-        return "redirect:/inbooks/new";
+        return "redirect:/inbooks/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,11 +34,11 @@ public class InbookController {
         return "inbooks";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("inbook", inbookService.getInbook(id));
-        return "inbook";
-    }
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public String getAdded(@PathVariable Long id, Model model) {
+//        model.addAttribute("inbook", inbookService.getInbook(id));
+//        return "inbook";
+//    }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newInbook() {

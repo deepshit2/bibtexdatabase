@@ -11,6 +11,7 @@ public class ManualTest {
         Manual book = new Manual();
 
         //Setterit
+        book.setCitation("citation");
         book.setAuthor("Author");
         book.setTitle("Title");
         book.setAddress("Osoite");

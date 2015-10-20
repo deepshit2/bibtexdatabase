@@ -21,9 +21,9 @@ public class IncollectionController {
     @RequestMapping(method = RequestMethod.POST)
     public String createIncollection(@ModelAttribute Incollection incollection, RedirectAttributes redirectAttributes) {
         incollectionService.addIncollection(incollection);
-        redirectAttributes.addFlashAttribute("id", incollection.getId());
+        redirectAttributes.addAttribute("id", incollection.getId());
         redirectAttributes.addFlashAttribute("message", "New incollection created");
-        return "redirect:/incollections/new";
+        return "redirect:/incollections/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,11 +34,11 @@ public class IncollectionController {
         return "incollections";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("incollection", incollectionService.getIncollection(id));
-        return "incollection";
-    }
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public String getAdded(@PathVariable Long id, Model model) {
+//        model.addAttribute("incollection", incollectionService.getIncollection(id));
+//        return "incollection";
+//    }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newIncollection() {

@@ -41,10 +41,10 @@ public class ManualService {
             field.setAccessible(true);
             if(field.getName().equals("tags")) continue;
             boolean ehto = (field.get(manual) != null && !field.get(manual).toString().isEmpty());
-//            if (ehto && field.getName().equals("citation")) {
-//                result += manual.getCitation() + "\n";
-//                continue;
-//            }
+            if (ehto && field.getName().equals("citation")) {
+                result += manual.getCitation() + "\n";
+                continue;
+            }
             if(ehto) {
                 if (field.getName().length()<8)
                     tabs="\t\t\t";

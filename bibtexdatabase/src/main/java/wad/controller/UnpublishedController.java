@@ -21,9 +21,9 @@ public class UnpublishedController {
     @RequestMapping(method = RequestMethod.POST)
     public String createUnpublished(@ModelAttribute Unpublished unpublished, RedirectAttributes redirectAttributes) {
         unpublishedService.addUnpublished(unpublished);
-        redirectAttributes.addFlashAttribute("id", unpublished.getId());
+        redirectAttributes.addAttribute("id", unpublished.getId());
         redirectAttributes.addFlashAttribute("message", "New unpublished created");
-        return "redirect:/unpublisheds/new";
+        return "redirect:/unpublisheds/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class UnpublishedController {
             model.addAttribute("unpublisheds", unpublishedService.list());
         }
         return "unpublisheds";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("unpublished", unpublishedService.getUnpublished(id));
-        return "unpublished";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

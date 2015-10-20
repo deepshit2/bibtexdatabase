@@ -11,6 +11,7 @@ public class InbookTest {
         Inbook book = new Inbook();
 
         //Setterit
+        book.setCitation("citation");
         book.setAuthor("Author");
         book.setTitle("Title");
         book.setPages(2);

@@ -235,10 +235,12 @@ public class TagServiceTest {
     @Test
     public void BookletTagTest() {
         mm1 = new Booklet();
+        mm1.setCitation("citation1");
         mm1.setAuthor("author1");
         mm1.setTitle("otsikko1");
         mm1.setYear(2001);
         mm2 = new Booklet();
+        mm2.setCitation("citation2");
         mm2.setAuthor("author2");
         mm2.setTitle("otsikko2");
         mm2.setYear(2002);
@@ -279,12 +281,14 @@ public class TagServiceTest {
     @Test
     public void InbookTagTest() {
         im1 = new Inbook();
+        im1.setCitation("citation1");
         im1.setAuthor("author1");
         im1.setTitle("otsikko1");
         im1.setPublisher("koulu1");
         im1.setYear(2001);
         im1.setPages(1);
         im2 = new Inbook();
+        im2.setCitation("citation2");
         im2.setAuthor("author2");
         im2.setTitle("otsikko2");
         im2.setPublisher("koulu2");
@@ -345,10 +349,12 @@ public class TagServiceTest {
     @Test
     public void ManualTagTest() {
         mam1 = new Manual();
+        mam1.setCitation("citation1");
         mam1.setAuthor("author1");
         mam1.setTitle("otsikko1");
         mam1.setYear(2001);
         mam2 = new Manual();
+        mam2.setCitation("citation2");
         mam2.setAuthor("author2");
         mam2.setTitle("otsikko2");
         mam2.setYear(2002);
@@ -382,10 +388,12 @@ public class TagServiceTest {
     @Test
     public void MiscTagTest() {
         mis1 = new Misc();
+        mis1.setCitation("citation1");
         mis1.setAuthor("author1");
         mis1.setTitle("otsikko1");
         mis1.setYear(2001);
         mis2 = new Misc();
+        mis2.setCitation("citation2");
         mis2.setAuthor("author2");
         mis2.setTitle("otsikko2");
         mis2.setYear(2002);
@@ -450,11 +458,13 @@ public class TagServiceTest {
     @Test
     public void UnpublishedTagTest() {
         um1 = new Unpublished();
+        um1.setCitation("citation1");
         um1.setAuthor("author1");
         um1.setTitle("otsikko1");
         um1.setNote("note");
         um1.setYear(2001);
         um2 = new Unpublished();
+        um2.setCitation("citation2");
         um2.setAuthor("author2");
         um2.setTitle("otsikko2");
         um2.setNote("note");

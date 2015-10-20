@@ -16,14 +16,14 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import wad.Application;
-import wad.domain.Article;
-import wad.repository.ArticleRepository;
+import wad.domain.Inproceedings;
+import wad.repository.InproceedingsRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class ArticleTests extends FluentTest {
+public class InproceedingBibtexTests extends FluentTest {
     @Value("${local.server.port}")
     private int serverPort;
     public WebDriver webDriver = new HtmlUnitDriver();
@@ -32,19 +32,27 @@ public class ArticleTests extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitArticle(){
-        goTo("http://localhost:" +serverPort+"/articles/new");
+    @Autowired
+    private InproceedingsRepository repo;
+    
+    @Before
+    public void setUp() {
+        goTo("http://localhost:" +serverPort+"/inproceedings/new");
         fill("#author").with("Santeri");
-        fill("#title").with("Eeppinen kandi");
-        fill("#citation").with("artsu");
-        fill("#journal").with("test");
-        fill("#year").with("1999");
-        fill("#volume").with("1");
+        fill("#citation").with("seksiwau");
+        fill("#booktitle").with("Kumpula");
+        fill("#year").with("2015");
+        fill("#title").with("Eeppinen seksiopas");
         submit("button[type=submit]");
-        goTo("http://localhost:" +serverPort+"/articles/1");
-        assertTrue(pageSource().contains("Santeri"));
-        assertTrue(pageSource().contains("Eeppinen kandi"));
     }
-
+    
+    @Test
+    public void inproBibtex() {
+        goTo("http://localhost:" +serverPort+"/inproceedings/1/bibtex");
+        assertTrue(pageSource().contains("@Inproceedings"));
+        assertTrue(pageSource().contains("}"));
+        assertTrue(pageSource().contains("Santeri"));
+        assertTrue(pageSource().contains(","));
+    }
+    
 }

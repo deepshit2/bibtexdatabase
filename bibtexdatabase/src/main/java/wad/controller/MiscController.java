@@ -21,9 +21,9 @@ public class MiscController {
     @RequestMapping(method = RequestMethod.POST)
     public String createMisc(@ModelAttribute Misc misc, RedirectAttributes redirectAttributes) {
         miscService.addMisc(misc);
-        redirectAttributes.addFlashAttribute("id", misc.getId());
+        redirectAttributes.addAttribute("id", misc.getId());
         redirectAttributes.addFlashAttribute("message", "New misc created");
-        return "redirect:/miscs/new";
+        return "redirect:/miscs/{id}/bibtex";
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +32,6 @@ public class MiscController {
             model.addAttribute("miscs", miscService.list());
         }
         return "miscs";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getAdded(@PathVariable Long id, Model model) {
-        model.addAttribute("misc", miscService.getMisc(id));
-        return "misc";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

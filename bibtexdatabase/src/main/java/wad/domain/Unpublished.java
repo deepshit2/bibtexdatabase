@@ -17,7 +17,8 @@ public class Unpublished extends AbstractPersistable<Long> {
     Required fields: author, title, note
     Optional fields: month, year, key
     */
-    
+    @NotBlank
+    private String citation;
     @NotBlank
     private String author;
     @NotBlank
@@ -88,6 +89,14 @@ public class Unpublished extends AbstractPersistable<Long> {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
     }
 
     

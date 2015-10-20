@@ -27,10 +27,7 @@ scenario "luon viitteen ja saan halutessa dokumentit bibtex-muodossa", {
         element.submit();
     }
 
-    when 'käyttäjä klikkaa bibtex-linkkiä', {
-        element = driver.findElement(By.linkText("BibTeX"));       
-        element.click();
-    }
+    when 'käyttäjä on siirtynyt bibtex sivulle', {}
 
     then 'uusi inproceedings tallennetaan', {
         driver.getPageSource().contains("@Inproceedings").shouldBe true
