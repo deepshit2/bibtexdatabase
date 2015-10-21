@@ -80,7 +80,6 @@ public class ConferenceService implements ServiceInterface<Conference> {
         try {
             result = toBibtex(inproceedings);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -90,7 +89,6 @@ public class ConferenceService implements ServiceInterface<Conference> {
         try {
             result = toBibtex(conference);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

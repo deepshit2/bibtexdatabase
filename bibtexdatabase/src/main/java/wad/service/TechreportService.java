@@ -78,7 +78,6 @@ public class TechreportService implements ServiceInterface<Techreport> {
         try {
             result = toBibtex(techreport);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

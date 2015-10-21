@@ -88,7 +88,6 @@ public class UnpublishedService implements ServiceInterface<Unpublished> {
         try {
             result = toBibtex(unpublished);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

@@ -79,7 +79,6 @@ public class PhdthesisService implements ServiceInterface<Phdthesis> {
         try {
             result = toBibtex(mastersthesis);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -89,7 +88,6 @@ public class PhdthesisService implements ServiceInterface<Phdthesis> {
         try {
             result = toBibtex(phdthesis);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

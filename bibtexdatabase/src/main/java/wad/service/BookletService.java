@@ -76,7 +76,6 @@ public class BookletService implements ServiceInterface<Booklet>{
         try {
         result = toBibtex(book);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
             return result;
     }
@@ -86,7 +85,6 @@ public class BookletService implements ServiceInterface<Booklet>{
         try {
             result = toBibtex(booklet);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

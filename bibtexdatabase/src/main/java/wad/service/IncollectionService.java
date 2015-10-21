@@ -79,7 +79,6 @@ public class IncollectionService implements ServiceInterface<Incollection> {
         try {
             result = toBibtex(inproceedings);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -89,7 +88,6 @@ public class IncollectionService implements ServiceInterface<Incollection> {
         try {
             result = toBibtex(incollection);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

@@ -79,7 +79,6 @@ public class ProceedingsService implements ServiceInterface<Proceedings> {
         try {
             result = toBibtex(inproceedings);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -89,7 +88,6 @@ public class ProceedingsService implements ServiceInterface<Proceedings> {
         try {
             result = toBibtex(proceedings);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

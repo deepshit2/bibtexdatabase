@@ -79,7 +79,6 @@ public class ArticleService implements ServiceInterface<Article>{
         try {
             result = toBibtex(article);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -89,7 +88,6 @@ public class ArticleService implements ServiceInterface<Article>{
         try {
             result = toBibtex(article);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

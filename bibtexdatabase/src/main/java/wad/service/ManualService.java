@@ -78,7 +78,6 @@ public class ManualService implements ServiceInterface<Manual> {
         try {
             result = toBibtex(item);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -88,7 +87,6 @@ public class ManualService implements ServiceInterface<Manual> {
         try {
             result = toBibtex(manual);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
