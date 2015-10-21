@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import wad.domain.Article;
+import wad.domain.Tag;
 import wad.service.ArticleService;
 
 @Controller
@@ -38,11 +39,11 @@ public class ArticleController {
         return "newarticle";
     }
     
-    @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value="/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteArticle(RedirectAttributes redirectAttributes, @PathVariable Long id){
         articleService.deleteArticle(id);
         redirectAttributes.addFlashAttribute("message", "Article deleted");
-        return "redirect:/articles";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
@@ -51,4 +52,5 @@ public class ArticleController {
         model.addAttribute("bibtex", articleService.getBibtex(article.getId()));
         return "bibtex";
     }
+    
 }

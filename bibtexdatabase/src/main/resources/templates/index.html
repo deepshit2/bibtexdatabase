@@ -22,7 +22,15 @@
                     <input class="filterinput form-control" id="author" type="text" name="searchtext"/>
                 </div>
             </form>
-
+            
+            <form role="form" method="GET" th:action="@{/download}">
+                <div class="form-group">
+                    <label for="tag"></label>
+                    <input id="tag" class="form-control" type="text" name="searchtext"/>
+                </div>
+                <button type="submit" name="submit" value="download" class="btn btn-info">Download as BibTeX</button>
+            </form>
+            
             <ul class="list-group" id="list">
                 <li class="list-group-item" th:each="article : ${articles}">
                     <a href="#" th:href="@{/articles/{id}/bibtex(id=${article.id})}" th:text="${article.title} + ', ' + ${article.author}"></a>

@@ -39,11 +39,11 @@ public class PhdthesisController {
         return "newphdthesis";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deletePhdthesis(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         phdthesisService.deletePhdthesis(id);
         redirectAttributes.addFlashAttribute("message", "Phdthesis deleted");
-        return "redirect:/phdthesises";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

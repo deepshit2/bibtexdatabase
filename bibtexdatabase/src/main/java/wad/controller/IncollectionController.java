@@ -45,11 +45,11 @@ public class IncollectionController {
         return "newincollection";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteIncollection(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         incollectionService.deleteIncollection(id);
         redirectAttributes.addFlashAttribute("message", "Incollection deleted");
-        return "redirect:/incollections";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

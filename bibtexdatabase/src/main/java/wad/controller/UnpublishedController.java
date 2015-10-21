@@ -39,11 +39,11 @@ public class UnpublishedController {
         return "newunpublished";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteUnpublished(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         unpublishedService.deleteUnpublished(id);
         redirectAttributes.addFlashAttribute("message", "Unpublished deleted");
-        return "redirect:/unpublisheds";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

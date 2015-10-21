@@ -44,11 +44,11 @@ public class TechreportController {
         return "newtechreport";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteTechreport(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         techreportService.deleteTechreport(id);
         redirectAttributes.addFlashAttribute("message", "Techreport deleted");
-        return "redirect:/techreports";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

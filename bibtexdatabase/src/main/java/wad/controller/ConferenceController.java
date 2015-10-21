@@ -39,11 +39,11 @@ public class ConferenceController {
         return "newconference";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteConference(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         conferenceService.deleteConference(id);
         redirectAttributes.addFlashAttribute("message", "Conference deleted");
-        return "redirect:/conferences";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

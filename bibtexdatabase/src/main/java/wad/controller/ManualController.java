@@ -39,11 +39,11 @@ public class ManualController {
         return "newmanual";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteManual(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         manualService.deleteManual(id);
         redirectAttributes.addFlashAttribute("message", "Manual deleted");
-        return "redirect:/manuals";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

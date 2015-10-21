@@ -39,11 +39,11 @@ public class BookletController {
         return "newbooklet";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteBooklet(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         bookletService.deleteBooklet(id);
         redirectAttributes.addFlashAttribute("message", "Booklet deleted");
-        return "redirect:/booklets";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

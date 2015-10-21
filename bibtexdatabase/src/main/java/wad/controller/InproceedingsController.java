@@ -45,11 +45,11 @@ public class InproceedingsController {
         return "newinproceeding";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteInproceedings(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         inproceedingsService.deleteInproceedings(id);
         redirectAttributes.addFlashAttribute("message", "Inproceeding deleted");
-        return "redirect:/inproceedings";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

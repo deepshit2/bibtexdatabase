@@ -39,11 +39,11 @@ public class MiscController {
         return "newmisc";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteMisc(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         miscService.deleteMisc(id);
         redirectAttributes.addFlashAttribute("message", "Misc deleted");
-        return "redirect:/miscs";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

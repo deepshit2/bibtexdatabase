@@ -39,11 +39,11 @@ public class MastersthesisController {
         return "newmastersthesis";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteMastersthesis(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         mastersthesisService.deleteMastersthesis(id);
         redirectAttributes.addFlashAttribute("message", "Mastersthesis deleted");
-        return "redirect:/mastersthesises";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

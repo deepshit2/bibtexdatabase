@@ -40,11 +40,11 @@ public class BookController {
         return "newbook";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteBook(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         bookService.deleteBook(id);
         redirectAttributes.addFlashAttribute("message", "Book deleted");
-        return "redirect:/books";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

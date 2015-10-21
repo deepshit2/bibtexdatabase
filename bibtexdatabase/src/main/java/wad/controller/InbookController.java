@@ -45,11 +45,11 @@ public class InbookController {
         return "newinbook";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteInbook(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         inbookService.deleteInbook(id);
         redirectAttributes.addFlashAttribute("message", "Inbook deleted");
-        return "redirect:/inbooks";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)

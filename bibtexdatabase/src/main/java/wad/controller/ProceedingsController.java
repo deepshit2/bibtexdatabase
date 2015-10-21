@@ -39,11 +39,11 @@ public class ProceedingsController {
         return "newproceeding";
     }
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}/bibtex", method = RequestMethod.DELETE)
     public String deleteProceedings(RedirectAttributes redirectAttributes, @PathVariable Long id) {
         proceedingsService.deleteProceedings(id);
         redirectAttributes.addFlashAttribute("message", "Proceeding deleted");
-        return "redirect:/proceedings";
+        return "redirect:/";
     }
     
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
