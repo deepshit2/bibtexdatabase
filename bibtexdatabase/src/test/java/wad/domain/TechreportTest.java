@@ -39,5 +39,11 @@ public class TechreportTest {
         assertTrue(t.getNumber() == 4);
     }
     
+    @Test
+    public void testTagsEmpty() {
+        Techreport t = new Techreport();
+        assertTrue(t.getTags().isEmpty());
+    }
+    
             
 }

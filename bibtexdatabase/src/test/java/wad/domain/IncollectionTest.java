@@ -52,5 +52,11 @@ public class IncollectionTest {
         assertTrue(i.getSeries() == 1);
         
     }
+    
+    @Test
+    public void testTagsEmpty() {
+        Incollection i = new Incollection();
+        assertTrue(i.getTags().isEmpty());
+    }
 
 }

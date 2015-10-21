@@ -42,5 +42,11 @@ public class ProceedingsTest {
         assertTrue(i.getSeries() == 1);
         
     }
+    
+    @Test
+    public void testTagsEmpty() {
+        Proceedings i = new Proceedings();
+        assertTrue(i.getTags().isEmpty());
+    }
 
 }

@@ -2,6 +2,7 @@
 package wad.domain;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class ManualTest {
@@ -32,6 +33,12 @@ public class ManualTest {
         assertEquals(1, (int) book.getEdition());
         assertEquals(1, (int) book.getMonth());
         assertEquals(2015, (int) book.getYear());
+    }
+    
+    @Test
+    public void testTagsEmpty() {
+        Manual book = new Manual();
+        assertTrue(book.getTags().isEmpty());
     }
     
 }

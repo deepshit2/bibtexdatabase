@@ -46,5 +46,11 @@ public class InproceedingsTest {
         assertTrue(i.getSeries() == 1);
         
     }
+    
+    @Test
+    public void testTagsEmpty() {
+        Inproceedings i = new Inproceedings();
+        assertTrue(i.getTags().isEmpty());
+    }
 
 }
