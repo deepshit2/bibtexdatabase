@@ -127,6 +127,7 @@ public class DownloadService {
         addToServicet(proceedingsService);
         addToServicet(techreportService);
         addToServicet(unpublishedService);
+        addToServicet(inproceedingsService);
     }
 
     private void addToServicet(ServiceInterface service) {

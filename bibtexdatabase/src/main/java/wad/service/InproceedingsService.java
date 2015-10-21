@@ -74,6 +74,7 @@ public class InproceedingsService implements ServiceInterface<Inproceedings>{
             return result;
         }
     
+    @Override
     public String getBibtex(Inproceedings inproceedings) {
         String result = "";
         try {
