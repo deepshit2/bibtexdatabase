@@ -49,6 +49,7 @@ public class UnpublishedController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Unpublished unpublished = unpublishedService.getUnpublished(id);
+        model.addAttribute("tags", unpublished.getTags());
         model.addAttribute("bibtex", unpublishedService.getBibtex(unpublished.getId()));
         return "bibtex";
     }

@@ -49,6 +49,7 @@ public class ManualController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Manual manual = manualService.getManual(id);
+        model.addAttribute("tags", manual.getTags());
         model.addAttribute("bibtex", manualService.getBibtex(manual.getId()));
         return "bibtex";
     }

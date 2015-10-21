@@ -49,6 +49,7 @@ public class PhdthesisController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Phdthesis phdthesis = phdthesisService.getPhdthesis(id);
+        model.addAttribute("tags", phdthesis.getTags());
         model.addAttribute("bibtex", phdthesisService.getBibtex(phdthesis.getId()));
         return "bibtex";
     }

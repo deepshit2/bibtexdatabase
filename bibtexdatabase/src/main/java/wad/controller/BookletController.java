@@ -49,6 +49,7 @@ public class BookletController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Booklet booklet = bookletService.getBooklet(id);
+        model.addAttribute("tags", booklet.getTags());
         model.addAttribute("bibtex", bookletService.getBibtex(booklet.getId()));
         return "bibtex";
     }

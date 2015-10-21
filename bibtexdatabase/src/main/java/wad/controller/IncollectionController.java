@@ -55,6 +55,7 @@ public class IncollectionController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Incollection incollection = incollectionService.getIncollection(id);
+        model.addAttribute("tags", incollection.getTags());
         model.addAttribute("bibtex", incollectionService.getBibtex(incollection.getId()));
         return "bibtex";
     }

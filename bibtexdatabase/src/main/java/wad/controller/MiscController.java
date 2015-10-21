@@ -49,6 +49,7 @@ public class MiscController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Misc misc = miscService.getMisc(id);
+        model.addAttribute("tags", misc.getTags());
         model.addAttribute("bibtex", miscService.getBibtex(misc.getId()));
         return "bibtex";
     }

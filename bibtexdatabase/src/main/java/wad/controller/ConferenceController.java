@@ -49,6 +49,7 @@ public class ConferenceController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Conference conference = conferenceService.getConference(id);
+        model.addAttribute("tags", conference.getTags());
         model.addAttribute("bibtex", conferenceService.getBibtex(conference.getId()));
         return "bibtex";
     }

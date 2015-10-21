@@ -55,6 +55,27 @@
                 <li class="list-group-item" th:each="inproceeding : ${inproceedings}">
                     <a href="#" th:href="@{/inproceedings/{id}/bibtex(id=${inproceeding.id})}" th:text="${inproceeding.title} + ', ' + ${inproceeding.author}"></a>
                 </li>
+                <li class="list-group-item" th:each="conference : ${conferences}">
+                    <a href="#" th:href="@{/conferences/{id}/bibtex(id=${conference.id})}" th:text="${conference.title} + ', ' + ${conference.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="incollection : ${incollections}">
+                    <a href="#" th:href="@{/incollections/{id}/bibtex(id=${incollection.id})}" th:text="${incollection.title} + ', ' + ${incollection.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="manual : ${manuals}">
+                    <a href="#" th:href="@{/manuals/{id}/bibtex(id=${manual.id})}" th:text="${manual.title} + ', ' + ${manual.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="misc : ${miscs}">
+                    <a href="#" th:href="@{/miscs/{id}/bibtex(id=${misc.id})}" th:text="${misc.title} + ', ' + ${misc.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="phdthesis : ${phdtheses}">
+                    <a href="#" th:href="@{/phdthesises/{id}/bibtex(id=${phdthesis.id})}" th:text="${phdthesis.title} + ', ' + ${phdthesis.author}"></a>
+                </li>
+                <li class="list-group-item" th:each="proceedings : ${proceedings}">
+                    <a href="#" th:href="@{/proceedings/{id}/bibtex(id=${proceedings.id})}" th:text="${proceedings.title} + ', ' + ${proceedings.editor}"></a>
+                </li>
+                <li class="list-group-item" th:each="unpublished : ${unpublished}">
+                    <a href="#" th:href="@{/unpublisheds/{id}/bibtex(id=${unpublished.id})}" th:text="${unpublished.title} + ', ' + ${unpublished.author}"></a>
+                </li>
             </ul>
 
             <!--Content-->

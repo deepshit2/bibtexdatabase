@@ -55,6 +55,7 @@ public class InproceedingsController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Inproceedings inproceedings = inproceedingsService.getInproceedings(id);
+        model.addAttribute("tags", inproceedings.getTags());
         model.addAttribute("bibtex", inproceedingsService.getBibtex(inproceedings.getId()));
         return "bibtex";
     }

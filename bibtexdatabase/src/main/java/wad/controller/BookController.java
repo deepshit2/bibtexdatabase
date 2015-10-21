@@ -50,6 +50,7 @@ public class BookController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Book book = bookService.getBook(id);
+        model.addAttribute("tags", book.getTags());
         model.addAttribute("bibtex", bookService.getBibtex(book.getId()));
         return "bibtex";
     }

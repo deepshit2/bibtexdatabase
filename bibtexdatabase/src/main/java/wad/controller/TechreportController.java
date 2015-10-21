@@ -54,6 +54,7 @@ public class TechreportController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Techreport techreport = techreportService.getTechreport(id);
+        model.addAttribute("tags",techreport.getTags());
         model.addAttribute("bibtex", techreportService.getBibtex(techreport.getId()));
         return "bibtex";
     }
