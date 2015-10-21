@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Misc;
+import wad.domain.Tag;
 import wad.repository.MiscRepository;
 
 @Service
@@ -15,6 +16,12 @@ public class MiscService implements ServiceInterface<Misc>{
     @Autowired
     private MiscRepository repo;
 
+    public void addTag(Long id, Tag tag) {
+        Misc misc = getMisc(id);
+        misc.getTags().add(tag);
+        addMisc(misc);
+    }
+    
     public List<Misc> list() {
         List<Misc> books = repo.findAll();
         return books;

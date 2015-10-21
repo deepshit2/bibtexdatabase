@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Manual;
+import wad.domain.Tag;
 import wad.repository.ManualRepository;
 
 @Service
@@ -14,6 +15,12 @@ public class ManualService implements ServiceInterface<Manual>{
     
     @Autowired
     private ManualRepository repo;
+    
+    public void addTag(Long id, Tag tag) {
+        Manual manual = getManual(id);
+        manual.getTags().add(tag);
+        addManual(manual);
+    }
     
     public List<Manual> list() {
         List<Manual> items = repo.findAll();

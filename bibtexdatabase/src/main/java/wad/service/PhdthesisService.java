@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Mastersthesis;
 import wad.domain.Phdthesis;
+import wad.domain.Tag;
 import wad.repository.PhdthesisRepository;
 
 @Service
@@ -15,6 +16,12 @@ public class PhdthesisService implements ServiceInterface<Phdthesis>{
     @Autowired
     private PhdthesisRepository mastersthesisRepository;
 
+    public void addTag(Long id, Tag tag) {
+        Phdthesis phdthesis = getPhdthesis(id);
+        phdthesis.getTags().add(tag);
+        addPhdthesis(phdthesis);
+    }
+    
     public List<Phdthesis> list() {
         List<Phdthesis> phdthesises = mastersthesisRepository.findAll();
         return phdthesises;

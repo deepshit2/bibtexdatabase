@@ -11,16 +11,16 @@
         <div th:replace="fragments/navbar :: navbar"></div>
         <pre th:if="${bibtex}" th:text="${bibtex}"></pre>
         <div class="container" align="center">
-            
+
             <div th:if="${message}" style="display: none">
                 <h3 th:text="${message}"></h3>
             </div>
-            
+
             <form role="form" th:method="delete" th:action="@{__${#httpServletRequest.requestURI}__}">
                 <button type="submit" name="submit" value="Delete" class="btn btn-danger">Delete</button>
             </form>
-            
-            <form role="form" method="POST" th:action="@{/}">
+
+            <form role="form" method="POST" th:action="@{/tags__${#httpServletRequest.requestURI}__}">
                 <div class="form-group">
                     <label for="tag">New tag</label>
                     <input id="tag" class="form-control" type="text" name="tag"/>
@@ -29,6 +29,13 @@
                     <button type="submit" name="submit" value="New tag" class="btn btn-default">Add new tag</button>
                 </div>
             </form>
+
+            <ul class="list-group" id="list">
+                <li class="list-group-item" th:each="tag : ${tags}">
+                    <p th:text="${tag.name}"></p>
+                </li>
+            </ul>
+
         </div>
     </body>
 </html>

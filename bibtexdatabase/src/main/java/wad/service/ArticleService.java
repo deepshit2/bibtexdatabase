@@ -7,13 +7,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Article;
+import wad.domain.Tag;
 import wad.repository.ArticleRepository;
 
 @Service
-public class ArticleService implements ServiceInterface<Article>{
+public class ArticleService implements ServiceInterface<Article> {
 
     @Autowired
     private ArticleRepository articleRepository;
+
+    public void addTag(Long articleId, Tag tag) {
+        Article a = getArticle(articleId);
+        a.getTags().add(tag);
+        addArticle(a);
+    }
 
     public List<Article> list() {
         List<Article> articles = articleRepository.findAll();

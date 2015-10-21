@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import wad.domain.Tag;
 import wad.domain.Techreport;
 import wad.repository.TechreportRepository;
 
@@ -14,6 +15,12 @@ public class TechreportService implements ServiceInterface<Techreport> {
     @Autowired
     private TechreportRepository techreportRepository;
 
+    public void addTag(Long id, Tag tag) {
+        Techreport techreport = getTechreport(id);
+        techreport.getTags().add(tag);
+        addTechreport(techreport);
+    }
+    
     public List<Techreport> list() {
         List<Techreport> techreports = techreportRepository.findAll();
         return techreports;

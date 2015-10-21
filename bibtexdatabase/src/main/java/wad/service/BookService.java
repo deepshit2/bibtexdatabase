@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Book;
+import wad.domain.Tag;
 import wad.repository.BookRepository;
 
 @Service
@@ -13,6 +14,12 @@ public class BookService implements ServiceInterface<Book> {
 
     @Autowired
     private BookRepository bookRepository;
+
+    public void addTag(Long bookId, Tag tag) {
+        Book book = getBook(bookId);
+        book.getTags().add(tag);
+        addBook(book);
+    }
 
     public List<Book> list() {
         List<Book> books = bookRepository.findAll();

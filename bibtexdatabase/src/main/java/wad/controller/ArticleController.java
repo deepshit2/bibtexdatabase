@@ -49,6 +49,7 @@ public class ArticleController {
     @RequestMapping(value="/{id}/bibtex", method = RequestMethod.GET)
     public String getBibtex(@PathVariable Long id, Model model){
         Article article = articleService.getArticle(id);
+        model.addAttribute("tags", article.getTags());
         model.addAttribute("bibtex", articleService.getBibtex(article.getId()));
         return "bibtex";
     }

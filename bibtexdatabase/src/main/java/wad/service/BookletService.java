@@ -1,4 +1,3 @@
-
 package wad.service;
 
 import java.lang.reflect.Field;
@@ -7,13 +6,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Booklet;
+import wad.domain.Tag;
 import wad.repository.BookletRepository;
 
 @Service
-public class BookletService implements ServiceInterface<Booklet>{
+public class BookletService implements ServiceInterface<Booklet> {
 
     @Autowired
     private BookletRepository repo;
+
+    public void addTag(Long bookletId, Tag tag) {
+        Booklet booklet = getBooklet(bookletId);
+        booklet.getTags().add(tag);
+        addBooklet(booklet);
+    }
 
     public List<Booklet> list() {
         List<Booklet> books = repo.findAll();
@@ -31,8 +37,8 @@ public class BookletService implements ServiceInterface<Booklet>{
     public Booklet getBooklet(Long id) {
         return repo.findOne(id);
     }
-   
-    private String toBibtex(Booklet book) throws IllegalArgumentException, IllegalAccessException{
+
+    private String toBibtex(Booklet book) throws IllegalArgumentException, IllegalAccessException {
         String result = "@Booklet {";
         String tabs;
         Class<? extends Object> obj = book.getClass();
@@ -44,19 +50,20 @@ public class BookletService implements ServiceInterface<Booklet>{
                 result += book.getCitation() + "\n";
                 continue;
             }
-            if(ehto) {
-                if (field.getName().length()<8)
-                    tabs="\t\t\t";
-                else
-                    tabs="\t\t";
+            if (ehto) {
+                if (field.getName().length() < 8) {
+                    tabs = "\t\t\t";
+                } else {
+                    tabs = "\t\t";
+                }
                 result += String.format("%s%s=\t\t\"%s\",\n",
-                field.getName(),
-                tabs,
-                field.get(book));
+                        field.getName(),
+                        tabs,
+                        field.get(book));
             }
         }
         int ind = result.lastIndexOf(",");
-        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result = new StringBuilder(result).replace(ind, ind + 1, "").toString();
         result += "}";
         result = aakkosetBibtexMuotoon(result);
         return result;
@@ -68,18 +75,18 @@ public class BookletService implements ServiceInterface<Booklet>{
         result = result.replace("å", "{\\aa}");
         return result;
     }
-        
+
     public String getBibtex(Long id) {
         Booklet book = repo.findOne(id);
         String result = "";
         try {
-        result = toBibtex(book);
+            result = toBibtex(book);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
-            return result;
+        return result;
     }
-    
+
     public String getBibtex(Booklet booklet) {
         String result = "";
         try {
@@ -89,7 +96,7 @@ public class BookletService implements ServiceInterface<Booklet>{
         }
         return result;
     }
-    
+
     public List<Booklet> search(String name) {
         List<Booklet> result = new ArrayList<>();
         List<Booklet> byAuthor = repo.findByAuthorContaining(name);
@@ -98,5 +105,5 @@ public class BookletService implements ServiceInterface<Booklet>{
         result.addAll(byTitle);
         return result;
     }
-    
+
 }

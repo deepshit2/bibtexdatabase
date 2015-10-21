@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import wad.domain.Tag;
 import wad.domain.Unpublished;
 import wad.repository.UnpublishedRepository;
 
@@ -14,6 +15,12 @@ public class UnpublishedService implements ServiceInterface<Unpublished>{
 
     @Autowired
     private UnpublishedRepository repo;
+    
+    public void addTag(Long id, Tag tag) {
+        Unpublished unpublished = getUnpublished(id);
+        unpublished.getTags().add(tag);
+        addUnpublished(unpublished);
+    }
 
     public List<Unpublished> list() {
         List<Unpublished> books = repo.findAll();

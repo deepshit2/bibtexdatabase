@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Incollection;
 import wad.domain.Inproceedings;
+import wad.domain.Tag;
 import wad.repository.IncollectionRepository;
 
 @Service
@@ -15,7 +16,13 @@ public class IncollectionService implements ServiceInterface<Incollection>{
 
     @Autowired
     private IncollectionRepository incollection;
-
+    
+    public void addTag(Long id, Tag tag) {
+        Incollection incollection = getIncollection(id);
+        incollection.getTags().add(tag);
+        addIncollection(incollection);
+    }
+    
     public List<Incollection> list() {
         List<Incollection> inproceedings = incollection.findAll();
         return inproceedings;

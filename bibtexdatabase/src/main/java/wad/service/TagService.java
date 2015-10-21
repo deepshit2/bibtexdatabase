@@ -16,6 +16,7 @@ import wad.domain.Mastersthesis;
 import wad.domain.Misc;
 import wad.domain.Phdthesis;
 import wad.domain.Proceedings;
+import wad.domain.Tag;
 import wad.domain.Techreport;
 import wad.domain.Unpublished;
 import wad.repository.TagRepository;
@@ -25,6 +26,14 @@ public class TagService {
 
     @Autowired
     private TagRepository tagRepo;
+
+    public void saveTag(Tag tag) {
+        tagRepo.save(tag);
+    }
+    
+    public Tag findByName(String name) {
+        return tagRepo.findByName(name);
+    }
 
     public List<Book> getBooks(String keyword) {
         if (tagRepo.findByName(keyword) == null) {

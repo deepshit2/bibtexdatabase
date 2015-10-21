@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Inproceedings;
+import wad.domain.Tag;
 import wad.repository.InproceedingsRepository;
 
 
@@ -16,6 +17,12 @@ public class InproceedingsService implements ServiceInterface<Inproceedings>{
     @Autowired
     private InproceedingsRepository inproceedingsRepository;
 
+    public void addTag(Long id, Tag tag) {
+        Inproceedings inproceedings = getInproceedings(id);
+        inproceedings.getTags().add(tag);
+        addInproceedings(inproceedings);
+    }
+    
     public List<Inproceedings> list() {
         List<Inproceedings> inproceedings = inproceedingsRepository.findAll();
         return inproceedings;

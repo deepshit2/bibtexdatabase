@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wad.domain.Mastersthesis;
+import wad.domain.Tag;
 import wad.repository.MastersthesisRepository;
 
 @Service
@@ -14,6 +15,12 @@ public class MastersthesisService implements ServiceInterface<Mastersthesis>{
     @Autowired
     private MastersthesisRepository mastersthesisRepository;
 
+    public void addTag(Long id, Tag tag) {
+        Mastersthesis ms = getMastersthesis(id);
+        ms.getTags().add(tag);
+        addMastersthesis(ms);
+    }
+    
     public List<Mastersthesis> list() {
         List<Mastersthesis> mastersthesises = mastersthesisRepository.findAll();
         return mastersthesises;
