@@ -7,6 +7,7 @@ package fluentlenium;
 
 import org.fluentlenium.adapter.FluentTest;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -35,14 +36,26 @@ public class ProceedingsTest extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitProceedings(){
-        goTo("http://localhost:" +serverPort+"/proceedings/new");
+    @Before
+    public void init(){
+        goTo("http://localhost:" + serverPort + "/proceedings/new");
         fill("#editor").with("Santeri");
         fill("#title").with("Eeppinen konferenssi");
         fill("#citation").with("artsu");
         fill("#year").with("1999");
         submit("button[type=submit]");
+    }
+    
+    @Test
+    public void submitProceedings(){
         assertTrue(pageSource().contains("New proceeding created"));
+    }
+    
+    @Test
+    public void proceedingBibtex(){
+        assertTrue(pageSource().contains("@Proceedings {"));
+        assertTrue(pageSource().contains("1999"));
+        assertTrue(pageSource().contains("year"));
+        assertTrue(pageSource().contains("}"));
     }
 }
