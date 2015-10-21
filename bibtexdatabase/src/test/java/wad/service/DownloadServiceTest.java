@@ -40,7 +40,6 @@ import wad.repository.MastersthesisRepository;
 import wad.repository.MiscRepository;
 import wad.repository.PhdthesisRepository;
 import wad.repository.ProceedingsRepository;
-import wad.repository.TagRepository;
 import wad.repository.TechreportRepository;
 import wad.repository.UnpublishedRepository;
 

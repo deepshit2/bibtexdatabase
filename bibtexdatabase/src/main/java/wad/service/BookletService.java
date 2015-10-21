@@ -58,6 +58,14 @@ public class BookletService implements ServiceInterface<Booklet>{
         int ind = result.lastIndexOf(",");
         result = new StringBuilder(result).replace(ind, ind+1,"").toString();
         result += "}";
+        result = aakkosetBibtexMuotoon(result);
+        return result;
+    }
+
+    private String aakkosetBibtexMuotoon(String result) {
+        result = result.replace("ä", "{\\\"a}");
+        result = result.replace("ö", "{\\\"o}");
+        result = result.replace("å", "{\\aa}");
         return result;
     }
         
