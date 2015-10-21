@@ -1,4 +1,3 @@
-
 package wad.service;
 
 import java.util.ArrayList;
@@ -53,94 +52,94 @@ public class TagServiceTest {
     private Tag tag3;
     List<Tag> tagit1;
     List<Tag> tagit2;
-    
+
     @Autowired
     private ArticleRepository articleRepository;
-    
+
     @Autowired
     private TagRepository tagRepo;
-    
+
     @Autowired
     private TagService tagService;
-    
+
     @Autowired
     private BookRepository bookrepository;
-    
+
     private Book m1;
     private Book m2;
-    
+
     @Autowired
     private BookletRepository bookletrepository;
-    
+
     private Booklet mm1;
     private Booklet mm2;
-    
+
     @Autowired
     private ConferenceRepository crepository;
-    
+
     private Conference mmm1;
     private Conference mmm2;
-    
+
     @Autowired
     private InbookRepository inrepository;
-    
+
     private Inbook im1;
     private Inbook im2;
-    
+
     @Autowired
     private IncollectionRepository incorepository;
-    
+
     private Incollection ccm1;
     private Incollection ccm2;
-    
+
     @Autowired
     private InproceedingsRepository iirepository;
-    
+
     private Inproceedings iim1;
     private Inproceedings iim2;
-    
+
     @Autowired
     private ManualRepository marepository;
-    
+
     private Manual mam1;
     private Manual mam2;
-    
+
     @Autowired
     private MastersthesisRepository masrepository;
 
     private Mastersthesis mas1;
     private Mastersthesis mas2;
-    
+
     @Autowired
     private MiscRepository misrepository;
-    
+
     private Misc mis1;
     private Misc mis2;
-    
+
     @Autowired
     private PhdthesisRepository prepository;
 
     private Phdthesis pm1;
     private Phdthesis pm2;
-    
+
     @Autowired
     private ProceedingsRepository prorepository;
-    
+
     private Proceedings prom1;
     private Proceedings prom2;
-    
+
     @Autowired
     private TechreportRepository trepository;
 
     private Techreport tm1;
     private Techreport tm2;
-    
+
     @Autowired
     private UnpublishedRepository urepository;
-    
+
     private Unpublished um1;
     private Unpublished um2;
-    
+
     @Before
     public void setUp() {
         articleRepository.deleteAll();
@@ -173,7 +172,7 @@ public class TagServiceTest {
         tagit1.add(tag3);
         tagit2.add(tag2);
     }
-    
+
     @Test
     public void ArticleTagTest() {
         article1 = new Article();
@@ -192,16 +191,16 @@ public class TagServiceTest {
         article2.setVolume(2);
         article1.setTags(tagit1);
         article2.setTags(tagit1);
-        
+
         articleRepository.save(article1);
         articleRepository.save(article2);
-        
+
         List<Article> articles = tagService.getArticles("nimi");
         assertTrue(!articles.isEmpty());
         assertTrue(articles.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(articles.size() == 2);
     }
-        
+
     @Test
     public void BookTagTest() {
         bookrepository.deleteAll();
@@ -221,7 +220,7 @@ public class TagServiceTest {
         m2.setTags(tagit1);
         bookrepository.save(m1);
         bookrepository.save(m2);
-        
+
         List<Book> books = tagService.getBooks("nimi");
         assertTrue(!books.isEmpty());
         assertTrue(books.get(0).getTags().get(0).getName().equals("nimi"));
@@ -231,7 +230,7 @@ public class TagServiceTest {
         List<Book> books2 = tagService.getBooks("joo");
         assertTrue(books2.size() == 1);
     }
-    
+
     @Test
     public void BookletTagTest() {
         mm1 = new Booklet();
@@ -253,7 +252,7 @@ public class TagServiceTest {
         assertTrue(books.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(books.size() == 1);
     }
-    
+
     @Test
     public void ConferenceTagTest() {
         mmm1 = new Conference();
@@ -277,7 +276,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
     }
-    
+
     @Test
     public void InbookTagTest() {
         im1 = new Inbook();
@@ -303,7 +302,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 2);
     }
-    
+
     @Test
     public void IncollectionTagTest() {
         ccm1 = new Incollection();
@@ -329,7 +328,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 2);
     }
-    
+
     @Test
     public void InproceedingsTagTest() {
         iim1 = new Inproceedings();
@@ -345,7 +344,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
     }
-    
+
     @Test
     public void ManualTagTest() {
         mam1 = new Manual();
@@ -366,9 +365,9 @@ public class TagServiceTest {
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("joo"));
         assertTrue(conferences.size() == 2);
-        
+
     }
-    
+
     @Test
     public void MastersTagTest() {
         mas1 = new Mastersthesis();
@@ -384,7 +383,7 @@ public class TagServiceTest {
         List<Mastersthesis> conferences2 = tagService.getMastersthesises("name");
         assertTrue(!conferences2.isEmpty());
     }
-    
+
     @Test
     public void MiscTagTest() {
         mis1 = new Misc();
@@ -405,9 +404,9 @@ public class TagServiceTest {
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 2);
-        
+
     }
-    
+
     @Test
     public void PhdthesisTagTest() {
         pm1 = new Phdthesis();
@@ -423,7 +422,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
     }
-    
+
     @Test
     public void ProceedingsTagTest() {
         prom1 = new Proceedings();
@@ -438,7 +437,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
     }
-    
+
     @Test
     public void TechreportTagTest() {
         tm1 = new Techreport();
@@ -454,7 +453,7 @@ public class TagServiceTest {
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
     }
-    
+
     @Test
     public void UnpublishedTagTest() {
         um1 = new Unpublished();
@@ -477,7 +476,27 @@ public class TagServiceTest {
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(conferences.size() == 1);
-        
     }
-    
+
+    @Test
+    public void emptyTagRepoTest() {
+        String tag = "tag";
+        tagService.getArticles(tag);
+        tagService.getInproceedings(tag);
+        tagService.getBooks(tag);
+        tagService.getMastersthesises(tag);
+        tagService.getTechreports(tag);
+        tagService.getBooklets(tag);
+        tagService.getConferences(tag);
+        tagService.getInbooks(tag);
+        tagService.getIncollections(tag);
+        tagService.getManuals(tag);
+        tagService.getMiscs(tag);
+        tagService.getPhdthesises(tag);
+        tagService.getProceedings(tag);
+        tagService.getUnpublished(tag);
+        List<Article> articles = tagService.getArticles("wagwge");
+        assertTrue(articles.isEmpty());
+    }
+
 }

@@ -1,6 +1,7 @@
 
 package wad.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,6 +55,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Book> getBooks() {
+        if(books == null) {
+            return new ArrayList<>();
+        }
         return books;
     }
 
@@ -62,6 +66,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Booklet> getBooklets() {
+        if(booklets == null) {
+            return new ArrayList<>();
+        }
         return booklets;
     }
 
@@ -70,6 +77,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Conference> getConferences() {
+        if(conferences == null) {
+            return new ArrayList<>();
+        }
         return conferences;
     }
 
@@ -78,6 +88,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Inbook> getInbooks() {
+        if(inbooks == null) {
+            return new ArrayList<>();
+        }
         return inbooks;
     }
 
@@ -86,6 +99,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Incollection> getIncollections() {
+        if(incollections == null) {
+            return new ArrayList<>();
+        }
         return incollections;
     }
 
@@ -94,6 +110,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Inproceedings> getInproceedings() {
+        if(inproceedings == null) {
+            return new ArrayList<>();
+        }
         return inproceedings;
     }
 
@@ -102,6 +121,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Proceedings> getProceedings() {
+        if(proceedings == null) {
+            return new ArrayList<>();
+        }
         return proceedings;
     }
 
@@ -110,6 +132,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Manual> getManuals() {
+        if(manuals == null) {
+            return new ArrayList<>();
+        }
         return manuals;
     }
 
@@ -118,6 +143,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Mastersthesis> getMastersthesises() {
+        if(mastersthesises == null) {
+            return new ArrayList<>();
+        }
         return mastersthesises;
     }
 
@@ -126,6 +154,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Misc> getMiscs() {
+        if(miscs == null) {
+            return new ArrayList<>();
+        }
         return miscs;
     }
 
@@ -134,6 +165,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Phdthesis> getPhdthesises() {
+        if(phdthesises == null) {
+            return new ArrayList<>();
+        }
         return phdthesises;
     }
 
@@ -142,6 +176,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Techreport> getTechreports() {
+        if(techreports == null) {
+            return new ArrayList<>();
+        }
         return techreports;
     }
 
@@ -150,6 +187,9 @@ public class Tag extends AbstractPersistable<Long> {
     }
 
     public List<Unpublished> getUnpublisheds() {
+        if(unpublisheds == null) {
+            return new ArrayList<>();
+        }
         return unpublisheds;
     }
 
