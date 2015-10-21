@@ -12,17 +12,17 @@ scenario "luon viitteen ja saan halutessa dokumentit bibtex-muodossa", {
         element = driver.findElement(By.linkText("Add new inproceedings"));       
         element.click();
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("cite");
+        element.sendKeys("ML1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Matt Luuks");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("kirjan otsikko");
+        element.sendKeys("Best Course Ever");
         element = driver.findElement(By.name("booktitle"));
-        element.sendKeys("julkaisija");
+        element.sendKeys("Courses Ever");
         element = driver.findElement(By.name("publisher"));
-        element.sendKeys("julkaisija2");
+        element.sendKeys("Not known");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("2015");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }
