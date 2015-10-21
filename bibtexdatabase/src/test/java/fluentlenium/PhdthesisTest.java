@@ -7,6 +7,7 @@ package fluentlenium;
 
 import org.fluentlenium.adapter.FluentTest;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -35,15 +36,28 @@ public class PhdthesisTest extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitPhdthesis(){
-        goTo("http://localhost:" +serverPort+"/phdthesises/new");
+    @Before
+    public void init(){
+        goTo("http://localhost:" + serverPort + "/phdthesises/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen väitöskirja");
         fill("#citation").with("väikkäri");
         fill("#school").with("school of epic people");
         fill("#year").with("1999");
         submit("button[type=submit]");
+    }
+    
+    @Test
+    public void submitPhdthesis(){
         assertTrue(pageSource().contains("New phdthesis created"));
+    }
+    
+    @Test
+    public void phdthesisBibtex(){
+        assertTrue(pageSource().contains("@Phdthesis {"));
+        assertTrue(pageSource().contains("1999"));
+        assertTrue(pageSource().contains("year"));
+        assertTrue(pageSource().contains("v{\\\"a}ikk{\\\"a}ri"));
+        assertTrue(pageSource().contains("}"));
     }
 }

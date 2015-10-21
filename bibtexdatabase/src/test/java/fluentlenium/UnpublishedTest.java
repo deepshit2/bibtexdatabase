@@ -7,6 +7,7 @@ package fluentlenium;
 
 import org.fluentlenium.adapter.FluentTest;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -35,15 +36,28 @@ public class UnpublishedTest extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitUnpublished(){
-        goTo("http://localhost:" +serverPort+"/unpublisheds/new");
+    @Before
+    public void init(){
+        goTo("http://localhost:" + serverPort + "/unpublisheds/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen julkaisematon salaisuus");
         fill("#citation").with("artsu");
-        fill("#note").with("paras julkaisu sitten julkaisemattomien");
+        fill("#note").with("paras julkaisu sitten julkaisemattomien ä");
         fill("#year").with("1999");
         submit("button[type=submit]");
+    }
+    
+    @Test
+    public void submitUnpublished(){
         assertTrue(pageSource().contains("New unpublished created"));
+    }
+    
+    @Test
+    public void unpublishedBibtex(){
+        assertTrue(pageSource().contains("@Unpublished {"));
+        assertTrue(pageSource().contains("1999"));
+        assertTrue(pageSource().contains("year"));
+        assertTrue(pageSource().contains("julkaisemattomien {\\\"a}"));
+        assertTrue(pageSource().contains("}"));
     }
 }

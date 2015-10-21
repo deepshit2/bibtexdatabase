@@ -7,6 +7,7 @@ package fluentlenium;
 
 import org.fluentlenium.adapter.FluentTest;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -35,13 +36,25 @@ public class BookletTest extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitBooklet(){
-        goTo("http://localhost:" +serverPort+"/booklets/new");
+    @Before
+    public void init(){
+        goTo("http://localhost:" + serverPort + "/booklets/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen vihko");
         fill("#citation").with("vihko");
         submit("button[type=submit]");
+    }
+    
+    @Test
+    public void submitBooklet(){
         assertTrue(pageSource().contains("New booklet created"));
+    }
+    
+    @Test
+    public void bookletBibtex(){
+        assertTrue(pageSource().contains("@Booklet {"));
+        assertTrue(pageSource().contains("Santeri"));
+        assertTrue(pageSource().contains("title"));
+        assertTrue(pageSource().contains("}"));
     }
 }

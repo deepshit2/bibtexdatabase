@@ -7,6 +7,7 @@ package fluentlenium;
 
 import org.fluentlenium.adapter.FluentTest;
 import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -35,9 +36,9 @@ public class InbookTest extends FluentTest {
         return webDriver;
     }
     
-    @Test
-    public void submitInbook(){
-        goTo("http://localhost:" +serverPort+"/inbooks/new");
+    @Before
+    public void init(){
+        goTo("http://localhost:" + serverPort + "/inbooks/new");
         fill("#author").with("Santeri");
         fill("#title").with("Eeppinen kandi");
         fill("#citation").with("artsu");
@@ -45,6 +46,18 @@ public class InbookTest extends FluentTest {
         fill("#year").with("1999");
         fill("#publisher").with("hämärä");
         submit("button[type=submit]");
+    }
+    
+    @Test
+    public void submitInbook(){
         assertTrue(pageSource().contains("New inbook created"));
+    }
+    
+    @Test
+    public void inbookBibtex(){
+        assertTrue(pageSource().contains("@Inbook {"));
+        assertTrue(pageSource().contains("1999"));
+        assertTrue(pageSource().contains("year"));
+        assertTrue(pageSource().contains("}"));
     }
 }
