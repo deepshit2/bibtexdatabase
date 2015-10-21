@@ -19,8 +19,8 @@ public class DownloadController {
     DownloadService downloadService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String download(@ModelAttribute("searchtext") String searchtext, HttpServletResponse response) {
-        String bibtex = downloadService.getBibtex(searchtext);
+    public String download(@ModelAttribute("downloadmessage") String downloadmessage, HttpServletResponse response) {
+        String bibtex = downloadService.getBibtex(downloadmessage);
         try {
             InputStream input = IOUtils.toInputStream(bibtex, "UTF-8");
             IOUtils.copy(input, response.getOutputStream());

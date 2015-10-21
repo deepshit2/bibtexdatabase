@@ -29,6 +29,7 @@
                     <input id="tag" class="form-control" type="text" name="searchtext"/>
                 </div>
                 <button type="submit" name="submit" value="download" class="btn btn-info">Download as BibTeX</button>
+                <input id="downloadmessage" class="form-control" type="text" th:value="${downloadmessage}" name="downloadmessage" style="display: none"/>
             </form>
             
             <ul class="list-group" id="list">

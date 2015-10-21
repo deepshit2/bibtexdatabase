@@ -1,0 +1,546 @@
+2015-10-22 01:01:38.877  INFO 19063 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Thu Oct 22 01:01:38 EEST 2015]; root of context hierarchy
+2015-10-22 01:01:40.843  INFO 19063 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-22 01:01:42.552  INFO 19063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$476b2802] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:01:42.599  INFO 19063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:01:42.612  INFO 19063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:01:42.627  INFO 19063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:01:43.537  INFO 19063 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-22 01:01:45.241  INFO 19063 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-22 01:01:45.252  INFO 19063 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-22 01:01:45.253  INFO 19063 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-22 01:01:46.361  INFO 19063 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-22 01:01:48.683 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-22 01:01:48.686 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-22 01:01:48.689 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-22 01:01:48.691 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-22 01:01:48.692 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-22 01:01:48.693 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-22 01:01:48.693 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-22 01:01:48.694 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-22 01:01:48.695 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-22 01:01:48.698 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-22 01:01:48.698 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-22 01:01:48.701 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-22 01:01:48.702 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-22 01:01:48.702 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-22 01:01:48.703 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-22 01:01:48.705 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-22 01:01:48.706 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-22 01:01:48.707 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-22 01:01:48.708 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-22 01:01:48.708 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-22 01:01:48.708 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-22 01:01:48.709 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-22 01:01:48.710 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-22 01:01:48.710 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-22 01:01:48.710 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-22 01:01:48.715 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-22 01:01:48.719 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-22 01:01:48.720 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-22 01:01:48.721 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-22 01:01:48.722 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-22 01:01:48.723 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-22 01:01:48.723 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-22 01:01:48.724 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-22 01:01:48.725 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-22 01:01:48.725 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-22 01:01:48.725 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-22 01:01:48.726 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-22 01:01:48.726 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-22 01:01:48.727 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-22 01:01:48.727 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-22 01:01:48.727 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-22 01:01:48.727 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-22 01:01:48.728 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-22 01:01:48.728 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-22 01:01:48.728 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-22 01:01:48.729 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-22 01:01:48.729 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-22 01:01:48.729 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-22 01:01:48.729 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-22 01:01:48.729 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-22 01:01:48.730 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-22 01:01:48.730 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-22 01:01:48.730 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-22 01:01:48.730 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-22 01:01:48.731 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-22 01:01:48.731 ERROR 19063 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-22 01:01:51.695  INFO 19063 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-22 01:01:51.808  INFO 19063 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-22 01:02:10.657 ERROR 19063 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response] with root cause
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:02:10.710 ERROR 19063 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:02:10.713 ERROR 19063 --- [http-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	... 30 common frames omitted
+
+2015-10-22 01:05:28.702 ERROR 19063 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response] with root cause
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:05:28.724 ERROR 19063 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:05:28.728 ERROR 19063 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	... 30 common frames omitted
+
+2015-10-22 01:08:21.177  INFO 19063 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Thu Oct 22 01:01:38 EEST 2015]; root of context hierarchy
+2015-10-22 01:08:21.193  INFO 19063 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-22 01:08:21.239  INFO 19063 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2015-10-22 01:08:31.694  INFO 19271 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Thu Oct 22 01:08:31 EEST 2015]; root of context hierarchy
+2015-10-22 01:08:33.469  INFO 19271 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-22 01:08:35.198  INFO 19271 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$476b2802] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:08:35.250  INFO 19271 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:08:35.266  INFO 19271 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:08:35.283  INFO 19271 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-22 01:08:36.102  INFO 19271 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2015-10-22 01:08:38.131  INFO 19271 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-22 01:08:38.148  INFO 19271 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-22 01:08:38.149  INFO 19271 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-22 01:08:39.483  INFO 19271 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-10-22 01:08:42.981 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_8cum6s2ucfosk3e4jepem69m5
+2015-10-22 01:08:42.984 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-22 01:08:42.984 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table article_tags drop constraint FK_1486uuwdkj0hint4jtkiyqm3t
+2015-10-22 01:08:42.985 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.ARTICLE_TAGS
+2015-10-22 01:08:42.985 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_axdd4vfy8ibb5j46r7evfeorf
+2015-10-22 01:08:42.985 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-22 01:08:42.986 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table book_tags drop constraint FK_i3vdk1l3bqhs47wiqlb25yfr4
+2015-10-22 01:08:42.986 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOK_TAGS
+2015-10-22 01:08:42.987 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_o1w3nqil734r9kn26v36ri14b
+2015-10-22 01:08:42.987 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-22 01:08:42.987 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table booklet_tags drop constraint FK_54onsrr6cj9813j9cykkwn1uw
+2015-10-22 01:08:42.987 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.BOOKLET_TAGS
+2015-10-22 01:08:42.988 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_r36sjdjosqfdybivnm19il1ha
+2015-10-22 01:08:42.988 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-22 01:08:42.989 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table conference_tags drop constraint FK_3b90v69aeqw2vkjg3gxg7tf9u
+2015-10-22 01:08:42.989 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.CONFERENCE_TAGS
+2015-10-22 01:08:42.990 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_tf7yyvn1si4qn2l69hw8wg548
+2015-10-22 01:08:42.990 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inbook_tags drop constraint FK_bck93bpuvkwg8gdlvmvpa57mu
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INBOOK_TAGS
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_nm0vldbuqf996aomded3nbmik
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table incollection_tags drop constraint FK_pfrv4vi3s7feosc2xqbbl36j1
+2015-10-22 01:08:42.991 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INCOLLECTION_TAGS
+2015-10-22 01:08:42.992 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_m9r3ng2ok7u7b6jb4be3mr7w0
+2015-10-22 01:08:42.992 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-22 01:08:42.992 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table inproceedings_tags drop constraint FK_6uxqq560iy5as982edi2ni3mr
+2015-10-22 01:08:42.992 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.INPROCEEDINGS_TAGS
+2015-10-22 01:08:42.993 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_4vebcav0yarv58rl7ihp00b10
+2015-10-22 01:08:42.993 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-22 01:08:42.993 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table manual_tags drop constraint FK_mh8j3rpewndo8qbgp3oietp1m
+2015-10-22 01:08:42.993 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MANUAL_TAGS
+2015-10-22 01:08:42.993 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_mnkaf6bhh92qo05j2s6jvp24r
+2015-10-22 01:08:42.994 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-22 01:08:42.994 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table mastersthesis_tags drop constraint FK_al5ijonhnsl9i3qrm4jhfeuyy
+2015-10-22 01:08:42.994 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MASTERSTHESIS_TAGS
+2015-10-22 01:08:42.995 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_9hqgcy9gemmulkioiicr580fu
+2015-10-22 01:08:42.995 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-22 01:08:42.995 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table misc_tags drop constraint FK_h3auaqmoer9dmj0gm1tunavw5
+2015-10-22 01:08:42.995 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.MISC_TAGS
+2015-10-22 01:08:42.995 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_euavtxmth3leekn9hrlpg1wfb
+2015-10-22 01:08:42.996 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-22 01:08:42.997 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table phdthesis_tags drop constraint FK_auciykqibder2y4k1k4ermap4
+2015-10-22 01:08:43.000 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PHDTHESIS_TAGS
+2015-10-22 01:08:43.002 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_hfkbb48esbaw3h6hvttpobcsc
+2015-10-22 01:08:43.003 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-22 01:08:43.004 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table proceedings_tags drop constraint FK_fbdicw5dh5xc58mrx8vacg2uu
+2015-10-22 01:08:43.004 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.PROCEEDINGS_TAGS
+2015-10-22 01:08:43.004 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_k85ct5fye0wyfp3xqib55hm8e
+2015-10-22 01:08:43.004 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-22 01:08:43.004 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table techreport_tags drop constraint FK_61y6088knmib1vg9pis6w32q1
+2015-10-22 01:08:43.005 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.TECHREPORT_TAGS
+2015-10-22 01:08:43.005 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_53flb3ly9skfsffod2txbk3mq
+2015-10-22 01:08:43.005 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-22 01:08:43.005 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000389: Unsuccessful: alter table unpublished_tags drop constraint FK_2ctr8ve0xmk9ma14ebugg63r1
+2015-10-22 01:08:43.006 ERROR 19271 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : user lacks privilege or object not found: PUBLIC.UNPUBLISHED_TAGS
+2015-10-22 01:08:46.580  INFO 19271 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-22 01:08:46.772  INFO 19271 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-10-22 01:25:07.162 ERROR 19271 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response] with root cause
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:25:07.203 ERROR 19271 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet dispatcherServlet threw exception
+
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-10-22 01:25:07.219 ERROR 19271 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:721)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:584)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:523)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:433)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:399)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:180)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:578)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:212)
+	at javax.servlet.ServletResponseWrapper.getWriter(ServletResponseWrapper.java:109)
+	at org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$SpelView.render(ErrorMvcAutoConfiguration.java:196)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	... 30 common frames omitted
+
+2015-10-22 01:25:22.866  INFO 19271 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@101df177: startup date [Thu Oct 22 01:08:31 EEST 2015]; root of context hierarchy
+2015-10-22 01:25:22.885  INFO 19271 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-10-22 01:25:22.955  INFO 19271 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

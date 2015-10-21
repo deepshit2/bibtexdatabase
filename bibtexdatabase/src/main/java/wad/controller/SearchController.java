@@ -99,6 +99,7 @@ public class SearchController {
         model.addAttribute("phdtheses", phdthesisService.search(searchtext));
         model.addAttribute("proceedings", proceedingsService.search(searchtext));
         model.addAttribute("unpublished", unpublishedService.search(searchtext));
+        model.addAttribute("downloadmessage",searchtext);
         return "index";
     }
 
