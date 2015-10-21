@@ -106,5 +106,4 @@ public class ArticleService implements ServiceInterface<Article>{
         }
         return result;
     }
-
 }

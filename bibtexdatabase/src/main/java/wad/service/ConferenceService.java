@@ -1,4 +1,3 @@
-
 package wad.service;
 
 import java.lang.reflect.Field;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import wad.domain.Conference;
 import wad.domain.Inproceedings;
 import wad.repository.ConferenceRepository;
-
 
 @Service
 public class ConferenceService implements ServiceInterface<Conference> {
@@ -33,58 +31,60 @@ public class ConferenceService implements ServiceInterface<Conference> {
     public Conference getConference(Long id) {
         return inproceedingsRepository.findOne(id);
     }
-    
-    
-    private String toBibtex(Conference inproceedings) throws IllegalArgumentException, IllegalAccessException{
+
+    private String toBibtex(Conference inproceedings) throws IllegalArgumentException, IllegalAccessException {
         String result = "@Conference {";
         String tabs;
         Class<? extends Object> obj = inproceedings.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            if(field.getName().equals("tags")) continue;
+            if (field.getName().equals("tags")) {
+                continue;
+            }
             boolean ehto = (field.get(inproceedings) != null && !field.get(inproceedings).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += inproceedings.getCitation() + "\n";
                 continue;
             }
-            if(ehto) {
-                if (field.getName().length()<8)
-                    tabs="\t\t\t";
-                else
-                    tabs="\t\t";
+            if (ehto) {
+                if (field.getName().length() < 8) {
+                    tabs = "\t\t\t";
+                } else {
+                    tabs = "\t\t";
+                }
                 result += String.format("%s%s=\t\t\"%s\",\n",
-                field.getName(),
-                tabs,
-                field.get(inproceedings));
+                        field.getName(),
+                        tabs,
+                        field.get(inproceedings));
             }
         }
         int ind = result.lastIndexOf(",");
-        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result = new StringBuilder(result).replace(ind, ind + 1, "").toString();
         result += "}";
-        
+
         result = aakkosetBibtexMuotoon(result);
         return result;
     }
-    
+
     private String aakkosetBibtexMuotoon(String result) {
         result = result.replace("ä", "{\\\"a}");
         result = result.replace("ö", "{\\\"o}");
         result = result.replace("å", "{\\aa}");
         return result;
     }
-    
+
     public String getBibtex(Long id) {
         Conference inproceedings = inproceedingsRepository.findOne(id);
         String result = "";
         try {
-        result = toBibtex(inproceedings);
+            result = toBibtex(inproceedings);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
-            return result;
+        return result;
     }
-    
+
     public String getBibtex(Conference conference) {
         String result = "";
         try {
@@ -94,16 +94,24 @@ public class ConferenceService implements ServiceInterface<Conference> {
         }
         return result;
     }
-    
+
     public List<Conference> search(String name) {
         List<Conference> result = new ArrayList<>();
         List<Conference> byAuthor = inproceedingsRepository.findByAuthorContaining(name);
         List<Conference> byTitle = inproceedingsRepository.findByTitleContaining(name);
         List<Conference> byBooktitle = inproceedingsRepository.findByBooktitleContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
-        result.addAll(byBooktitle);
+        for (Conference conference : byTitle) {
+            if (!result.contains(conference)) {
+                result.add(conference);
+            }
+        }
+        for (Conference conference : byBooktitle) {
+            if (!result.contains(conference)) {
+                result.add(conference);
+            }
+        }
         return result;
     }
-    
+
 }
