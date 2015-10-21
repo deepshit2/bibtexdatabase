@@ -15,15 +15,15 @@ scenario "käyttäjä voi lisätä articlen kunnollisilla syötteillä", {
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("artsu");
+        element.sendKeys("PA1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Peter Adams");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("artikkelin otsikko");
+        element.sendKeys("The title of the work");
         element = driver.findElement(By.name("journal"));
-        element.sendKeys("jossain lehdessa");
+        element.sendKeys("The name of the journal");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("2000");
+        element.sendKeys("1993");
         element = driver.findElement(By.name("number"));
         element.sendKeys("2");
         element = driver.findElement(By.name("pages"));
@@ -31,9 +31,9 @@ scenario "käyttäjä voi lisätä articlen kunnollisilla syötteillä", {
         element = driver.findElement(By.name("month"));
         element.sendKeys("10");
         element = driver.findElement(By.name("note"));
-        element.sendKeys("joooo");
+        element.sendKeys("optional note");
         element = driver.findElement(By.name("volume"));
-        element.sendKeys("3");
+        element.sendKeys("4");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }

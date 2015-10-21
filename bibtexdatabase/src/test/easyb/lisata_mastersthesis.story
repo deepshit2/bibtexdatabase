@@ -15,15 +15,15 @@ scenario "käyttäjä voi lisätä mastersthesis kunnollisilla syötteillä", {
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("masterblastermastersthesis");
+        element.sendKeys("MT1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Master Thesis");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("kirjan otsikko");
+        element.sendKeys("MasterBlaster Master");
         element = driver.findElement(By.name("school"));
-        element.sendKeys("julkaisija");
+        element.sendKeys("University of Masters");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("1995");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }

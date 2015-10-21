@@ -15,27 +15,23 @@ scenario "käyttäjä voi lisätä inbookin kunnollisilla syötteillä", {
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("citation");
+        element.sendKeys("EE1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Esther Eston");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("otsikko");
+        element.sendKeys("Badcode for dummies");
         element = driver.findElement(By.name("pages"));
         element.sendKeys("123");
         element = driver.findElement(By.name("publisher"));
-        element.sendKeys("julkaisija");
+        element.sendKeys("For dummies Inc.");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("1984");
         element = driver.findElement(By.name("address"));
-        element.sendKeys("osoite 10");
+        element.sendKeys("Dummystreet 50, NY");
         element = driver.findElement(By.name("month"));
-        element.sendKeys("12");
-        element = driver.findElement(By.name("type"));
-        element.sendKeys("tyyppi");
+        element.sendKeys("11");
         element = driver.findElement(By.name("note"));
-        element.sendKeys("muistio");
-        element = driver.findElement(By.name("key"));
-        element.sendKeys("avain");
+        element.sendKeys("notes for readers");
         element = driver.findElement(By.name("volume"));
         element.sendKeys("1");
         element = driver.findElement(By.name("series"));

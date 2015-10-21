@@ -15,17 +15,17 @@ scenario "käyttäjä voi lisätä inproceedingsin kunnollisilla syötteillä", 
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("cite");
+        element.sendKeys("HF1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Harry Farindon");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("kirjan otsikko");
+        element.sendKeys("Far from here");
         element = driver.findElement(By.name("booktitle"));
-        element.sendKeys("julkaisija");
+        element.sendKeys("Title of my book");
         element = driver.findElement(By.name("publisher"));
-        element.sendKeys("julkaisija2");
+        element.sendKeys("PublishIT");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("1992");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }

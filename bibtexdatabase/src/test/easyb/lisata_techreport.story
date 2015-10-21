@@ -15,15 +15,15 @@ scenario "käyttäjä voi lisätä techreportit kunnollisilla syötteillä", {
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
-        element.sendKeys("raporttirobotti");
+        element.sendKeys("MM1");
         element = driver.findElement(By.name("author"));
-        element.sendKeys("kirjoittaja");
+        element.sendKeys("Marc Marcheford");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("kirjan otsikko");
+        element.sendKeys("Ford, Car or Harrison");
         element = driver.findElement(By.name("institution"));
-        element.sendKeys("julkaisija");
+        element.sendKeys("Ford Institute");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("1933");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }
