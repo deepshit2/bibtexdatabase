@@ -47,6 +47,9 @@ public class Tag extends AbstractPersistable<Long> {
     private List<Unpublished> unpublisheds;
     
     public List<Article> getArticles() {
+        if(articles == null) {
+            return new ArrayList<>();
+        }
         return articles;
     }
 

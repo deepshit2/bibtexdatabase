@@ -85,7 +85,6 @@ public class BookService implements ServiceInterface<Book> {
         try {
             result = toBibtex(book);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -95,7 +94,6 @@ public class BookService implements ServiceInterface<Book> {
         try {
             result = toBibtex(book);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -105,7 +103,11 @@ public class BookService implements ServiceInterface<Book> {
         List<Book> byAuthor = bookRepository.findByAuthorContaining(name);
         List<Book> byTitle = bookRepository.findByTitleContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
+        for (Book book : byTitle) {
+            if(!result.contains(book)){
+                result.add(book);
+            }
+        }
         return result;
     }
 

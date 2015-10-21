@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import wad.domain.Article;
 import wad.domain.Booklet;
 import wad.domain.Tag;
 import wad.repository.BookletRepository;
@@ -82,7 +83,6 @@ public class BookletService implements ServiceInterface<Booklet> {
         try {
             result = toBibtex(book);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -92,7 +92,6 @@ public class BookletService implements ServiceInterface<Booklet> {
         try {
             result = toBibtex(booklet);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -102,7 +101,11 @@ public class BookletService implements ServiceInterface<Booklet> {
         List<Booklet> byAuthor = repo.findByAuthorContaining(name);
         List<Booklet> byTitle = repo.findByTitleContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
+        for (Booklet booklet : byTitle) {
+            if(!result.contains(booklet)){
+                result.add(booklet);
+            }
+        }
         return result;
     }
 

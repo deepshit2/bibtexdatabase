@@ -46,5 +46,11 @@ public class ConferenceTest {
         assertTrue(i.getSeries() == 1);
         
     }
+    
+    @Test
+    public void testTagsEmpty() {
+        Conference i = new Conference();
+        assertTrue(i.getTags().isEmpty());
+    }
 
 }

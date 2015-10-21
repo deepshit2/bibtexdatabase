@@ -2,6 +2,7 @@
 package wad.domain;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class BookletTest {
@@ -31,6 +32,12 @@ public class BookletTest {
         assertEquals(2015, (int) book.getYear());
         assertEquals("kopioitu", book.getHowpublished());
         
+    }
+    
+    @Test
+    public void testTagsEmpty() {
+        Booklet book = new Booklet();
+        assertTrue(book.getTags().isEmpty());
     }
     
 }

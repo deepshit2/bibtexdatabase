@@ -17,7 +17,7 @@
             <div th:replace="fragments/navbar :: navbar"></div>
 
             <h1>Bibtexdatabase</h1>  
-            <form role="form" action="#">
+             <form role="form" method="GET" th:action="@{/search/keyword}">
                 <div class="form-group">
                     <input class="filterinput form-control" id="author" type="text" name="searchtext"/>
                 </div>

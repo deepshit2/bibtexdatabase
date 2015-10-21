@@ -2,6 +2,7 @@
 package wad.domain;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class UnpublishedTest {
@@ -26,8 +27,12 @@ public class UnpublishedTest {
         assertEquals("Title", book.getTitle());
         assertEquals(1, (int) book.getMonth());
         assertEquals(2015, (int) book.getYear());
-        
-        
+    }
+    
+    @Test
+    public void testTagsEmpty() {
+        Unpublished book = new Unpublished();
+        assertTrue(book.getTags().isEmpty());
     }
     
 }

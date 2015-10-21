@@ -37,56 +37,58 @@ public class TechreportService implements ServiceInterface<Techreport> {
     public Techreport getTechreport(Long id) {
         return techreportRepository.findOne(id);
     }
-    
-    private String toBibtex(Techreport techreport) throws IllegalArgumentException, IllegalAccessException{
+
+    private String toBibtex(Techreport techreport) throws IllegalArgumentException, IllegalAccessException {
         String result = "@Techreport {";
         String tabs;
         Class<? extends Object> obj = techreport.getClass();
         Field[] fields = obj.getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-            if(field.getName().equals("tags")) continue;
+            if (field.getName().equals("tags")) {
+                continue;
+            }
             boolean ehto = (field.get(techreport) != null && !field.get(techreport).toString().isEmpty());
             if (ehto && field.getName().equals("citation")) {
                 result += techreport.getCitation() + "\n";
                 continue;
             }
-            if(ehto) {
-                if (field.getName().length()<8)
-                    tabs="\t\t\t";
-                else
-                    tabs="\t\t";
+            if (ehto) {
+                if (field.getName().length() < 8) {
+                    tabs = "\t\t\t";
+                } else {
+                    tabs = "\t\t";
+                }
                 result += String.format("%s%s=\t\t\"%s\",\n",
-                field.getName(),
-                tabs,
-                field.get(techreport));
+                        field.getName(),
+                        tabs,
+                        field.get(techreport));
             }
         }
         int ind = result.lastIndexOf(",");
-        result = new StringBuilder(result).replace(ind, ind+1,"").toString();
+        result = new StringBuilder(result).replace(ind, ind + 1, "").toString();
         result += "}";
         result = aakkosetBibtexMuotoon(result);
         return result;
     }
-    
+
     private String aakkosetBibtexMuotoon(String result) {
         result = result.replace("ä", "{\\\"a}");
         result = result.replace("ö", "{\\\"o}");
         result = result.replace("å", "{\\aa}");
         return result;
     }
-    
+
     public String getBibtex(Long id) {
         Techreport techreport = techreportRepository.findOne(id);
         String result = "";
         try {
-        result = toBibtex(techreport);
+            result = toBibtex(techreport);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
-            return result;
-        }
-    
+        return result;
+    }
+
     public String getBibtex(Techreport techreport) {
         String result = "";
         try {
@@ -103,8 +105,16 @@ public class TechreportService implements ServiceInterface<Techreport> {
         List<Techreport> byTitle = techreportRepository.findByTitleContaining(name);
         List<Techreport> byBooktitle = techreportRepository.findByInstitutionContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
-        result.addAll(byBooktitle);
+        for (Techreport mastersthesis : byTitle) {
+            if (!result.contains(mastersthesis)) {
+                result.add(mastersthesis);
+            }
+        }
+        for (Techreport mastersthesis : byBooktitle) {
+            if (!result.contains(mastersthesis)) {
+                result.add(mastersthesis);
+            }
+        }
         return result;
     }
 

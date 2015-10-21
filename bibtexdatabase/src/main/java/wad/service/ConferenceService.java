@@ -88,7 +88,6 @@ public class ConferenceService implements ServiceInterface<Conference> {
         try {
             result = toBibtex(inproceedings);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -98,7 +97,6 @@ public class ConferenceService implements ServiceInterface<Conference> {
         try {
             result = toBibtex(conference);
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }
@@ -109,8 +107,16 @@ public class ConferenceService implements ServiceInterface<Conference> {
         List<Conference> byTitle = inproceedingsRepository.findByTitleContaining(name);
         List<Conference> byBooktitle = inproceedingsRepository.findByBooktitleContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
-        result.addAll(byBooktitle);
+        for (Conference conference : byTitle) {
+            if (!result.contains(conference)) {
+                result.add(conference);
+            }
+        }
+        for (Conference conference : byBooktitle) {
+            if (!result.contains(conference)) {
+                result.add(conference);
+            }
+        }
         return result;
     }
 

@@ -24,6 +24,7 @@ public class DownloadController {
         try {
             InputStream input = IOUtils.toInputStream(bibtex, "UTF-8");
             IOUtils.copy(input, response.getOutputStream());
+            response.setContentType("text/csv");
             response.flushBuffer();
         } catch (IOException ex) {
             throw new RuntimeException("IOError writing file to output stream");

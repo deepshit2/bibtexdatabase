@@ -3,55 +3,51 @@ import wad.controller.*
 import org.openqa.selenium.*
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-description 'Käyttäjänä haluan lisätä book-viitteitä järjestelmään lomakkeella webbisivun kautta.'
+description 'Käyttäjänä haluan lisätä proceedings-viitteitä järjestelmään lomakkeella webbisivun kautta.'
 
-scenario "käyttäjä voi lisätä bookin kunnollisilla syötteillä", {
+scenario "käyttäjä voi lisätä proceedingsin kunnollisilla syötteillä", {
     given 'käyttäjä on lomakesivulla', {
         driver = new HtmlUnitDriver();
         driver.get("https://bibtexdatabase.herokuapp.com/");
-        element = driver.findElement(By.linkText("Add new book"));       
+        element = driver.findElement(By.linkText("Add new proceedings"));       
         element.click();
     }
 
     when 'käyttäjä on syöttänyt kunnolliset syötteet', {
         element = driver.findElement(By.name("citation"));
         element.sendKeys("PB1");
-        element = driver.findElement(By.name("author"));
-        element.sendKeys("Patty Babington");
         element = driver.findElement(By.name("title"));
-        element.sendKeys("Computers of my life");
+        element.sendKeys("End of this");
         element = driver.findElement(By.name("publisher"));
-        element.sendKeys("The name of my publisher");
+        element.sendKeys("Kumpula publishing");
         element = driver.findElement(By.name("year"));
-        element.sendKeys("1999");
+        element.sendKeys("2013");
         element = driver.findElement(By.name("volume"));
-        element.sendKeys("5");
+        element.sendKeys("2");
         element = driver.findElement(By.name("series"));
-        element.sendKeys("10");
+        element.sendKeys("11");
         element = driver.findElement(By.name("address"));
-        element.sendKeys("Parkhill Street 10");
-        element = driver.findElement(By.name("edition"));
+        element.sendKeys("Gumproad 120");
+        element = driver.findElement(By.name("editor"));
         element.sendKeys("3");
         element = driver.findElement(By.name("month"));
-        element.sendKeys("12");
+        element.sendKeys("3");
         element = driver.findElement(By.name("note"));
-        element.sendKeys("additional note");
-        element = driver.findElement(By.name("isbn"));
-        element.sendKeys("315-6616-156");
+        element.sendKeys("note");
         element = driver.findElement(By.name("submit"));
         element.submit();
     }
 
-    then 'uusi book tallennetaan', {
-        driver.getPageSource().contains("New book created").shouldBe true
+    then 'uusi proceedings tallennetaan', {
+        driver.getPageSource().contains("New proceeding created").shouldBe true
     }
 }
 
-scenario "käyttäjä ei voi lisätä bookkia epäkunnollisilla syötteillä", {
+scenario "käyttäjä ei voi lisätä proceedingsia epäkunnollisilla syötteillä", {
     given 'käyttäjä on lomakesivulla', {
         driver = new HtmlUnitDriver();
         driver.get("https://bibtexdatabase.herokuapp.com/");
-        element = driver.findElement(By.linkText("Add new book"));       
+        element = driver.findElement(By.linkText("Add new proceedings"));       
         element.click();
     }
 
@@ -60,8 +56,9 @@ scenario "käyttäjä ei voi lisätä bookkia epäkunnollisilla syötteillä", {
         element.submit();
     }
 
-    then 'uutta bookkia ei tallenneta', {
-        driver.getPageSource().contains("New book created").shouldBe false
+    then 'uutta proceedingsia ei tallenneta', {
+        driver.getPageSource().contains("New proceeding created").shouldBe false
     }
 
 }
+
