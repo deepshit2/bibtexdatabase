@@ -119,6 +119,7 @@ public class SearchController {
         model.addAttribute("phdtheses", tagService.getPhdthesises(tag));
         model.addAttribute("proceedings", tagService.getProceedings(tag));
         model.addAttribute("unpublished", tagService.getUnpublished(tag));
+        model.addAttribute("downloadmessage",tag);
         return "index";
     }
 }
