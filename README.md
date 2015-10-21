@@ -39,3 +39,6 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 * Käyttäjänä haluan pystyä hakemaan viitteitä asiasanojen perusteella
 * Käyttäjänä haluan lisätä inproceedings-viitteitä järjestelmään lomakkeella webbisivun kautta.
 
+##Raportti
+https://docs.google.com/document/d/1AwVtWAzgvwDIlXvLKpkkzT8hht1q0ngVggBOmRr0eUw/edit?usp=sharing
+
