@@ -99,7 +99,11 @@ public class ArticleService implements ServiceInterface<Article>{
         List<Article> byAuthor = articleRepository.findByAuthorContaining(name);
         List<Article> byTitle = articleRepository.findByTitleContaining(name);
         result.addAll(byAuthor);
-        result.addAll(byTitle);
+        for (Article article : byTitle) {
+            if(!result.contains(article)){
+                result.add(article);
+            }
+        }
         return result;
     }
 

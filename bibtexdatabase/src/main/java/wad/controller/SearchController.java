@@ -83,27 +83,22 @@ public class SearchController {
     @Autowired
     private UnpublishedService unpublishedService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String search() {
-        return "search";
-    }
-
     @RequestMapping(value = "/keyword", method = RequestMethod.GET)
-    public String find(@RequestParam String search, Model model) {
-        model.addAttribute("books", bookService.search(search));
-        model.addAttribute("articles", articleService.search(search));
-        model.addAttribute("inproceedings", inproceedingsService.search(search));
-        model.addAttribute("mastersthesises", mastersthesisService.search(search));
-        model.addAttribute("techreports", techreportService.search(search));
-        model.addAttribute("booklets", bookletService.search(search));
-        model.addAttribute("conferences", conferenceService.search(search));
-        model.addAttribute("inbooks", inbookService.search(search));
-        model.addAttribute("incollections", incollectionService.search(search));
-        model.addAttribute("manuals", manualService.search(search));
-        model.addAttribute("miscs", miscService.search(search));
-        model.addAttribute("phdtheses", phdthesisService.search(search));
-        model.addAttribute("proceedings", proceedingsService.search(search));
-        model.addAttribute("unpublished", unpublishedService.search(search));
+    public String find(@RequestParam String searchtext, Model model) {
+        model.addAttribute("books", bookService.search(searchtext));
+        model.addAttribute("articles", articleService.search(searchtext));
+        model.addAttribute("inproceedings", inproceedingsService.search(searchtext));
+        model.addAttribute("mastersthesises", mastersthesisService.search(searchtext));
+        model.addAttribute("techreports", techreportService.search(searchtext));
+        model.addAttribute("booklets", bookletService.search(searchtext));
+        model.addAttribute("conferences", conferenceService.search(searchtext));
+        model.addAttribute("inbooks", inbookService.search(searchtext));
+        model.addAttribute("incollections", incollectionService.search(searchtext));
+        model.addAttribute("manuals", manualService.search(searchtext));
+        model.addAttribute("miscs", miscService.search(searchtext));
+        model.addAttribute("phdtheses", phdthesisService.search(searchtext));
+        model.addAttribute("proceedings", proceedingsService.search(searchtext));
+        model.addAttribute("unpublished", unpublishedService.search(searchtext));
         return "index";
     }
 
