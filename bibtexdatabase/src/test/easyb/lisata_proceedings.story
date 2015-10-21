@@ -39,7 +39,7 @@ scenario "käyttäjä voi lisätä proceedingsin kunnollisilla syötteillä", {
     }
 
     then 'uusi proceedings tallennetaan', {
-        driver.getPageSource().contains("New proceedings created").shouldBe true
+        driver.getPageSource().contains("New proceeding created").shouldBe true
     }
 }
 
@@ -57,7 +57,7 @@ scenario "käyttäjä ei voi lisätä proceedingsia epäkunnollisilla syötteill
     }
 
     then 'uutta proceedingsia ei tallenneta', {
-        driver.getPageSource().contains("New proceedings created").shouldBe false
+        driver.getPageSource().contains("New proceeding created").shouldBe false
     }
 
 }
