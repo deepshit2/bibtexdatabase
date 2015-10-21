@@ -35,5 +35,11 @@ public class ArticleTest {
         assertEquals("artsu", article.getCitation());
 
     }
+    
+    @Test
+    public void testTagsEmpty() {
+        Article article = new Article();
+        assertTrue(article.getTags().isEmpty());
+    }
 
 }

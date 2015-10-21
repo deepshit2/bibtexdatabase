@@ -38,4 +38,10 @@ public class MastersthesisTest {
         
     }
     
+    @Test
+    public void testTagsEmpty() {
+        Mastersthesis thesis = new Mastersthesis();
+        assertTrue(thesis.getTags().isEmpty());
+    }
+    
 }
