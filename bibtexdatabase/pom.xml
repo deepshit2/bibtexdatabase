@@ -140,11 +140,15 @@
                             <ignore>wad/profiles/*.class</ignore>
                             <ignore>wad/Application.class</ignore>
                             <ignore>wad/controller/SearchController.class</ignore>
+                            <ignore>wad/controller/DownloadController.class</ignore>
+                            <ignore>wad/controller/TagController.class</ignore>
                         </ignores>
                         <excludes>
                             <exclude>wad/profiles/*.class</exclude>
                             <exclude>wad/Application.class</exclude>
                             <exclude>wad/controller/SearchController.class</exclude>
+                            <exclude>wad/controller/DownloadController.class</exclude>
+                            <exclude>wad/controller/TagController.class</exclude>
                         </excludes>
                     </instrumentation>
                     <maxmem>256m</maxmem>
