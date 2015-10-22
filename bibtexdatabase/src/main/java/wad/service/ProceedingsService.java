@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Inproceedings;
 import wad.domain.Proceedings;
 import wad.domain.Tag;
 import wad.repository.ProceedingsRepository;
@@ -104,9 +103,9 @@ public class ProceedingsService implements ServiceInterface<Proceedings> {
         List<Proceedings> byTitle = inproceedingsRepository.findByTitleContaining(name);
         List<Proceedings> byEditor = inproceedingsRepository.findByEditorContaining(name);
         result.addAll(byEditor);
-        for (Proceedings mastersthesis : byTitle) {
-            if (!result.contains(mastersthesis)) {
-                result.add(mastersthesis);
+        for (Proceedings proceedings : byTitle) {
+            if (!result.contains(proceedings)) {
+                result.add(proceedings);
             }
         }
         return result;

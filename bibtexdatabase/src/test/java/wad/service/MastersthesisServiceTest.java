@@ -24,112 +24,112 @@ public class MastersthesisServiceTest {
     @Autowired
     private MastersthesisRepository repository;
 
-    private Mastersthesis m1;
-    private Mastersthesis m2;
+    private Mastersthesis masters1;
+    private Mastersthesis masters2;
 
     @Before
     public void setUp() {
         repository.deleteAll();
-        m1 = new Mastersthesis();
-        m1.setCitation("cite");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setSchool("koulu1");
-        m1.setYear(2001);
-        m2 = new Mastersthesis();
-        m2.setCitation("cite");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setSchool("koulu2");
-        m2.setYear(2002);
+        masters1 = new Mastersthesis();
+        masters1.setCitation("cite");
+        masters1.setAuthor("author1");
+        masters1.setTitle("otsikko1");
+        masters1.setSchool("koulu1");
+        masters1.setYear(2001);
+        masters2 = new Mastersthesis();
+        masters2.setCitation("cite");
+        masters2.setAuthor("author2");
+        masters2.setTitle("otsikko2");
+        masters2.setSchool("koulu2");
+        masters2.setYear(2002);
     }
 
     @Test
     public void testAddThesis() {
-        service.addMastersthesis(m1);
-        Mastersthesis retrieved = repository.findOne(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        service.addMastersthesis(masters1);
+        Mastersthesis retrieved = repository.findOne(masters1.getId());
+        assertEquals(retrieved.getId(), masters1.getId());
+        assertEquals(retrieved.getAuthor(), masters1.getAuthor());
+        assertEquals(retrieved.getTitle(), masters1.getTitle());
     }
 
     @Test
     public void testDeleteThesis() {
-        repository.save(m1);
-        Long id = m1.getId();
-        service.deleteMastersthesis(m1.getId());
+        repository.save(masters1);
+        Long id = masters1.getId();
+        service.deleteMastersthesis(masters1.getId());
         Mastersthesis eiOle = repository.findOne(id);
         assertTrue(eiOle == null);
     }
 
     @Test
     public void testGetThesis() {
-        repository.save(m1);
-        Mastersthesis retrieved = service.getMastersthesis(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        repository.save(masters1);
+        Mastersthesis retrieved = service.getMastersthesis(masters1.getId());
+        assertEquals(retrieved.getId(), masters1.getId());
+        assertEquals(retrieved.getAuthor(), masters1.getAuthor());
+        assertEquals(retrieved.getTitle(), masters1.getTitle());
     }
 
     @Test
     public void testListArticles() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> kaikki = service.list();
         List<String> titles = new ArrayList();
         for (Mastersthesis m : kaikki) {
             titles.add(m.getTitle());
         }
-        assertTrue(titles.contains(m1.getTitle()));
-        assertTrue(titles.contains(m2.getTitle()));
+        assertTrue(titles.contains(masters1.getTitle()));
+        assertTrue(titles.contains(masters2.getTitle()));
     }
 
     @Test
     public void testFindByAuthor() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> articles = service.search("thor1");
         assertTrue(articles.size() == 1);
-        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(articles.get(0).getAuthor(), masters1.getAuthor());
     }
 
     @Test
     public void testFindByTitle() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> boobs = service.search("kko1");
         assertTrue(boobs.size() == 1);
-        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(boobs.get(0).getAuthor(), masters1.getAuthor());
     }
 
     @Test
     public void testFindBySchool() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> boobs = service.search("oulu2");
         assertTrue(boobs.size() == 1);
     }
 
     @Test
     public void testSearchCanFindAll() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> boobs = service.search("ikko");
         assertTrue(boobs.size() == 2);
     }
 
     @Test
     public void nonExistCantBeFound() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(masters1);
+        repository.save(masters2);
         List<Mastersthesis> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
     
     @Test
     public void testGetBibtex() {
-        repository.save(m1);
-        String bibtex = service.getBibtex(m1.getId());
+        repository.save(masters1);
+        String bibtex = service.getBibtex(masters1.getId());
         assertTrue(bibtex.contains("@Mastersthesis"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));

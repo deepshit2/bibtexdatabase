@@ -65,97 +65,97 @@ public class TagServiceTest {
     @Autowired
     private BookRepository bookrepository;
 
-    private Book m1;
-    private Book m2;
+    private Book book1;
+    private Book book2;
 
     @Autowired
     private BookletRepository bookletrepository;
 
-    private Booklet mm1;
-    private Booklet mm2;
+    private Booklet booklet1;
+    private Booklet booklet2;
 
     @Autowired
-    private ConferenceRepository crepository;
+    private ConferenceRepository conferenceRepository;
 
-    private Conference mmm1;
-    private Conference mmm2;
-
-    @Autowired
-    private InbookRepository inrepository;
-
-    private Inbook im1;
-    private Inbook im2;
+    private Conference conference1;
+    private Conference conference2;
 
     @Autowired
-    private IncollectionRepository incorepository;
+    private InbookRepository inbookRepository;
 
-    private Incollection ccm1;
-    private Incollection ccm2;
-
-    @Autowired
-    private InproceedingsRepository iirepository;
-
-    private Inproceedings iim1;
-    private Inproceedings iim2;
+    private Inbook inbook1;
+    private Inbook inbook2;
 
     @Autowired
-    private ManualRepository marepository;
+    private IncollectionRepository incollectionRepository;
 
-    private Manual mam1;
-    private Manual mam2;
+    private Incollection incollection1;
+    private Incollection incollection2;
 
     @Autowired
-    private MastersthesisRepository masrepository;
+    private InproceedingsRepository inproceedingsRepository;
+
+    private Inproceedings inproceedings1;
+    private Inproceedings inproceedings2;
+
+    @Autowired
+    private ManualRepository manualRepository;
+
+    private Manual manual1;
+    private Manual manual2;
+
+    @Autowired
+    private MastersthesisRepository mastersthesisRepository;
 
     private Mastersthesis mas1;
     private Mastersthesis mas2;
 
     @Autowired
-    private MiscRepository misrepository;
+    private MiscRepository miscRepository;
 
-    private Misc mis1;
-    private Misc mis2;
-
-    @Autowired
-    private PhdthesisRepository prepository;
-
-    private Phdthesis pm1;
-    private Phdthesis pm2;
+    private Misc misc1;
+    private Misc misc2;
 
     @Autowired
-    private ProceedingsRepository prorepository;
+    private PhdthesisRepository phdRepository;
 
-    private Proceedings prom1;
-    private Proceedings prom2;
-
-    @Autowired
-    private TechreportRepository trepository;
-
-    private Techreport tm1;
-    private Techreport tm2;
+    private Phdthesis phd1;
+    private Phdthesis phd2;
 
     @Autowired
-    private UnpublishedRepository urepository;
+    private ProceedingsRepository proceedingsRepository;
 
-    private Unpublished um1;
-    private Unpublished um2;
+    private Proceedings proceedings1;
+    private Proceedings proceedings2;
+
+    @Autowired
+    private TechreportRepository techRepository;
+
+    private Techreport techreport1;
+    private Techreport techreport2;
+
+    @Autowired
+    private UnpublishedRepository unpublishedRepository;
+
+    private Unpublished unpublished1;
+    private Unpublished unpublished2;
 
     @Before
     public void setUp() {
         articleRepository.deleteAll();
         bookrepository.deleteAll();
         bookletrepository.deleteAll();
-        crepository.deleteAll();
-        inrepository.deleteAll();
-        incorepository.deleteAll();
-        marepository.deleteAll();
-        iirepository.deleteAll();
-        misrepository.deleteAll();
-        prepository.deleteAll();
-        prorepository.deleteAll();
-        masrepository.deleteAll();
-        urepository.deleteAll();
-        trepository.deleteAll();
+        conferenceRepository.deleteAll();
+        inbookRepository.deleteAll();
+        incollectionRepository.deleteAll();
+        manualRepository.deleteAll();
+        inproceedingsRepository.deleteAll();
+        miscRepository.deleteAll();
+        phdRepository.deleteAll();
+        proceedingsRepository.deleteAll();
+        mastersthesisRepository.deleteAll();
+        unpublishedRepository.deleteAll();
+        techRepository.deleteAll();
         tagRepo.deleteAll();
         tag1 = new Tag();
         tag1.setName("nimi");
@@ -204,49 +204,49 @@ public class TagServiceTest {
     @Test
     public void BookTagTest() {
         bookrepository.deleteAll();
-        m1 = new Book();
-        m1.setCitation("kirja");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setPublisher("koulu1");
-        m1.setYear(2001);
-        m2 = new Book();
-        m2.setCitation("kirja");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setPublisher("koulu2");
-        m2.setYear(2002);
-        m1.setTags(tagit1);
-        m2.setTags(tagit1);
-        bookrepository.save(m1);
-        bookrepository.save(m2);
+        book1 = new Book();
+        book1.setCitation("kirja");
+        book1.setAuthor("author1");
+        book1.setTitle("otsikko1");
+        book1.setPublisher("koulu1");
+        book1.setYear(2001);
+        book2 = new Book();
+        book2.setCitation("kirja");
+        book2.setAuthor("author2");
+        book2.setTitle("otsikko2");
+        book2.setPublisher("koulu2");
+        book2.setYear(2002);
+        book1.setTags(tagit1);
+        book2.setTags(tagit1);
+        bookrepository.save(book1);
+        bookrepository.save(book2);
 
         List<Book> books = tagService.getBooks("nimi");
         assertTrue(!books.isEmpty());
         assertTrue(books.get(0).getTags().get(0).getName().equals("nimi"));
         assertTrue(books.size() == 2);
-        m2.setTags(tagit2);
-        bookrepository.save(m2);
+        book2.setTags(tagit2);
+        bookrepository.save(book2);
         List<Book> books2 = tagService.getBooks("joo");
         assertTrue(books2.size() == 1);
     }
 
     @Test
     public void BookletTagTest() {
-        mm1 = new Booklet();
-        mm1.setCitation("citation1");
-        mm1.setAuthor("author1");
-        mm1.setTitle("otsikko1");
-        mm1.setYear(2001);
-        mm2 = new Booklet();
-        mm2.setCitation("citation2");
-        mm2.setAuthor("author2");
-        mm2.setTitle("otsikko2");
-        mm2.setYear(2002);
-        mm1.setTags(tagit1);
-        mm2.setTags(tagit2);
-        bookletrepository.save(mm1);
-        bookletrepository.save(mm2);
+        booklet1 = new Booklet();
+        booklet1.setCitation("citation1");
+        booklet1.setAuthor("author1");
+        booklet1.setTitle("otsikko1");
+        booklet1.setYear(2001);
+        booklet2 = new Booklet();
+        booklet2.setCitation("citation2");
+        booklet2.setAuthor("author2");
+        booklet2.setTitle("otsikko2");
+        booklet2.setYear(2002);
+        booklet1.setTags(tagit1);
+        booklet2.setTags(tagit2);
+        bookletrepository.save(booklet1);
+        bookletrepository.save(booklet2);
         List<Booklet> books = tagService.getBooklets("nimi");
         assertTrue(!books.isEmpty());
         assertTrue(books.get(0).getTags().get(0).getName().equals("nimi"));
@@ -255,22 +255,22 @@ public class TagServiceTest {
 
     @Test
     public void ConferenceTagTest() {
-        mmm1 = new Conference();
-        mmm1.setCitation("cite");
-        mmm1.setAuthor("author1");
-        mmm1.setTitle("otsikko1");
-        mmm1.setBooktitle("koulu1");
-        mmm1.setYear(2001);
-        mmm2 = new Conference();
-        mmm2.setCitation("cite2");
-        mmm2.setAuthor("author2");
-        mmm2.setTitle("otsikko2");
-        mmm2.setBooktitle("koulu2");
-        mmm2.setYear(2002);
-        mmm1.setTags(tagit1);
-        mmm2.setTags(tagit2);
-        crepository.save(mmm1);
-        crepository.save(mmm2);
+        conference1 = new Conference();
+        conference1.setCitation("cite");
+        conference1.setAuthor("author1");
+        conference1.setTitle("otsikko1");
+        conference1.setBooktitle("koulu1");
+        conference1.setYear(2001);
+        conference2 = new Conference();
+        conference2.setCitation("cite2");
+        conference2.setAuthor("author2");
+        conference2.setTitle("otsikko2");
+        conference2.setBooktitle("koulu2");
+        conference2.setYear(2002);
+        conference1.setTags(tagit1);
+        conference2.setTags(tagit2);
+        conferenceRepository.save(conference1);
+        conferenceRepository.save(conference2);
         List<Conference> conferences = tagService.getConferences("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -279,24 +279,24 @@ public class TagServiceTest {
 
     @Test
     public void InbookTagTest() {
-        im1 = new Inbook();
-        im1.setCitation("citation1");
-        im1.setAuthor("author1");
-        im1.setTitle("otsikko1");
-        im1.setPublisher("koulu1");
-        im1.setYear(2001);
-        im1.setPages(1);
-        im2 = new Inbook();
-        im2.setCitation("citation2");
-        im2.setAuthor("author2");
-        im2.setTitle("otsikko2");
-        im2.setPublisher("koulu2");
-        im2.setYear(2002);
-        im2.setPages(1);
-        im1.setTags(tagit1);
-        im2.setTags(tagit1);
-        inrepository.save(im1);
-        inrepository.save(im2);
+        inbook1 = new Inbook();
+        inbook1.setCitation("citation1");
+        inbook1.setAuthor("author1");
+        inbook1.setTitle("otsikko1");
+        inbook1.setPublisher("koulu1");
+        inbook1.setYear(2001);
+        inbook1.setPages(1);
+        inbook2 = new Inbook();
+        inbook2.setCitation("citation2");
+        inbook2.setAuthor("author2");
+        inbook2.setTitle("otsikko2");
+        inbook2.setPublisher("koulu2");
+        inbook2.setYear(2002);
+        inbook2.setPages(1);
+        inbook1.setTags(tagit1);
+        inbook2.setTags(tagit1);
+        inbookRepository.save(inbook1);
+        inbookRepository.save(inbook2);
         List<Inbook> conferences = tagService.getInbooks("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -305,24 +305,24 @@ public class TagServiceTest {
 
     @Test
     public void IncollectionTagTest() {
-        ccm1 = new Incollection();
-        ccm1.setCitation("cite");
-        ccm1.setAuthor("author1");
-        ccm1.setTitle("otsikko1");
-        ccm1.setBooktitle("koulu1");
-        ccm1.setYear(2001);
-        ccm1.setPublisher("aaa1");
-        ccm2 = new Incollection();
-        ccm2.setCitation("cite2");
-        ccm2.setPublisher("aaa2");
-        ccm2.setAuthor("author2");
-        ccm2.setTitle("otsikko2");
-        ccm2.setBooktitle("koulu2");
-        ccm2.setYear(2002);
-        ccm1.setTags(tagit1);
-        ccm2.setTags(tagit1);
-        incorepository.save(ccm1);
-        incorepository.save(ccm2);
+        incollection1 = new Incollection();
+        incollection1.setCitation("cite");
+        incollection1.setAuthor("author1");
+        incollection1.setTitle("otsikko1");
+        incollection1.setBooktitle("koulu1");
+        incollection1.setYear(2001);
+        incollection1.setPublisher("aaa1");
+        incollection2 = new Incollection();
+        incollection2.setCitation("cite2");
+        incollection2.setPublisher("aaa2");
+        incollection2.setAuthor("author2");
+        incollection2.setTitle("otsikko2");
+        incollection2.setBooktitle("koulu2");
+        incollection2.setYear(2002);
+        incollection1.setTags(tagit1);
+        incollection2.setTags(tagit1);
+        incollectionRepository.save(incollection1);
+        incollectionRepository.save(incollection2);
         List<Incollection> conferences = tagService.getIncollections("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -331,14 +331,14 @@ public class TagServiceTest {
 
     @Test
     public void InproceedingsTagTest() {
-        iim1 = new Inproceedings();
-        iim1.setCitation("cite");
-        iim1.setAuthor("author1");
-        iim1.setTitle("otsikko1");
-        iim1.setBooktitle("koulu1");
-        iim1.setYear(2001);
-        iim1.setTags(tagit1);
-        iirepository.save(iim1);
+        inproceedings1 = new Inproceedings();
+        inproceedings1.setCitation("cite");
+        inproceedings1.setAuthor("author1");
+        inproceedings1.setTitle("otsikko1");
+        inproceedings1.setBooktitle("koulu1");
+        inproceedings1.setYear(2001);
+        inproceedings1.setTags(tagit1);
+        inproceedingsRepository.save(inproceedings1);
         List<Inproceedings> conferences = tagService.getInproceedings("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -347,20 +347,20 @@ public class TagServiceTest {
 
     @Test
     public void ManualTagTest() {
-        mam1 = new Manual();
-        mam1.setCitation("citation1");
-        mam1.setAuthor("author1");
-        mam1.setTitle("otsikko1");
-        mam1.setYear(2001);
-        mam2 = new Manual();
-        mam2.setCitation("citation2");
-        mam2.setAuthor("author2");
-        mam2.setTitle("otsikko2");
-        mam2.setYear(2002);
-        mam1.setTags(tagit2);
-        mam2.setTags(tagit2);
-        marepository.save(mam1);
-        marepository.save(mam2);
+        manual1 = new Manual();
+        manual1.setCitation("citation1");
+        manual1.setAuthor("author1");
+        manual1.setTitle("otsikko1");
+        manual1.setYear(2001);
+        manual2 = new Manual();
+        manual2.setCitation("citation2");
+        manual2.setAuthor("author2");
+        manual2.setTitle("otsikko2");
+        manual2.setYear(2002);
+        manual1.setTags(tagit2);
+        manual2.setTags(tagit2);
+        manualRepository.save(manual1);
+        manualRepository.save(manual2);
         List<Manual> conferences = tagService.getManuals("joo");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("joo"));
@@ -377,7 +377,7 @@ public class TagServiceTest {
         mas1.setSchool("koulu1");
         mas1.setYear(2001);
         mas1.setTags(tagit1);
-        masrepository.save(mas1);
+        mastersthesisRepository.save(mas1);
         List<Mastersthesis> conferences = tagService.getMastersthesises("joo");
         assertTrue(conferences.isEmpty());
         List<Mastersthesis> conferences2 = tagService.getMastersthesises("name");
@@ -386,20 +386,20 @@ public class TagServiceTest {
 
     @Test
     public void MiscTagTest() {
-        mis1 = new Misc();
-        mis1.setCitation("citation1");
-        mis1.setAuthor("author1");
-        mis1.setTitle("otsikko1");
-        mis1.setYear(2001);
-        mis2 = new Misc();
-        mis2.setCitation("citation2");
-        mis2.setAuthor("author2");
-        mis2.setTitle("otsikko2");
-        mis2.setYear(2002);
-        mis1.setTags(tagit1);
-        mis2.setTags(tagit1);
-        misrepository.save(mis1);
-        misrepository.save(mis2);
+        misc1 = new Misc();
+        misc1.setCitation("citation1");
+        misc1.setAuthor("author1");
+        misc1.setTitle("otsikko1");
+        misc1.setYear(2001);
+        misc2 = new Misc();
+        misc2.setCitation("citation2");
+        misc2.setAuthor("author2");
+        misc2.setTitle("otsikko2");
+        misc2.setYear(2002);
+        misc1.setTags(tagit1);
+        misc2.setTags(tagit1);
+        miscRepository.save(misc1);
+        miscRepository.save(misc2);
         List<Misc> conferences = tagService.getMiscs("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -409,14 +409,14 @@ public class TagServiceTest {
 
     @Test
     public void PhdthesisTagTest() {
-        pm1 = new Phdthesis();
-        pm1.setCitation("cite");
-        pm1.setAuthor("author1");
-        pm1.setTitle("otsikko1");
-        pm1.setSchool("koulu1");
-        pm1.setYear(2001);
-        pm1.setTags(tagit1);
-        prepository.save(pm1);
+        phd1 = new Phdthesis();
+        phd1.setCitation("cite");
+        phd1.setAuthor("author1");
+        phd1.setTitle("otsikko1");
+        phd1.setSchool("koulu1");
+        phd1.setYear(2001);
+        phd1.setTags(tagit1);
+        phdRepository.save(phd1);
         List<Phdthesis> conferences = tagService.getPhdthesises("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -425,13 +425,13 @@ public class TagServiceTest {
 
     @Test
     public void ProceedingsTagTest() {
-        prom1 = new Proceedings();
-        prom1.setCitation("cite");
-        prom1.setTitle("otsikko1");
-        prom1.setEditor("edit1");
-        prom1.setYear(2001);
-        prom1.setTags(tagit1);
-        prorepository.save(prom1);
+        proceedings1 = new Proceedings();
+        proceedings1.setCitation("cite");
+        proceedings1.setTitle("otsikko1");
+        proceedings1.setEditor("edit1");
+        proceedings1.setYear(2001);
+        proceedings1.setTags(tagit1);
+        proceedingsRepository.save(proceedings1);
         List<Proceedings> conferences = tagService.getProceedings("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -440,14 +440,14 @@ public class TagServiceTest {
 
     @Test
     public void TechreportTagTest() {
-        tm1 = new Techreport();
-        tm1.setCitation("cite");
-        tm1.setAuthor("author1");
-        tm1.setTitle("otsikko1");
-        tm1.setInstitution("koulu1");
-        tm1.setYear(2001);
-        tm1.setTags(tagit1);
-        trepository.save(tm1);
+        techreport1 = new Techreport();
+        techreport1.setCitation("cite");
+        techreport1.setAuthor("author1");
+        techreport1.setTitle("otsikko1");
+        techreport1.setInstitution("koulu1");
+        techreport1.setYear(2001);
+        techreport1.setTags(tagit1);
+        techRepository.save(techreport1);
         List<Techreport> conferences = tagService.getTechreports("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));
@@ -456,22 +456,22 @@ public class TagServiceTest {
 
     @Test
     public void UnpublishedTagTest() {
-        um1 = new Unpublished();
-        um1.setCitation("citation1");
-        um1.setAuthor("author1");
-        um1.setTitle("otsikko1");
-        um1.setNote("note");
-        um1.setYear(2001);
-        um2 = new Unpublished();
-        um2.setCitation("citation2");
-        um2.setAuthor("author2");
-        um2.setTitle("otsikko2");
-        um2.setNote("note");
-        um2.setYear(2002);
-        um1.setTags(tagit1);
-        um2.setTags(tagit2);
-        urepository.save(um1);
-        urepository.save(um2);
+        unpublished1 = new Unpublished();
+        unpublished1.setCitation("citation1");
+        unpublished1.setAuthor("author1");
+        unpublished1.setTitle("otsikko1");
+        unpublished1.setNote("note");
+        unpublished1.setYear(2001);
+        unpublished2 = new Unpublished();
+        unpublished2.setCitation("citation2");
+        unpublished2.setAuthor("author2");
+        unpublished2.setTitle("otsikko2");
+        unpublished2.setNote("note");
+        unpublished2.setYear(2002);
+        unpublished1.setTags(tagit1);
+        unpublished2.setTags(tagit2);
+        unpublishedRepository.save(unpublished1);
+        unpublishedRepository.save(unpublished2);
         List<Unpublished> conferences = tagService.getUnpublished("nimi");
         assertTrue(!conferences.isEmpty());
         assertTrue(conferences.get(0).getTags().get(0).getName().equals("nimi"));

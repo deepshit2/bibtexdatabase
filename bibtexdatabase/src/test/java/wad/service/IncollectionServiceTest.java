@@ -26,114 +26,114 @@ public class IncollectionServiceTest {
     @Autowired
     private IncollectionRepository repository;
     
-    private Incollection m1;
-    private Incollection m2;
+    private Incollection i1;
+    private Incollection i2;
     
     @Before
     public void setUp() {
         repository.deleteAll();
-        m1 = new Incollection();
-        m1.setCitation("cite");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setBooktitle("koulu1");
-        m1.setYear(2001);
-        m1.setPublisher("aaa1");
-        m2 = new Incollection();
-        m2.setCitation("cite2");
-        m2.setPublisher("aaa2");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setBooktitle("koulu2");
-        m2.setYear(2002);
+        i1 = new Incollection();
+        i1.setCitation("cite");
+        i1.setAuthor("author1");
+        i1.setTitle("otsikko1");
+        i1.setBooktitle("koulu1");
+        i1.setYear(2001);
+        i1.setPublisher("aaa1");
+        i2 = new Incollection();
+        i2.setCitation("cite2");
+        i2.setPublisher("aaa2");
+        i2.setAuthor("author2");
+        i2.setTitle("otsikko2");
+        i2.setBooktitle("koulu2");
+        i2.setYear(2002);
     }
     
     @Test
     public void testAddIncollection() {
-        service.addIncollection(m1);
-        Incollection retrieved = repository.findOne(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        service.addIncollection(i1);
+        Incollection retrieved = repository.findOne(i1.getId());
+        assertEquals(retrieved.getId(), i1.getId());
+        assertEquals(retrieved.getAuthor(), i1.getAuthor());
+        assertEquals(retrieved.getTitle(), i1.getTitle());
     }
     
     @Test
     public void testDeleteIncollection() {
-        repository.save(m1);
-        Long id = m1.getId();
-        service.deleteIncollection(m1.getId());
+        repository.save(i1);
+        Long id = i1.getId();
+        service.deleteIncollection(i1.getId());
         Incollection eiOle = repository.findOne(id);
         assertTrue(eiOle == null);
     }
     
     @Test
     public void testGetIncollection() {
-        repository.save(m1);
-        Incollection retrieved = service.getIncollection(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        repository.save(i1);
+        Incollection retrieved = service.getIncollection(i1.getId());
+        assertEquals(retrieved.getId(), i1.getId());
+        assertEquals(retrieved.getAuthor(), i1.getAuthor());
+        assertEquals(retrieved.getTitle(), i1.getTitle());
     }
     
     @Test
     public void testListIncollection() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> kaikki = service.list();
         List<String> titles = new ArrayList();
         for(Incollection m : kaikki) {
             titles.add(m.getTitle());
         }
-        assertTrue(titles.contains(m1.getTitle()));
-        assertTrue(titles.contains(m2.getTitle()));
+        assertTrue(titles.contains(i1.getTitle()));
+        assertTrue(titles.contains(i2.getTitle()));
     }
     
     @Test
     public void testFindByAuthor() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> articles = service.search("thor1");
         assertTrue(articles.size() == 1);
-        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(articles.get(0).getAuthor(), i1.getAuthor());
     }
 
     @Test
     public void testFindByTitle() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> boobs = service.search("kko1");
         assertTrue(boobs.size() == 1);
-        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(boobs.get(0).getAuthor(), i1.getAuthor());
     }
 
     @Test
     public void testFindByBooktitle() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> boobs = service.search("oulu2");
         assertTrue(boobs.size() == 1);
     }
 
     @Test
     public void testSearchCanFindAll() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> boobs = service.search("ikko");
         assertTrue(boobs.size() == 2);
     }
 
     @Test
     public void nonExistCantBeFound() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(i1);
+        repository.save(i2);
         List<Incollection> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
     
     @Test
     public void testGetBibtex() {
-        repository.save(m1);
-        String bibtex = service.getBibtex(m1.getId());
+        repository.save(i1);
+        String bibtex = service.getBibtex(i1.getId());
         assertTrue(bibtex.contains("@Incollection"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));

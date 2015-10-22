@@ -57,82 +57,82 @@ public class DownloadServiceTest {
     private Article article2;
     
     @Autowired
-    private BookRepository bookrepository;
+    private BookRepository bookRepo;
     
-    private Book m1;
-    private Book m2;
-    
-    @Autowired
-    private BookletRepository bookletrepository;
-    
-    private Booklet mm1;
-    private Booklet mm2;
+    private Book book1;
+    private Book book2;
     
     @Autowired
-    private ConferenceRepository crepository;
+    private BookletRepository bookletRepo;
     
-    private Conference mmm1;
-    private Conference mmm2;
-    
-    @Autowired
-    private InbookRepository inrepository;
-    
-    private Inbook im1;
-    private Inbook im2;
+    private Booklet booklet1;
+    private Booklet booklet2;
     
     @Autowired
-    private IncollectionRepository incorepository;
+    private ConferenceRepository conferenceRepo;
     
-    private Incollection ccm1;
-    private Incollection ccm2;
-    
-    @Autowired
-    private InproceedingsRepository iirepository;
-    
-    private Inproceedings iim1;
-    private Inproceedings iim2;
+    private Conference conference1;
+    private Conference conference2;
     
     @Autowired
-    private ManualRepository marepository;
+    private InbookRepository inbookRepo;
     
-    private Manual mam1;
-    private Manual mam2;
+    private Inbook inbook1;
+    private Inbook inbook2;
     
     @Autowired
-    private MastersthesisRepository masrepository;
+    private IncollectionRepository incollectionRepo;
+    
+    private Incollection incollection1;
+    private Incollection incollection2;
+    
+    @Autowired
+    private InproceedingsRepository inproceedingsRepo;
+    
+    private Inproceedings inpro1;
+    private Inproceedings inpro2;
+    
+    @Autowired
+    private ManualRepository manualRepository;
+    
+    private Manual manual1;
+    private Manual manual2;
+    
+    @Autowired
+    private MastersthesisRepository mastersthesisRepo;
 
-    private Mastersthesis mas1;
-    private Mastersthesis mas2;
+    private Mastersthesis masters1;
+    private Mastersthesis masters2;
     
     @Autowired
-    private MiscRepository misrepository;
+    private MiscRepository miscRepo;
     
-    private Misc mis1;
-    private Misc mis2;
+    private Misc misc1;
+    private Misc misc2;
     
     @Autowired
-    private PhdthesisRepository prepository;
+    private PhdthesisRepository phdRepo;
 
-    private Phdthesis pm1;
-    private Phdthesis pm2;
+    private Phdthesis phd1;
+    private Phdthesis phd2;
     
     @Autowired
-    private ProceedingsRepository prorepository;
+    private ProceedingsRepository proceedingsRepo;
     
-    private Proceedings prom1;
-    private Proceedings prom2;
+    private Proceedings proceedings1;
+    private Proceedings proceedings2;
     
     @Autowired
-    private TechreportRepository trepository;
+    private TechreportRepository techRepo;
 
-    private Techreport tm1;
-    private Techreport tm2;
+    private Techreport techreport1;
+    private Techreport techreport2;
     
     @Autowired
-    private UnpublishedRepository urepository;
+    private UnpublishedRepository unpublishedRepo;
     
-    private Unpublished um1;
-    private Unpublished um2;
+    private Unpublished unpublished1;
+    private Unpublished unpublished2;
     
     @Autowired
     DownloadService downloadService;
@@ -140,19 +140,19 @@ public class DownloadServiceTest {
     @Before
     public void setUp() {
         articleRepository.deleteAll();
-        bookrepository.deleteAll();
-        bookletrepository.deleteAll();
-        crepository.deleteAll();
-        inrepository.deleteAll();
-        incorepository.deleteAll();
-        marepository.deleteAll();
-        iirepository.deleteAll();
-        misrepository.deleteAll();
-        prepository.deleteAll();
-        prorepository.deleteAll();
-        masrepository.deleteAll();
-        urepository.deleteAll();
-        trepository.deleteAll();
+        bookRepo.deleteAll();
+        bookletRepo.deleteAll();
+        conferenceRepo.deleteAll();
+        inbookRepo.deleteAll();
+        incollectionRepo.deleteAll();
+        manualRepository.deleteAll();
+        inproceedingsRepo.deleteAll();
+        miscRepo.deleteAll();
+        phdRepo.deleteAll();
+        proceedingsRepo.deleteAll();
+        mastersthesisRepo.deleteAll();
+        unpublishedRepo.deleteAll();
+        techRepo.deleteAll();
         article1 = new Article();
         article1.setCitation("artsu");
         article1.setAuthor("kirjoittaja1");
@@ -170,162 +170,162 @@ public class DownloadServiceTest {
         articleRepository.save(article1);
         articleRepository.save(article2);
         
-        m1 = new Book();
-        m1.setCitation("kirja");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setPublisher("koulu1");
-        m1.setYear(2001);
-        m2 = new Book();
-        m2.setCitation("kirja");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setPublisher("koulu2");
-        m2.setYear(2002);
-        bookrepository.save(m1);
-        bookrepository.save(m2);
+        book1 = new Book();
+        book1.setCitation("kirja");
+        book1.setAuthor("author1");
+        book1.setTitle("otsikko1");
+        book1.setPublisher("koulu1");
+        book1.setYear(2001);
+        book2 = new Book();
+        book2.setCitation("kirja");
+        book2.setAuthor("author2");
+        book2.setTitle("otsikko2");
+        book2.setPublisher("koulu2");
+        book2.setYear(2002);
+        bookRepo.save(book1);
+        bookRepo.save(book2);
         
-        mm1 = new Booklet();
-        mm1.setCitation("citation1");
-        mm1.setAuthor("author1");
-        mm1.setTitle("otsikko1");
-        mm1.setYear(2001);
-        mm2 = new Booklet();
-        mm2.setCitation("citation2");
-        mm2.setAuthor("author2");
-        mm2.setTitle("otsikko2");
-        mm2.setYear(2002);
-        bookletrepository.save(mm1);
-        bookletrepository.save(mm2);
+        booklet1 = new Booklet();
+        booklet1.setCitation("citation1");
+        booklet1.setAuthor("author1");
+        booklet1.setTitle("otsikko1");
+        booklet1.setYear(2001);
+        booklet2 = new Booklet();
+        booklet2.setCitation("citation2");
+        booklet2.setAuthor("author2");
+        booklet2.setTitle("otsikko2");
+        booklet2.setYear(2002);
+        bookletRepo.save(booklet1);
+        bookletRepo.save(booklet2);
         
-        mmm1 = new Conference();
-        mmm1.setCitation("cite");
-        mmm1.setAuthor("author1");
-        mmm1.setTitle("otsikko1");
-        mmm1.setBooktitle("koulu1");
-        mmm1.setYear(2001);
-        mmm2 = new Conference();
-        mmm2.setCitation("cite2");
-        mmm2.setAuthor("author2");
-        mmm2.setTitle("otsikko2");
-        mmm2.setBooktitle("koulu2");
-        mmm2.setYear(2002);
-        crepository.save(mmm1);
-        crepository.save(mmm2);
+        conference1 = new Conference();
+        conference1.setCitation("cite");
+        conference1.setAuthor("author1");
+        conference1.setTitle("otsikko1");
+        conference1.setBooktitle("koulu1");
+        conference1.setYear(2001);
+        conference2 = new Conference();
+        conference2.setCitation("cite2");
+        conference2.setAuthor("author2");
+        conference2.setTitle("otsikko2");
+        conference2.setBooktitle("koulu2");
+        conference2.setYear(2002);
+        conferenceRepo.save(conference1);
+        conferenceRepo.save(conference2);
         
-        im1 = new Inbook();
-        im1.setCitation("citation1");
-        im1.setAuthor("author1");
-        im1.setTitle("otsikko1");
-        im1.setPublisher("koulu1");
-        im1.setYear(2001);
-        im1.setPages(1);
-        im2 = new Inbook();
-        im2.setCitation("citation2");
-        im2.setAuthor("author2");
-        im2.setTitle("otsikko2");
-        im2.setPublisher("koulu2");
-        im2.setYear(2002);
-        im2.setPages(1);
-        inrepository.save(im1);
-        inrepository.save(im2);
+        inbook1 = new Inbook();
+        inbook1.setCitation("citation1");
+        inbook1.setAuthor("author1");
+        inbook1.setTitle("otsikko1");
+        inbook1.setPublisher("koulu1");
+        inbook1.setYear(2001);
+        inbook1.setPages(1);
+        inbook2 = new Inbook();
+        inbook2.setCitation("citation2");
+        inbook2.setAuthor("author2");
+        inbook2.setTitle("otsikko2");
+        inbook2.setPublisher("koulu2");
+        inbook2.setYear(2002);
+        inbook2.setPages(1);
+        inbookRepo.save(inbook1);
+        inbookRepo.save(inbook2);
         
-        ccm1 = new Incollection();
-        ccm1.setCitation("cite");
-        ccm1.setAuthor("author1");
-        ccm1.setTitle("otsikko1");
-        ccm1.setBooktitle("koulu1");
-        ccm1.setYear(2001);
-        ccm1.setPublisher("aaa1");
-        ccm2 = new Incollection();
-        ccm2.setCitation("cite2");
-        ccm2.setPublisher("aaa2");
-        ccm2.setAuthor("author2");
-        ccm2.setTitle("otsikko2");
-        ccm2.setBooktitle("koulu2");
-        ccm2.setYear(2002);
-        incorepository.save(ccm1);
-        incorepository.save(ccm2);
+        incollection1 = new Incollection();
+        incollection1.setCitation("cite");
+        incollection1.setAuthor("author1");
+        incollection1.setTitle("otsikko1");
+        incollection1.setBooktitle("koulu1");
+        incollection1.setYear(2001);
+        incollection1.setPublisher("aaa1");
+        incollection2 = new Incollection();
+        incollection2.setCitation("cite2");
+        incollection2.setPublisher("aaa2");
+        incollection2.setAuthor("author2");
+        incollection2.setTitle("otsikko2");
+        incollection2.setBooktitle("koulu2");
+        incollection2.setYear(2002);
+        incollectionRepo.save(incollection1);
+        incollectionRepo.save(incollection2);
         
-        iim1 = new Inproceedings();
-        iim1.setCitation("cite");
-        iim1.setAuthor("author1");
-        iim1.setTitle("otsikko1");
-        iim1.setBooktitle("koulu1");
-        iim1.setYear(2001);
-        iirepository.save(iim1);
+        inpro1 = new Inproceedings();
+        inpro1.setCitation("cite");
+        inpro1.setAuthor("author1");
+        inpro1.setTitle("otsikko1");
+        inpro1.setBooktitle("koulu1");
+        inpro1.setYear(2001);
+        inproceedingsRepo.save(inpro1);
         
-        mam1 = new Manual();
-        mam1.setCitation("citation1");
-        mam1.setAuthor("author1");
-        mam1.setTitle("otsikko1");
-        mam1.setYear(2001);
-        mam2 = new Manual();
-        mam2.setCitation("citation2");
-        mam2.setAuthor("author2");
-        mam2.setTitle("otsikko2");
-        mam2.setYear(2002);
-        marepository.save(mam1);
-        marepository.save(mam2);
+        manual1 = new Manual();
+        manual1.setCitation("citation1");
+        manual1.setAuthor("author1");
+        manual1.setTitle("otsikko1");
+        manual1.setYear(2001);
+        manual2 = new Manual();
+        manual2.setCitation("citation2");
+        manual2.setAuthor("author2");
+        manual2.setTitle("otsikko2");
+        manual2.setYear(2002);
+        manualRepository.save(manual1);
+        manualRepository.save(manual2);
         
-        mas1 = new Mastersthesis();
-        mas1.setCitation("cite");
-        mas1.setAuthor("author1");
-        mas1.setTitle("otsikko1");
-        mas1.setSchool("koulu1");
-        mas1.setYear(2001);
-        masrepository.save(mas1);
+        masters1 = new Mastersthesis();
+        masters1.setCitation("cite");
+        masters1.setAuthor("author1");
+        masters1.setTitle("otsikko1");
+        masters1.setSchool("koulu1");
+        masters1.setYear(2001);
+        mastersthesisRepo.save(masters1);
         
-        mis1 = new Misc();
-        mis1.setCitation("citation1");
-        mis1.setAuthor("author1");
-        mis1.setTitle("otsikko1");
-        mis1.setYear(2001);
-        mis2 = new Misc();
-        mis2.setCitation("citation2");
-        mis2.setAuthor("author2");
-        mis2.setTitle("otsikko2");
-        mis2.setYear(2002);
-        misrepository.save(mis1);
-        misrepository.save(mis2);
+        misc1 = new Misc();
+        misc1.setCitation("citation1");
+        misc1.setAuthor("author1");
+        misc1.setTitle("otsikko1");
+        misc1.setYear(2001);
+        misc2 = new Misc();
+        misc2.setCitation("citation2");
+        misc2.setAuthor("author2");
+        misc2.setTitle("otsikko2");
+        misc2.setYear(2002);
+        miscRepo.save(misc1);
+        miscRepo.save(misc2);
         
-        pm1 = new Phdthesis();
-        pm1.setCitation("cite");
-        pm1.setAuthor("author1");
-        pm1.setTitle("otsikko1");
-        pm1.setSchool("koulu1");
-        pm1.setYear(2001);
-        prepository.save(pm1);
+        phd1 = new Phdthesis();
+        phd1.setCitation("cite");
+        phd1.setAuthor("author1");
+        phd1.setTitle("otsikko1");
+        phd1.setSchool("koulu1");
+        phd1.setYear(2001);
+        phdRepo.save(phd1);
         
-        prom1 = new Proceedings();
-        prom1.setCitation("cite");
-        prom1.setTitle("otsikko1");
-        prom1.setEditor("edit1");
-        prom1.setYear(2001);
-        prorepository.save(prom1);
+        proceedings1 = new Proceedings();
+        proceedings1.setCitation("cite");
+        proceedings1.setTitle("otsikko1");
+        proceedings1.setEditor("edit1");
+        proceedings1.setYear(2001);
+        proceedingsRepo.save(proceedings1);
         
-        tm1 = new Techreport();
-        tm1.setCitation("cite");
-        tm1.setAuthor("author1");
-        tm1.setTitle("olenUniikki");
-        tm1.setInstitution("koulu1");
-        tm1.setYear(2001);
-        trepository.save(tm1);
+        techreport1 = new Techreport();
+        techreport1.setCitation("cite");
+        techreport1.setAuthor("author1");
+        techreport1.setTitle("olenUniikki");
+        techreport1.setInstitution("koulu1");
+        techreport1.setYear(2001);
+        techRepo.save(techreport1);
         
-        um1 = new Unpublished();
-        um1.setCitation("citation1");
-        um1.setAuthor("author1");
-        um1.setTitle("otsikko1");
-        um1.setNote("note");
-        um1.setYear(2001);
-        um2 = new Unpublished();
-        um2.setCitation("citation2");
-        um2.setAuthor("author2");
-        um2.setTitle("otsikko2");
-        um2.setNote("note");
-        um2.setYear(2002);
-        urepository.save(um1);
-        urepository.save(um2);
+        unpublished1 = new Unpublished();
+        unpublished1.setCitation("citation1");
+        unpublished1.setAuthor("author1");
+        unpublished1.setTitle("otsikko1");
+        unpublished1.setNote("note");
+        unpublished1.setYear(2001);
+        unpublished2 = new Unpublished();
+        unpublished2.setCitation("citation2");
+        unpublished2.setAuthor("author2");
+        unpublished2.setTitle("otsikko2");
+        unpublished2.setNote("note");
+        unpublished2.setYear(2002);
+        unpublishedRepo.save(unpublished1);
+        unpublishedRepo.save(unpublished2);
     }
     
     @Test
@@ -338,7 +338,7 @@ public class DownloadServiceTest {
     public void bibtexitJoillaOnTiettyTitle(){
         TechreportService techreportService = new TechreportService();
         String bibtex = downloadService.getBibtex("olenUniikki");
-        assertTrue(bibtex.equals(techreportService.getBibtex(tm1)+"\n\n"));
+        assertTrue(bibtex.equals(techreportService.getBibtex(techreport1)+"\n\n"));
     }
     
     @Test

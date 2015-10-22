@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import wad.Application;
-import wad.domain.Book;
 import wad.domain.Booklet;
 import wad.repository.BookletRepository;
 
@@ -26,102 +25,102 @@ public class BookletServiceTest {
     @Autowired
     private BookletRepository repository;
     
-    private Booklet m1;
-    private Booklet m2;
+    private Booklet booklet1;
+    private Booklet booklet2;
     
     @Before
     public void setUp() {
         repository.deleteAll();
-        m1 = new Booklet();
-        m1.setCitation("citation");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setYear(2001);
-        m2 = new Booklet();
-        m2.setCitation("citation");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setYear(2002);
+        booklet1 = new Booklet();
+        booklet1.setCitation("citation");
+        booklet1.setAuthor("author1");
+        booklet1.setTitle("otsikko1");
+        booklet1.setYear(2001);
+        booklet2 = new Booklet();
+        booklet2.setCitation("citation");
+        booklet2.setAuthor("author2");
+        booklet2.setTitle("otsikko2");
+        booklet2.setYear(2002);
     }
     
     @Test
     public void testAddBooklet() {
-        service.addBooklet(m1);
-        Booklet retrieved = repository.findOne(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        service.addBooklet(booklet1);
+        Booklet retrieved = repository.findOne(booklet1.getId());
+        assertEquals(retrieved.getId(), booklet1.getId());
+        assertEquals(retrieved.getAuthor(), booklet1.getAuthor());
+        assertEquals(retrieved.getTitle(), booklet1.getTitle());
     }
     
     @Test
     public void testDeleteBooklet() {
-        repository.save(m1);
-        Long id = m1.getId();
-        service.deleteBooklet(m1.getId());
+        repository.save(booklet1);
+        Long id = booklet1.getId();
+        service.deleteBooklet(booklet1.getId());
         Booklet eiOle = repository.findOne(id);
         assertTrue(eiOle == null);
     }
     
     @Test
     public void testGetTechreport() {
-        repository.save(m1);
-        Booklet retrieved = service.getBooklet(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        repository.save(booklet1);
+        Booklet retrieved = service.getBooklet(booklet1.getId());
+        assertEquals(retrieved.getId(), booklet1.getId());
+        assertEquals(retrieved.getAuthor(), booklet1.getAuthor());
+        assertEquals(retrieved.getTitle(), booklet1.getTitle());
     }
     
     @Test
     public void testListBooklet() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(booklet1);
+        repository.save(booklet2);
         List<Booklet> kaikki = service.list();
         List<String> titles = new ArrayList();
         for(Booklet m : kaikki) {
             titles.add(m.getTitle());
         }
-        assertTrue(titles.contains(m1.getTitle()));
-        assertTrue(titles.contains(m2.getTitle()));
+        assertTrue(titles.contains(booklet1.getTitle()));
+        assertTrue(titles.contains(booklet2.getTitle()));
     }
     
     @Test
     public void testFindByAuthor() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(booklet1);
+        repository.save(booklet2);
         List<Booklet> articles = service.search("thor1");
         assertTrue(articles.size() == 1);
-        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(articles.get(0).getAuthor(), booklet1.getAuthor());
     }
 
     @Test
     public void testFindByTitle() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(booklet1);
+        repository.save(booklet2);
         List<Booklet> boobs = service.search("kko1");
         assertTrue(boobs.size() == 1);
-        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(boobs.get(0).getAuthor(), booklet1.getAuthor());
     }
 
     @Test
     public void testSearchCanFindAll() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(booklet1);
+        repository.save(booklet2);
         List<Booklet> boobs = service.search("ikko");
         assertTrue(boobs.size() == 2);
     }
 
     @Test
     public void nonExistCantBeFound() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(booklet1);
+        repository.save(booklet2);
         List<Booklet> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
     
     @Test
     public void testGetBibtex() {
-        repository.save(m1);
-        String bibtex = service.getBibtex(m1.getId());
+        repository.save(booklet1);
+        String bibtex = service.getBibtex(booklet1.getId());
         assertTrue(bibtex.contains("@Booklet"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));

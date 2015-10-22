@@ -104,14 +104,14 @@ public class MastersthesisService implements ServiceInterface<Mastersthesis> {
         List<Mastersthesis> result = new ArrayList<>();
         List<Mastersthesis> byAuthor = mastersthesisRepository.findByAuthorContaining(name);
         List<Mastersthesis> byTitle = mastersthesisRepository.findByTitleContaining(name);
-        List<Mastersthesis> byBooktitle = mastersthesisRepository.findBySchoolContaining(name);
+        List<Mastersthesis> bySchool = mastersthesisRepository.findBySchoolContaining(name);
         result.addAll(byAuthor);
         for (Mastersthesis mastersthesis : byTitle) {
             if (!result.contains(mastersthesis)) {
                 result.add(mastersthesis);
             }
         }
-        for (Mastersthesis mastersthesis : byBooktitle) {
+        for (Mastersthesis mastersthesis : bySchool) {
             if (!result.contains(mastersthesis)) {
                 result.add(mastersthesis);
             }

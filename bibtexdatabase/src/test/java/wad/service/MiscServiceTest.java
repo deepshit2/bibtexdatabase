@@ -26,102 +26,102 @@ public class MiscServiceTest {
     @Autowired
     private MiscRepository repository;
     
-    private Misc m1;
-    private Misc m2;
+    private Misc misc1;
+    private Misc misc2;
     
     @Before
     public void setUp() {
         repository.deleteAll();
-        m1 = new Misc();
-        m1.setCitation("citation");
-        m1.setAuthor("author1");
-        m1.setTitle("otsikko1");
-        m1.setYear(2001);
-        m2 = new Misc();
-        m2.setCitation("citation");
-        m2.setAuthor("author2");
-        m2.setTitle("otsikko2");
-        m2.setYear(2002);
+        misc1 = new Misc();
+        misc1.setCitation("citation");
+        misc1.setAuthor("author1");
+        misc1.setTitle("otsikko1");
+        misc1.setYear(2001);
+        misc2 = new Misc();
+        misc2.setCitation("citation");
+        misc2.setAuthor("author2");
+        misc2.setTitle("otsikko2");
+        misc2.setYear(2002);
     }
     
     @Test
     public void testAddMisc() {
-        service.addMisc(m1);
-        Misc retrieved = repository.findOne(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        service.addMisc(misc1);
+        Misc retrieved = repository.findOne(misc1.getId());
+        assertEquals(retrieved.getId(), misc1.getId());
+        assertEquals(retrieved.getAuthor(), misc1.getAuthor());
+        assertEquals(retrieved.getTitle(), misc1.getTitle());
     }
     
     @Test
     public void testDeleteMisc() {
-        repository.save(m1);
-        Long id = m1.getId();
-        service.deleteMisc(m1.getId());
+        repository.save(misc1);
+        Long id = misc1.getId();
+        service.deleteMisc(misc1.getId());
         Misc eiOle = repository.findOne(id);
         assertTrue(eiOle == null);
     }
     
     @Test
     public void testGetMisc() {
-        repository.save(m1);
-        Misc retrieved = service.getMisc(m1.getId());
-        assertEquals(retrieved.getId(), m1.getId());
-        assertEquals(retrieved.getAuthor(), m1.getAuthor());
-        assertEquals(retrieved.getTitle(), m1.getTitle());
+        repository.save(misc1);
+        Misc retrieved = service.getMisc(misc1.getId());
+        assertEquals(retrieved.getId(), misc1.getId());
+        assertEquals(retrieved.getAuthor(), misc1.getAuthor());
+        assertEquals(retrieved.getTitle(), misc1.getTitle());
     }
     
     @Test
     public void testListMisc() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(misc1);
+        repository.save(misc2);
         List<Misc> kaikki = service.list();
         List<String> titles = new ArrayList();
         for(Misc m : kaikki) {
             titles.add(m.getTitle());
         }
-        assertTrue(titles.contains(m1.getTitle()));
-        assertTrue(titles.contains(m2.getTitle()));
+        assertTrue(titles.contains(misc1.getTitle()));
+        assertTrue(titles.contains(misc2.getTitle()));
     }
     
     @Test
     public void testFindByAuthor() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(misc1);
+        repository.save(misc2);
         List<Misc> articles = service.search("thor1");
         assertTrue(articles.size() == 1);
-        assertEquals(articles.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(articles.get(0).getAuthor(), misc1.getAuthor());
     }
 
     @Test
     public void testFindByTitle() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(misc1);
+        repository.save(misc2);
         List<Misc> boobs = service.search("kko1");
         assertTrue(boobs.size() == 1);
-        assertEquals(boobs.get(0).getAuthor(), m1.getAuthor());
+        assertEquals(boobs.get(0).getAuthor(), misc1.getAuthor());
     }
 
     @Test
     public void testSearchCanFindAll() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(misc1);
+        repository.save(misc2);
         List<Misc> boobs = service.search("ikko");
         assertTrue(boobs.size() == 2);
     }
 
     @Test
     public void nonExistCantBeFound() {
-        repository.save(m1);
-        repository.save(m2);
+        repository.save(misc1);
+        repository.save(misc2);
         List<Misc> boobs = service.search("batman134134");
         assertTrue(boobs.isEmpty());
     }
     
     @Test
     public void testGetBibtex() {
-        repository.save(m1);
-        String bibtex = service.getBibtex(m1.getId());
+        repository.save(misc1);
+        String bibtex = service.getBibtex(misc1.getId());
         assertTrue(bibtex.contains("@Misc"));
         assertTrue(bibtex.contains("{"));
         assertTrue(bibtex.contains("}"));

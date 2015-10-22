@@ -2,7 +2,6 @@ package wad.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
@@ -20,11 +19,8 @@ public class Article extends AbstractPersistable<Long> {
     private String author;
     @NotBlank
     private String title;
-//    @NotBlank
     private String journal;
-//    @NotNull
     private Integer year;
-//    @NotNull
     private Integer volume;
     
     private String note;

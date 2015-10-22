@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Booklet;
 import wad.domain.Conference;
-import wad.domain.Inproceedings;
 import wad.domain.Tag;
 import wad.repository.ConferenceRepository;
 
@@ -15,7 +13,7 @@ import wad.repository.ConferenceRepository;
 public class ConferenceService implements ServiceInterface<Conference> {
 
     @Autowired
-    private ConferenceRepository inproceedingsRepository;
+    private ConferenceRepository conferenceRepository;
 
     public void addTag(Long id, Tag tag) {
         Conference conference = getConference(id);
@@ -24,20 +22,20 @@ public class ConferenceService implements ServiceInterface<Conference> {
     }
 
     public List<Conference> list() {
-        List<Conference> inproceedings = inproceedingsRepository.findAll();
-        return inproceedings;
+        List<Conference> conference = conferenceRepository.findAll();
+        return conference;
     }
 
-    public void addConference(Conference inproceedings) {
-        inproceedingsRepository.save(inproceedings);
+    public void addConference(Conference conference) {
+        conferenceRepository.save(conference);
     }
 
     public void deleteConference(Long id) {
-        inproceedingsRepository.delete(inproceedingsRepository.findOne(id));
+        conferenceRepository.delete(conferenceRepository.findOne(id));
     }
 
     public Conference getConference(Long id) {
-        return inproceedingsRepository.findOne(id);
+        return conferenceRepository.findOne(id);
     }
 
     private String toBibtex(Conference inproceedings) throws IllegalArgumentException, IllegalAccessException {
@@ -83,10 +81,10 @@ public class ConferenceService implements ServiceInterface<Conference> {
     }
 
     public String getBibtex(Long id) {
-        Conference inproceedings = inproceedingsRepository.findOne(id);
+        Conference conference = conferenceRepository.findOne(id);
         String result = "";
         try {
-            result = toBibtex(inproceedings);
+            result = toBibtex(conference);
         } catch (Exception ex) {
         }
         return result;
@@ -103,9 +101,9 @@ public class ConferenceService implements ServiceInterface<Conference> {
 
     public List<Conference> search(String name) {
         List<Conference> result = new ArrayList<>();
-        List<Conference> byAuthor = inproceedingsRepository.findByAuthorContaining(name);
-        List<Conference> byTitle = inproceedingsRepository.findByTitleContaining(name);
-        List<Conference> byBooktitle = inproceedingsRepository.findByBooktitleContaining(name);
+        List<Conference> byAuthor = conferenceRepository.findByAuthorContaining(name);
+        List<Conference> byTitle = conferenceRepository.findByTitleContaining(name);
+        List<Conference> byBooktitle = conferenceRepository.findByBooktitleContaining(name);
         result.addAll(byAuthor);
         for (Conference conference : byTitle) {
             if (!result.contains(conference)) {

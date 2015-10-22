@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wad.domain.Mastersthesis;
 import wad.domain.Phdthesis;
 import wad.domain.Tag;
 import wad.repository.PhdthesisRepository;
@@ -14,7 +13,7 @@ import wad.repository.PhdthesisRepository;
 public class PhdthesisService implements ServiceInterface<Phdthesis> {
 
     @Autowired
-    private PhdthesisRepository mastersthesisRepository;
+    private PhdthesisRepository phdthesisRepository;
 
     public void addTag(Long id, Tag tag) {
         Phdthesis phdthesis = getPhdthesis(id);
@@ -23,20 +22,20 @@ public class PhdthesisService implements ServiceInterface<Phdthesis> {
     }
     
     public List<Phdthesis> list() {
-        List<Phdthesis> phdthesises = mastersthesisRepository.findAll();
+        List<Phdthesis> phdthesises = phdthesisRepository.findAll();
         return phdthesises;
     }
 
     public void addPhdthesis(Phdthesis mastersthesis) {
-        mastersthesisRepository.save(mastersthesis);
+        phdthesisRepository.save(mastersthesis);
     }
 
     public void deletePhdthesis(Long id) {
-        mastersthesisRepository.delete(mastersthesisRepository.findOne(id));
+        phdthesisRepository.delete(phdthesisRepository.findOne(id));
     }
 
     public Phdthesis getPhdthesis(Long id) {
-        return mastersthesisRepository.findOne(id);
+        return phdthesisRepository.findOne(id);
     }
 
     private String toBibtex(Phdthesis thesis) throws IllegalArgumentException, IllegalAccessException {
@@ -81,7 +80,7 @@ public class PhdthesisService implements ServiceInterface<Phdthesis> {
     }
 
     public String getBibtex(Long id) {
-        Phdthesis mastersthesis = mastersthesisRepository.findOne(id);
+        Phdthesis mastersthesis = phdthesisRepository.findOne(id);
         String result = "";
         try {
             result = toBibtex(mastersthesis);
@@ -101,18 +100,18 @@ public class PhdthesisService implements ServiceInterface<Phdthesis> {
 
     public List<Phdthesis> search(String name) {
         List<Phdthesis> result = new ArrayList<>();
-        List<Phdthesis> byAuthor = mastersthesisRepository.findByAuthorContaining(name);
-        List<Phdthesis> byTitle = mastersthesisRepository.findByTitleContaining(name);
-        List<Phdthesis> byBooktitle = mastersthesisRepository.findBySchoolContaining(name);
+        List<Phdthesis> byAuthor = phdthesisRepository.findByAuthorContaining(name);
+        List<Phdthesis> byTitle = phdthesisRepository.findByTitleContaining(name);
+        List<Phdthesis> bySchool = phdthesisRepository.findBySchoolContaining(name);
         result.addAll(byAuthor);
-        for (Phdthesis mastersthesis : byTitle) {
-            if (!result.contains(mastersthesis)) {
-                result.add(mastersthesis);
+        for (Phdthesis phdthesis : byTitle) {
+            if (!result.contains(phdthesis)) {
+                result.add(phdthesis);
             }
         }
-        for (Phdthesis mastersthesis : byBooktitle) {
-            if (!result.contains(mastersthesis)) {
-                result.add(mastersthesis);
+        for (Phdthesis phdthesis : bySchool) {
+            if (!result.contains(phdthesis)) {
+                result.add(phdthesis);
             }
         }
         return result;
