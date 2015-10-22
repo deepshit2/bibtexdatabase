@@ -13,6 +13,9 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 [Burndown sprint 2](https://docs.google.com/spreadsheets/d/1t7lnGBohWWyEUNtwTysRNfehCEYvia4sC__T7VJpmDw/edit?usp=sharing)
 
 [Burndown sprint 3](https://docs.google.com/spreadsheets/d/1WSwbjCdI4UkuURBGwjvo9t9rpgdB4ZwhDjUaYpdFrik/edit?usp=sharing)
+
+[Raportti](https://docs.google.com/document/d/1AwVtWAzgvwDIlXvLKpkkzT8hht1q0ngVggBOmRr0eUw/edit?usp=sharing)
+
 ##Jäsenet
 * Jukka-Pekka Seppänen
 * Santeri Horttanainen
@@ -38,7 +41,3 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 * Käyttäjänä haluan ladata bibtex -muotoisen dokumentin
 * Käyttäjänä haluan pystyä hakemaan viitteitä asiasanojen perusteella
 * Käyttäjänä haluan lisätä inproceedings-viitteitä järjestelmään lomakkeella webbisivun kautta.
-
-##Raportti
-https://docs.google.com/document/d/1AwVtWAzgvwDIlXvLKpkkzT8hht1q0ngVggBOmRr0eUw/edit?usp=sharing
-
