@@ -21,7 +21,6 @@ Ohjelmistotuotanto S2015 - Miniprojekti
 * Santeri Horttanainen
 * Tomi Ueda
 * Otto-Ville Raitolahti
-* Paavo Rohamo
 
 ##Sprint 1.
 
